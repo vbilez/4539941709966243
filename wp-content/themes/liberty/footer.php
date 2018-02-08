@@ -28,15 +28,20 @@
                         <div class="row">
                             <h3>Напишіть нам:</h3>
                             <div class="wrap">
-                                <div class="mat-div">
-                                    <label for="customer-email-address" class="mat-label">Email:</label>
-                                    <input type="text" class="mat-input" id="customer-email-address">
+                                <div id="emailmsg" style="display: none;clear:both;">Неправильний емейл</div>
+                                <?php
+                                $urlArray = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+                                $segments = explode('/', $urlArray);
+                                //$numSegments = count($segments);
+                                $currentSegment = $segments[1];
+
+                                if($currentSegment=='thankyou'){
+                                     get_template_part('content');}
+                                ?>
+                                <?php echo do_shortcode('[sitepoint_contact_form]');?>
+                                <div id="hidden_div" style="display:none">
+                                    <p>Show me when form is submitted :) </p>
                                 </div>
-                                <div class="mat-div">
-                                    <label for="customer-name" class="mat-label">Повідомлення:</label>
-                                    <input type="text" class="mat-input" id="customer-name">
-                                </div>
-                                <button class="submit-send-email">Надіслати:</button>
                             </div>
                         </div>
                     </div>
