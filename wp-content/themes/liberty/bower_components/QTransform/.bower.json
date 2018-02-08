@@ -1,0 +1,13 @@
+{
+  "name": "QTransform",
+  "homepage": "https://github.com/puppybits/QTransform",
+  "_release": "0ec223099f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "0ec223099f74cfd6e51f03f3a7e052ae9085c1fc"
+  },
+  "_source": "https://github.com/puppybits/QTransform.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/puppybits/QTransform.git"
+}
