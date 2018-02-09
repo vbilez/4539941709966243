@@ -7,8 +7,8 @@ $title=mb_strimwidth($post->post_title,0,15);
 
 $postdate= get_the_date('d',$post) .'|'.get_the_date('m',$post) ;
 echo '
-<div class="col-md-7  col-lg-7 col-sm-12 col-xs-12 videoplayer">
-			<video  style="" id="my-video" class="video-js vjs-big-play-centered " controls preload="auto" width="700" height="400"
+<div class="col-md-7  col-lg-7 col-sm-12 col-xs-12 videoplayer" style="padding-left:0 !important;padding-right:0 !important" >
+			<video  style="width: 100%; height: 100%;" id="my-video" class="video-js vjs-big-play-centered vjs-16-9" controls preload="auto" 
   poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
     <source src="'.get_the_guid($id).'" type="video/mp4">
     
@@ -29,6 +29,8 @@ echo '
 
 			</div>
 		
-	</div>';
+
+  ';
 	?>
+
 <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>

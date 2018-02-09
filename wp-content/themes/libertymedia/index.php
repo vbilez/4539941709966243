@@ -43,7 +43,53 @@ $currentSegment=urldecode($currentSegment);
     -o-background-size: 100%; /* Opera 9.6+ */
     background-size: cover; /* Современные браузеры */
    }
+   @media only screen and (min-width: 1024px) and (max-width: 2500px){
+        .portfolio-title{
+            margin-left:460px;
+           height:0.5em;
+            padding-top:70px;
+        }
+        .videoplayer{
+        background-color: transparent;
+        height: 400px;
+        width: 58.33333333%;
+        float: left;
+            position: relative;
+    min-height: 1px;
+        }
+     
+    }
+    @media only screen and (min-width: 350px) and (max-width: 768px){
+        .portfolio-title{
+            padding-top:70px;
+        }
+           .videoplayer{
+        background-color: transparent;
+        height: 200px;
+        width: 100% !important;
+        }
+    
+    }
 
+    @media only screen and (min-width: 768px) and (max-width: 1023px){
+        .portfolio-title{
+            padding-top:70px;
+        }
+           .videoplayer{
+        background-color: transparent;
+        height: 400px;
+        width: 58.33333333%;
+        }
+    
+    }
+   .description{
+        padding-top: 20px;
+        background-color: gray;
+        height: 400px;
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+        overflow-y:scroll;
+    }
    .title-text{
     font-family:'Corinthia',sans-serif;
     opacity: 1;float:left;
@@ -79,7 +125,7 @@ $currentSegment=urldecode($currentSegment);
         color: #4f504f;
         
         padding: 0 40px;
-        font-weight: 9і00;
+        
         color: #fff;
         display: table-cell;
         vertical-align: middle;
@@ -88,8 +134,8 @@ $currentSegment=urldecode($currentSegment);
         -o-transform: skew(20deg);
          color: #fff;
         font-family: 'GothamPro', sans-serif;
-    font-size: 27px;
-    font-weight: bold;
+        font-size: 27px;
+        font-weight: bold;
 
     }
 
@@ -112,27 +158,15 @@ $currentSegment=urldecode($currentSegment);
         
          
     }
-    .videoplayer{
-        background-color: transparent;
-        height: 400px;
-        
-
-        
-    }
-    .description{
-        padding-top: 20px;
-        background-color: gray;
-        height: 400px;
-        padding-left: 0px!important;
-        padding-right: 0px!important;
-        overflow-y:scroll;
-    }
+    
+    
 
     .filler{
         float: left;
         width: 2.7%;
         position: relative;
-        min-height: 1px;
+        min-height: 40px;
+        min-width: 20px;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
@@ -172,7 +206,7 @@ $currentSegment=urldecode($currentSegment);
 
     <div class="row">
 
-        <div style="margin-left:460px;height:0.5em;padding-top:70px;">
+        <div class="portfolio-title">
         <div class="parallelogram-modified" style="opacity: 1;">
                  <div class="parallelogram-inner-text-modified" >Портфоліо</div>
             </div>
@@ -353,14 +387,8 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
  }
 ?>
 </div>
- <div style="width:100%;height:30px;"></div>
-    <div class="row">
-        
-        <div>   
-        <input type="text" style="width:200px;height:30px;opacity:0.45;background-color:gray;border:none;display:inline-block"> <span class="glyphicon glyphicon-search"></span>
-        </div>
 
-    </div>
+  
 <div style="width:100%;height:30px;"></div>
     </div>
 </center>

@@ -1,11 +1,4 @@
-<section class="brand-slider">
-    <span style="display:block;height:40vh;background:#000;opacity:.7;"></span>
-    <div class="container-fluid">
-        <div class="row"  style="margin-top: -220px;background-color: transparent ">
-            <?php echo do_shortcode('[print_circle_slider_plus_lightbox]');?>
-        </div>
-    </div>
-</section>
+
 <footer>
     <div class="footer_grid">
         <div class="container-fluid">
