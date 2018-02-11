@@ -1,3 +1,18 @@
+<?php
+$urlArray = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$segments = explode('/', $urlArray);
+//$numSegments = count($segments);
+$currentSegment = $segments[1];
+$idseg = $segments[2];
+$seg3=$segments[3];
+
+$currentSegment=urldecode($currentSegment);
+?>
+<?php
+  if($currentSegment==''){
+          
+    
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,9 +57,9 @@
     </div><!-- /.container-fluid -->
 </nav>
 <img class="feather-img opacity-0 feather-img-bg-top" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_top_bg.jpg" alt="">
-<div class="intro-title production-title opacity-0"><a href="www">Production</a></div>
+<div class="intro-title production-title opacity-0"><a href="productionpage">Production</a></div>
 <img class="feather-img opacity-0 feather-img-bg-bottom" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_bottom_bg.jpg" alt="">
-<div class="intro-title wedding-title opacity-0" style=""><a href="rrr">Wedding</a></div>
+<div class="intro-title wedding-title opacity-0" style=""><a href="weddingpage">Wedding</a></div>
 <img class="opacity-0" id="stroke-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_stroke.png" alt="" usemap="#strokemap">
 <map name="strokemap">
     <area id="top-feather-area" href="111" coords="5,4,152,19,356,99,583,229,771,407,964,669,1104,978,308,1788,181,1610,68,1299,12,961,3,604" shape="poly">
@@ -59,3 +74,8 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/intro-anims.js" type="text/javascript"></script>
 </body>
 </html>
+<?php } ?>
+
+<?php if($currentSegment=='weddingpage'){include('wedding.php');}?>
+<?php if($currentSegment=='productionpage'){include('production.php');}?>
+
