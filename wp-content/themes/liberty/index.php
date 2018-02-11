@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/intro-styles.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/intro-styles-header-menu-overrides.css">
-    <?php wp_head();?>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -35,20 +34,20 @@
                         <li><a href="#">Wedding</a></li>
                     </ul>
                 </li>
-                <li><a href="<?php echo get_template_directory_uri(); ?>#">Блог</a></li>
-                <li><a href="<?php echo get_template_directory_uri(); ?>#">Контакти</a></li>
-                <li><a href="<?php echo get_template_directory_uri(); ?>#">Наші клієнти</a></li>
+                <li><a href="#">Блог</a></li>
+                <li><a href="#">Контакти</a></li>
+                <li><a href="#">Наші клієнти</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 <img class="feather-img opacity-0 feather-img-bg-top" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_top_bg.jpg" alt="">
-<div class="intro-title production-title opacity-0"><a href="<?php echo get_template_directory_uri(); ?>/production.php">Production</a></div>
+<div class="intro-title production-title opacity-0"><a href="www">Production</a></div>
 <img class="feather-img opacity-0 feather-img-bg-bottom" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_bottom_bg.jpg" alt="">
 <div class="intro-title wedding-title opacity-0" style=""><a href="rrr">Wedding</a></div>
 <img class="opacity-0" id="stroke-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_stroke.png" alt="" usemap="#strokemap">
 <map name="strokemap">
-    <area id="top-feather-area" href="<?php echo get_template_directory_uri(); ?>/production.php" coords="5,4,152,19,356,99,583,229,771,407,964,669,1104,978,308,1788,181,1610,68,1299,12,961,3,604" shape="poly">
+    <area id="top-feather-area" href="111" coords="5,4,152,19,356,99,583,229,771,407,964,669,1104,978,308,1788,181,1610,68,1299,12,961,3,604" shape="poly">
     <area id="bottom-feather-area" href="222" coords="311,1741,627,1993,781,2020,1525,2025,1820,2004,1947,1933,1997,1845,1998,1686,1870,1456,1692,1244,1547,1120,1059,982" shape="poly">
 </map>
 <span class="stroke"></span>

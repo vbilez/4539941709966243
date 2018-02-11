@@ -27,7 +27,7 @@ $(document).ready(function () {
     stroke = $('.stroke');
     strokeImg = $('#stroke-img');
     // todo change to "index" on production
-    isIntroPage = window.location.href.indexOf("intro") !== -1;
+    isIntroPage = window.location.href.indexOf("/") !== -1;
     isIntroPage ? killScroll() : null;
     effects_elem_arr = [
         [productionTitle, topFeatherArea, featherTop],
