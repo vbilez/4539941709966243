@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/animate.css/animate.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css">
     <script src="<?php echo get_template_directory_uri(); ?>/js/send-text-input.js"></script>
 </head>
 <body>
@@ -26,7 +26,7 @@
             <div class="row wedding-promotion">
                 <div class=" col-sm-6 col-md-4 clearfix">
                     <div class="wedding-img">Light
-                        <img class="wedding-img-img img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/wedding-promotion1.jpeg"/>
+                        <img class="wedding-img-img img-responsive" src="<?php echo get_template_directory_uri(); ?>assets/img/wedding-promotion1.jpeg"/>
                     </div>
                     <h3>Instagram-clip</h3>
                     <h4>в подарунок</h4>

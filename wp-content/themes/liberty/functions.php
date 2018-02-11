@@ -14,3 +14,11 @@ function register_my_menus() {
     );
 }
 add_action( 'init', 'register_my_menus' );
+
+function liberty_setup(){
+    load_theme_textdomain('libertymedia' );
+    add_theme_support( 'automatic-fild-links');
+    add_theme_support( 'post-formats', array(
+        'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
+    ) );
+};
