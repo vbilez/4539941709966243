@@ -14,11 +14,11 @@ $currentSegment=urldecode($currentSegment);
     
     ?>
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
-    <title>Liberty</title>
+    <title><?php wp_title(); ?></title>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
@@ -72,6 +72,7 @@ $currentSegment=urldecode($currentSegment);
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/QTransform/QTransform.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jQuery-rwdImageMaps/jquery.rwdImageMaps.min.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/intro-anims.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/anims.js" type="text/javascript"></script>
 </body>
 </html>
 <?php } ?>
