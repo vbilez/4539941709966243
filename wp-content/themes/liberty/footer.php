@@ -19,9 +19,9 @@
                         </div>
                     </div>
                     <div class="col-md-4 hidden-xs">
-                        <h3>Latest Instagram</h3>
+                        <h3>Latest Facebook</h3>
                         <div class="footer-menu">
-                            <!--<iframe style="border: none" src="https://codepen.io" id="frame_1"></iframe>-->
+                            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flibertyproduction%2Fvideos%2F1983199758569644%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -58,7 +58,7 @@
                             <li><a href="#">Портфоліо</a></li>
                             <li><a href="#">Блог</a></li>
                             <li><a href="#">Новини</a></li>
-                            <li><a href="#">Наші клієнти</a></li>
+<!--                            <li><a href="#">Наші клієнти</a></li>-->
                         </ul>
                     </div>
                 </div>
