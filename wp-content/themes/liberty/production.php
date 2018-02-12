@@ -33,7 +33,7 @@
             </div>
             <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav header-menu">
-                    <li><a href="#">Про нас</a></li>
+                    <li><a href="#ourteam">Про нас</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Портфоліо</a>
                         <ul class="dropdown-menu">
@@ -103,7 +103,7 @@
     </div>
     <div id="stripe" class="stripe-anim-start hidden-sm"></div>
 </header>
-<section class="our-team">
+<section class="our-team" id="ourteam">
     <!--todo : non responsive render of this section on mobile-->
     <div class="container-fluid">
         <div class="row row-eq-height">
@@ -632,9 +632,9 @@
 <!--todo: make animation work on scroll on mobile-->
 <section class="portfolio">
     <img class="feather-img feather-img-bg-top" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_top_bg.jpg" alt="">
-    <div class="intro-title production-title opacity-0"><a href="production">Production</a></div>
+    <div class="intro-title production-title opacity-0"><a href="portfolio-production">Production</a></div>
     <img class="feather-img feather-img-bg-bottom" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_bottom_bg.jpg" alt="">
-    <div class="intro-title wedding-title opacity-0" style=""><a href="wedding">Wedding</a></div>
+    <div class="intro-title wedding-title opacity-0" style=""><a href="portfolio-wedding">Wedding</a></div>
     <img class="opacity-0" id="stroke-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_stroke.png" alt="" usemap="#strokemap">
     <span class="stroke"></span>
 </section>
