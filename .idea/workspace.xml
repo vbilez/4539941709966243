@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bb5e048-5c5b-4594-ba3f-e582da254a64" name="Default" comment="change page information...">
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/00001-01 copy.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/20years logo_MM_png (1) copy.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/24581138_1411555702290791_249101020_n copy.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/26178822_250595748810126_684651140_o copy.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/LogoTrecCzerwone copy.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/Logo_white.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/Untitled-1 copy.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/Untitled-1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/logo-01 copy.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/logo-bugatti.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/zastavka---prozoryj_fon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/Роялти_УКР_прозр copy.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/Сервізант ЛОГО.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/assets/img/колаж.png" />
+    <list default="true" id="7bb5e048-5c5b-4594-ba3f-e582da254a64" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/liberty/index.php" afterPath="$PROJECT_DIR$/wp-content/themes/liberty/index.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -412,7 +396,7 @@
       <workItem from="1516278553445" duration="4465000" />
       <workItem from="1516616771141" duration="11079000" />
       <workItem from="1518351943666" duration="19935000" />
-      <workItem from="1518440346660" duration="648000" />
+      <workItem from="1518440346660" duration="692000" />
     </task>
     <task id="LOCAL-00001" summary="change page information...">
       <created>1518368976369</created>
@@ -421,11 +405,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518368976369</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add image for slider">
+      <created>1518441413193</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1518441413193</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73175000" />
+    <option name="totallyTimeSpent" value="73219000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -524,7 +515,8 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="change page information..." />
-    <option name="LAST_COMMIT_MESSAGE" value="change page information..." />
+    <MESSAGE value="add image for slider" />
+    <option name="LAST_COMMIT_MESSAGE" value="add image for slider" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
