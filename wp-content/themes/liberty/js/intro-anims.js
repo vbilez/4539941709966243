@@ -27,23 +27,26 @@ $(document).ready(function () {
     stroke = $('.stroke');
     strokeImg = $('#stroke-img');
     // todo change to "index" on production
-    isIntroPage = window.location.href.indexOf("/") !== -1;
+    isIntroPage = window.location.href.length === 23;
     isIntroPage ? killScroll() : null;
     effects_elem_arr = [
         [productionTitle, topFeatherArea, featherTop],
         [weddingTitle, bottomFeatherArea, featherBottom]
     ];
-
     function featherAnim() {
-        stroke.animate({'height': isIntroPage ? '100vh' : '50%'}, 1500, 'swing', function () {
-            if (container_w <= 1024) {
-                stroke.animate({'height': '50%'}, 1500);
-                strokeImg.css({'height': '50%'});
-            } else {
-                // stroke.animate({'height': strokeImg.height() + 'px'}, 1500);
-                stroke.animate({'height': 70 + 'vh'}, 1500);
-            }
-        });
+        if (isIntroPage) {
+            stroke.animate({'height': '100vh'}, 1500, function () {
+                if (container_w <= 1024) {
+                    stroke.animate({'height': '50%'}, 1500);
+                    strokeImg.css({'height': '50%'});
+                } else {
+                    // stroke.animate({'height': strokeImg.height() + 'px'}, 1500);
+                    stroke.animate({'height': 70 + 'vh'}, 1500);
+                }
+            });
+        } else {
+            stroke.animate({'height': '50%'}, 1500);
+        }
         featherTop.add(featherBottom).animate({
             '-webkit-mask-position-x': '50%',
             '-webkit-mask-position-y': '50%',
@@ -97,7 +100,9 @@ $(document).ready(function () {
                 var oTop = $('section.portfolio').offset().top - window.innerHeight;
                 var pTop = $(window).scrollTop();
                 if( pTop-container_h > oTop ){
-                    featherAnim();
+                    setTimeout(function () {
+                        featherAnim()
+                    }, 100);
                     productionTitle.add(weddingTitle).removeClass('opacity-0');
                     productionTitle.addClass('animated bounceInLeft');
                     weddingTitle.addClass('animated bounceInRight');

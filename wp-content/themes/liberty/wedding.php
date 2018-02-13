@@ -670,6 +670,7 @@ else {
 <!--for debug purpose-->
 
 <?php wp_footer(); ?>
+<!--todo : remove below script on production-->
 <script>
     $(document).ready(function () {
         $('#viewportInf p:first-child').append(function () {
