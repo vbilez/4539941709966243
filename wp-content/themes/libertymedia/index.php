@@ -7,6 +7,12 @@ $idseg = $segments[2];
 $seg3=$segments[3];
 
 $currentSegment=urldecode($currentSegment);
+$s=$_GET['s'];
+if($currentSegment=='page')
+{$paged=$seg3;}
+else {
+//$paged=$_GET['page'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -252,6 +258,9 @@ array(
     'post_type' => 'attachment',
     'post_mime_type'=>'video/mp4',
     'post_status'    => 'inherit',
+    's'=>$s,
+    'posts_per_page'=>1,
+    'paged' => $paged,
     'cat'=>5
 );
 $args2 =
@@ -342,7 +351,9 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
 
             }
             wp_reset_postdata();
+
         }
+        
         //get_template_part( 'portfolio-wedding' );
     }
     if($currentSegment=='portfolio-production')   {
@@ -388,8 +399,25 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
 ?>
 </div>
 
-  
+ <?php 
+ if(($currentSegment=='portfolio-production')||($currentSegment=='portfolio-wedding'))
+ {
+    echo "<div>";previous_posts_link('<',$q->max_num_pages);
+    echo "<div>".$paged."</div>";next_posts_link('>',$q->max_num_pages);
+    echo "</div>";
+ }
+ ?>
 <div style="width:100%;height:30px;"></div>
+    <div class="row">
+        
+        <div>   
+            <form>
+                <input type="text" name="s" style="width:200px;height:30px;opacity:0.45;background-color:gray;border:none;display:inline-block"> <span class="glyphicon glyphicon-search"></span>
+             </form>               
+        </div>
+
+    </div>
+
     </div>
 </center>
 <?php get_footer(); ?>
