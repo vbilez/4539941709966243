@@ -41,17 +41,17 @@ $currentSegment=urldecode($currentSegment);
         </div>
         <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav header-menu">
-                <li><a href="#">Про нас</a></li>
+                <li><a href="<?php echo get_home_url(); ?>/productionpage#ourteam">Про нас</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Портфоліо</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Production</a></li>
-                        <li><a href="#">Wedding</a></li>
+                        <li><a href="<?php echo get_home_url(); ?>/portfolio-production">Production</a></li>
+                        <li><a href="<?php echo get_home_url(); ?>/portfolio-wedding">Wedding</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Блог</a></li>
-                <li><a href="#">Контакти</a></li>
-                <li><a href="#">Наші клієнти</a></li>
+                <li><a href="blog">Блог</a></li>
+                <li><a href="<?php echo get_home_url(); ?>/productionpage#footer">Контакти</a></li>
+                <li><a href="<?php echo get_home_url(); ?>/productionpage#brand-slider">Наші клієнти</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -62,8 +62,8 @@ $currentSegment=urldecode($currentSegment);
 <div class="intro-title wedding-title opacity-0" style=""><a href="weddingpage">Wedding</a></div>
 <img class="opacity-0" id="stroke-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_stroke.png" alt="" usemap="#strokemap">
 <map name="strokemap">
-    <area id="top-feather-area" href="111" coords="5,4,152,19,356,99,583,229,771,407,964,669,1104,978,308,1788,181,1610,68,1299,12,961,3,604" shape="poly">
-    <area id="bottom-feather-area" href="222" coords="311,1741,627,1993,781,2020,1525,2025,1820,2004,1947,1933,1997,1845,1998,1686,1870,1456,1692,1244,1547,1120,1059,982" shape="poly">
+    <area id="top-feather-area" href="productionpage" coords="5,4,152,19,356,99,583,229,771,407,964,669,1104,978,308,1788,181,1610,68,1299,12,961,3,604" shape="poly">
+    <area id="bottom-feather-area" href="weddingpage" coords="311,1741,627,1993,781,2020,1525,2025,1820,2004,1947,1933,1997,1845,1998,1686,1870,1456,1692,1244,1547,1120,1059,982" shape="poly">
 </map>
 <span class="stroke"></span>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
