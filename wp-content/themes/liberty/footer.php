@@ -2,10 +2,10 @@
 <footer id="footer">
     <section class="brand-slider hiden-xs" id="">
         <span style="display:block;height:40vh;background:#000;opacity:.84;"></span>
-        <div  class="carousel-wrap">
+        <div  class="carousel-wrap" style="margin-top:-275px;">
             <div id="" class="owl-carousel slider-active">
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/servizantlogo.png"></div>
-                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/mamocka.png""></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/00001-01 copy.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/royalty.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/trecnutrition.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/kyivstar.png"></div>
