@@ -1,12 +1,24 @@
-<section class="brand-slider" id="brand-slider">
-    <span style="display:block;height:40vh;background:#000;opacity:.7;"></span>
-    <div class="container-fluid">
-        <div class="row"  style="margin-top: -220px;background-color: transparent ">
-            <?php echo do_shortcode('[print_circle_slider_plus_lightbox]');?>
-        </div>
-    </div>
-</section>
+
 <footer id="footer">
+    <section class="brand-slider hiden-xs" id="">
+        <span style="display:block;height:40vh;background:#000;opacity:.84;"></span>
+        <div  class="carousel-wrap" style="margin-top:-275px;">
+            <div id="" class="owl-carousel slider-active">
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/servizantlogo.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/00001-01 copy.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/royalty.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/trecnutrition.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/kyivstar.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/00001-01 copy.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/LogoTrecCzerwone.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/dzerelo.png"></div>
+                <div class="item"><img src="http://placehold.it/150x150"></div>
+                <div class="item"><img src="http://placehold.it/150x150"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/brand_img_sm.png"></div>
+                <div class="item"><img src="http://placehold.it/150x150"></div>
+            </div>
+        </div>
+    </section>
     <div class="footer_grid">
         <div class="container-fluid">
             <div class="row">
@@ -58,7 +70,7 @@
                             <li><a href="#">Портфоліо</a></li>
                             <li><a href="#">Блог</a></li>
                             <li><a href="#">Новини</a></li>
-<!--                            <li><a href="#">Наші клієнти</a></li>-->
+                        <!--<li><a href="#">Наші клієнти</a></li>-->
                         </ul>
                     </div>
                 </div>

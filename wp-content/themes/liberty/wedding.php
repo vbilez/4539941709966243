@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/intro-styles.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/owl.carousel/dist/assets/owl.carousel.min.css" />
 
     <?php wp_head(); ?>
 </head>
@@ -667,6 +668,8 @@ else {
 <?php get_footer(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery-ui/jquery-ui.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/bower_components/owl.carousel/dist/owl.carousel.min.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/brandslider.js" type="text/javascript"></script>
 <!--for debug purpose-->
 
 <?php wp_footer(); ?>
@@ -675,10 +678,11 @@ else {
     $(document).ready(function () {
         $('#viewportInf p:first-child').append(function () {
             return $(window).width();
-        })
+        });
         $('#viewportInf p:last-child').append(function () {
             return $(window).height();
-        })
+        });
+   
     });
 </script>
 <!--//for debug purpose-->
@@ -687,10 +691,12 @@ else {
 <script src="<?php echo get_template_directory_uri(); ?>/js/intro-anims.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/send-text-input.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/aos/dist/aos.js"></script>
+
 <script>
     AOS.init();
 </script>
-<script src="<?php echo get_template_directory_uri(); ?>/bower_components/QTransform/QTransform.js" type="text/javascript"></script>
+<!--<script src="<?php echo get_template_directory_uri(); ?>/bower_components/QTransform/QTransform.js" type="text/javascript"></script>
+    -->
 <!--todo : take away jquery.rwdImageMaps.min.js from index file-->
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jQuery-rwdImageMaps/jquery.rwdImageMaps.min.js" type="text/javascript"></script>
 <script type="text/javascript">

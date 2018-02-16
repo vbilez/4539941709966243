@@ -73,6 +73,7 @@ $currentSegment=urldecode($currentSegment);
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jQuery-rwdImageMaps/jquery.rwdImageMaps.min.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/intro-anims.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/anims.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/brandslider.js" type="text/javascript"></script>
 </body>
 </html>
 <?php } ?>
