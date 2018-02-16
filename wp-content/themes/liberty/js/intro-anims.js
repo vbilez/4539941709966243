@@ -3,8 +3,8 @@ function killScroll() {
         startX = e.changedTouches[0].pageX;
         startY = e.changedTouches[0].pageY;
     }, { passive: false });
-    document.addEventListener('touchmove', function(e) {
-        if ( event.touches.length == 1 ) {
+    document.addEventListener('touchmove', function() {
+        if ( event.touches.length === 1 ) {
             curX = event.touches[0].pageX;
             curY = event.touches[0].pageY;
             if(Math.abs((curX-startX))>10 || Math.abs((curY-startY))>10){
@@ -26,8 +26,18 @@ $(document).ready(function () {
     weddingTitle = $('.wedding-title');
     stroke = $('.stroke');
     strokeImg = $('#stroke-img');
+    var url = window.location.href;
     // todo change to "index" on production
-    isIntroPage = window.location.href.length === 23;
+    // determine if url route is on index
+    function isIndexPageFunc(startPos, allMatches) {
+        allMatches = allMatches === undefined ? 0 : allMatches;
+        startPos = startPos === undefined ? 0 : startPos;
+        var match = url.indexOf("/", startPos);
+        if (match === -1) return allMatches === 3 && startPos === url.length;
+        allMatches++;
+        return isIndexPageFunc(match + 1, allMatches)
+    }
+    isIntroPage = isIndexPageFunc();
     isIntroPage ? killScroll() : null;
     effects_elem_arr = [
         [productionTitle, topFeatherArea, featherTop],
