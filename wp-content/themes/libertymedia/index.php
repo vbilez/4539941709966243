@@ -24,7 +24,7 @@ else {
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
-
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
 
 
 
@@ -38,7 +38,9 @@ else {
     <?php wp_head(); ?>
 </head>
 <style type="text/css">
-
+.nodecor{
+    text-decoration: none !important;
+}
 @font-face {
   font-family: 'Corinthia';
   src: local("Corinthia"), url("assets/fonts/corinthia.ttf") format("woff"), url("https://nomail.com.ua/files/woff/d9af980a0070a31725a941a825f01086.woff") format("woff"); }
@@ -247,10 +249,6 @@ else {
 
 
         
-
-   
-
-<div class="row">
 <?php
 $args =
 
@@ -259,7 +257,7 @@ array(
     'post_mime_type'=>'video/mp4',
     'post_status'    => 'inherit',
     's'=>$s,
-    'posts_per_page'=>1,
+    'posts_per_page'=>3,
     'paged' => $paged,
     'cat'=>5
 );
@@ -274,8 +272,27 @@ array(
 $q = new WP_Query( $args );
 $q2 = new WP_Query( $args2 );
 
-
+ 
+ 
 ?>
+   
+<div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+    <?php if(($currentSegment=='portfolio-wedding')||($currentSegment=='portfolio-production')){?>
+   
+    <div style="position:absolute;margin-top:190px;vertical-align:middle;float:left;margin-left:-50px;">
+        <?php previous_posts_link('<i style="color:#66FAF9;font-family: FontAwesome!important" class="icon-4x icon-chevron-left" ></i>',$q->max_num_pages);?>
+    </div>
+    
+    
+    <div style="position:absolute;margin-top:190px;margin-left:100%;float:right;vertical-align:middle;margin-right:5px;">
+        
+        <?php next_posts_link('<i style="color:#66FAF9;font-family: FontAwesome!important" class="icon-4x icon-chevron-right" ></i>',$q->max_num_pages);?>
+    </div>
+    
+    <div style="clear:both"></div>
+    <?php }?>
+<div class="row">
+
 <?php
 /**
  * Like get_template_part() put lets you pass args to the template file
@@ -397,16 +414,9 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
 
  }
 ?>
+    </div>
 </div>
-
- <?php 
- if(($currentSegment=='portfolio-production')||($currentSegment=='portfolio-wedding'))
- {
-    echo "<div>";previous_posts_link('<',$q->max_num_pages);
-    echo "<div>".$paged."</div>";next_posts_link('>',$q->max_num_pages);
-    echo "</div>";
- }
- ?>
+<div style="clear:both"></div>
 <div style="width:100%;height:30px;"></div>
     <div class="row">
         
