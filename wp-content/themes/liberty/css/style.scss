@@ -936,6 +936,11 @@ footer .footer_grid {
     align-items: center;
 }
 
+.cellphone{
+  font-size: 30px;
+  color: #66FAF9;
+}
+
 footer {
     background: #151616;
     margin-top: auto;
@@ -1166,4 +1171,42 @@ footer {
     .footer-bottom-wrapper {
         font-size: 1.3em
     }
+}
+
+
+/*************BRAND SLIDER********************/
+
+.carousel-wrap {
+  margin: -318px auto;
+  padding: 0 5%;
+  width: 80%;
+  position: relative;
+}
+
+/* fix blank or flashing items on carousel */
+.owl-carousel .item {
+  position: relative;
+  z-index: 100;
+  -webkit-backface-visibility: hidden;
+}
+
+/* end fix */
+.owl-nav > div {
+
+  margin-top: -26px;
+  position: absolute;
+  top: 50%;
+  color: #cdcbcd;
+}
+
+.owl-nav i {
+  font-size: 52px;
+}
+
+.owl-nav .owl-prev {
+  left: -30px;
+}
+
+.owl-nav .owl-next {
+  right: -30px;
 }

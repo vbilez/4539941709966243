@@ -724,7 +724,8 @@ header .jumbotron h2 .parallelogram .parallelogram-inner-text {
   background: url("../assets/img/brands-slider-background.jpg") no-repeat center;
   height: 40vh;
   -webkit-background-size: 100%;
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
 
 /***END** Brands Slider***/
 /** FOOTER **/
@@ -738,10 +739,9 @@ footer .footer_grid {
   margin-top: 20px;
   align-items: center; }
 
-.cellphone{
+.cellphone {
   font-size: 30px;
-  color: #66FAF9;
-}
+  color: #66FAF9; }
 
 footer {
   background: #151616;
@@ -752,7 +752,7 @@ footer {
   display: block; }
   .footer-menu iframe {
     width: 100%;
-    max-width: 300px; }
+    max-width: 400px; }
 
 .footer-op {
   padding-left: 9%; }
@@ -932,44 +932,33 @@ footer {
 
   .footer-bottom-wrapper {
     font-size: 1.3em; } }
-
-/*# sourceMappingURL=style.css.map */
-
-
 /*************BRAND SLIDER********************/
-
 .carousel-wrap {
   margin: -318px auto;
   padding: 0 5%;
   width: 80%;
-  position: relative;
-}
+  position: relative; }
 
 /* fix blank or flashing items on carousel */
 .owl-carousel .item {
   position: relative;
   z-index: 100;
-  -webkit-backface-visibility: hidden;
-}
+  -webkit-backface-visibility: hidden; }
 
 /* end fix */
 .owl-nav > div {
-
   margin-top: -26px;
   position: absolute;
   top: 50%;
-  color: #cdcbcd;
-}
+  color: #cdcbcd; }
 
 .owl-nav i {
-  font-size: 52px;
-}
+  font-size: 52px; }
 
 .owl-nav .owl-prev {
-  left: -30px;
-}
+  left: -30px; }
 
 .owl-nav .owl-next {
-  right: -30px;
-}
+  right: -30px; }
 
+/*# sourceMappingURL=style.css.map */
