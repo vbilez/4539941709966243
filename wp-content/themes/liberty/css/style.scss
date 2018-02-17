@@ -581,13 +581,12 @@ header .jumbotron h2 .parallelogram .parallelogram-inner-text {
     }
   }
   & .about-team-width {
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
     margin-top: 90px;
     text-align: center;
     & .about-team{
       position: relative;
-      display: inline-block;
+      //display: inline-block;
       //-webkit-border-radius: 37px;
       //-moz-border-radius: 37px;
       /*padding: 30px 30px 30px 30px;*/

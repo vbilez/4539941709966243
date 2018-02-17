@@ -450,13 +450,11 @@ header .jumbotron h2 .parallelogram .parallelogram-inner-text {
   .our-team .our-team-title #about-team-title {
     display: none; }
 .our-team .about-team-width {
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
   margin-top: 90px;
   text-align: center; }
   .our-team .about-team-width .about-team {
     position: relative;
-    display: inline-block;
     /*padding: 30px 30px 30px 30px;*/
     /* text-decoration: none; */ }
     .our-team .about-team-width .about-team .wtp {
