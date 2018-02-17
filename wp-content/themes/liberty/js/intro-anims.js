@@ -55,6 +55,7 @@ $(document).ready(function () {
                 }
             });
         } else {
+            stroke.animate({'height': '60%'}, 1500);
             stroke.animate({'height': '50%'}, 1500);
         }
         featherTop.add(featherBottom).animate({
