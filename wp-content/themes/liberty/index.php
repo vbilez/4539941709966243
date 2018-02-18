@@ -41,7 +41,7 @@ $currentSegment=urldecode($currentSegment);
         </div>
         <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav header-menu">
-                <li><a href="<?php echo get_home_url(); ?>/productionpage#ourteam">Про нас</a></li>
+                <li><a href="<?php echo get_home_url(); ?>/productionpage">Про нас</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Портфоліо</a>
                     <ul class="dropdown-menu">
@@ -66,6 +66,7 @@ $currentSegment=urldecode($currentSegment);
     <area id="bottom-feather-area" href="weddingpage" coords="311,1741,627,1993,781,2020,1525,2025,1820,2004,1947,1933,1997,1845,1998,1686,1870,1456,1692,1244,1547,1120,1059,982" shape="poly">
 </map>
 <span class="stroke"></span>
+<?php include('_partials/_footer_social.php')?>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery-ui/jquery-ui.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
