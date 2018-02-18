@@ -74,20 +74,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row social-connect" style="display:block !important;">
-                    <div class="social-button" style="display:block !important;">
-                        <div class="">
-                            <section class="footer-social-section" style="display:block !important;">
-                                <span class="footer-social-icons-wrapper" style="display:block !important;">
-                                    <a href="#" target="_blank" title="Vimeo"><i class="liberty-icon-vimeo"></i></a>
-                                    <a href="#" target="_blank" title="Facebook" style="display:inline-block !important;"><i class="liberty-icon-facebook"></i></a>
-                                    <a href="#" target="_blank" title="Youtube" style="display:inline-block !important;"><i class="liberty-icon-youtube"></i></a>
-                                    <a href="#" target="_blank" title="Instagram"><i class="liberty-icon-instagram"></i></a>
-                                </span>
-                            </section>
-                        </div>
-                    </div>
-                </div>
+                <?php include('_partials/_footer_social.php')?>
                 <!--<div class="row">-->
                     <!--<@created by web.adv.solution-->
                 <!--</div>-->
