@@ -23,7 +23,7 @@ $currentSegment=urldecode($currentSegment);
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/intro-styles.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/intro-styles-header-menu-overrides.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/intro-styles-specific-overrides.css">
 </head>
 <body>
 <nav class="navbar navbar-default">
