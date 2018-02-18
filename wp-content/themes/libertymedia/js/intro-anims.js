@@ -16,8 +16,8 @@ function killScroll() {
 $(document).ready(function () {
     $('img[usemap]').rwdImageMaps();
     container = $(window);
-    container_w = container.width();
-    container_h = container.height();
+    viewport_w = container.width();
+    viewport_h = container.height();
     featherTop = $('.feather-img-bg-top');
     featherBottom = $('.feather-img-bg-bottom');
     topFeatherArea = $('#top-feather-area');
@@ -36,7 +36,7 @@ $(document).ready(function () {
 
     function featherAnim() {
         stroke.animate({'height': isIntroPage ? '100vh' : '50%'}, 1500, 'swing', function () {
-            if (container_w <= 1024) {
+            if (viewport_w <= 1024) {
                 stroke.animate({'height': '50%'}, 1500);
                 strokeImg.css({'height': '50%'});
             } else {
@@ -96,7 +96,7 @@ $(document).ready(function () {
             if (makeAnim === 0) {
                 var oTop = $('section.portfolio').offset().top - window.innerHeight;
                 var pTop = $(window).scrollTop();
-                if( pTop-container_h > oTop ){
+                if( pTop-viewport_h > oTop ){
                     featherAnim();
                     productionTitle.add(weddingTitle).removeClass('opacity-0');
                     productionTitle.addClass('animated bounceInLeft');
