@@ -78,6 +78,10 @@ $currentSegment=urldecode($currentSegment);
 </html>
 <?php } ?>
 
-<?php if($currentSegment=='weddingpage'){include('wedding.php');}?>
-<?php if($currentSegment=='productionpage'){include('production.php');}?>
+<?php
+$weddingpage = 'weddingpage';
+$productionpage = 'productionpage';
+if(in_array($currentSegment, [$weddingpage, $productionpage])){include('home_page.php');}?>
+<?php //if($currentSegment=='productionpage'){include('production.php');}?>
+<!--todo: add 404 page-->
 
