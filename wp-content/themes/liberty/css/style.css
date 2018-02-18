@@ -116,7 +116,8 @@ header {
     text-align: center;
     color: #fff;
     font-weight: bold;
-    padding: 40px 5px;
+    padding-left: 5px;
+    padding-right: 5px;
     font-size: 10pt;
     font-weight: bold;
     letter-spacing: 1px;
@@ -130,10 +131,22 @@ header {
     @media (max-height: 459px) {
       .navbar-default .navbar-nav > li > a {
         font-size: 15px; } }
-  .navbar-default .navbar-brand img {
-    height: 85px; }
-    .navbar-default .navbar-brand img.visible-xs-h {
-      height: 25vh; }
+    @media (min-width: 768px) {
+      .navbar-default .navbar-nav > li > a {
+        padding-top: 30px;
+        padding-bottom: 30px; } }
+    @media (min-width: 1200px) {
+      .navbar-default .navbar-nav > li > a {
+        padding-top: 40px;
+        padding-bottom: 40px; } }
+  @media (min-width: 768px) {
+    .navbar-default .navbar-brand img {
+      height: 45px; } }
+  @media (min-width: 1200px) {
+    .navbar-default .navbar-brand img {
+      height: 85px; } }
+  .navbar-default .navbar-brand img.visible-xs-h {
+    height: 25vh; }
   .navbar-default .navbar-toggle {
     border: none; }
     @media (max-width: 767px) {

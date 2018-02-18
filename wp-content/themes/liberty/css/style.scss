@@ -153,7 +153,8 @@ header {
 
   & .navbar-nav > li > a {
     @include header-menu-links-style;
-    padding: 40px 5px;
+    padding-left: 5px;
+    padding-right: 5px;
     font-size: 10pt;
     font-weight: bold;
     letter-spacing: 1px;
@@ -167,11 +168,24 @@ header {
     @include media-for-xs-h {
       font-size: 15px;
     }
+    @include media-for-sm {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    @include media-for-lg {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
   }
 
   & .navbar-brand {
     & img {
-      height: 85px;
+      @include media-for-sm {
+        height: 45px;
+      }
+      @include media-for-lg {
+        height: 85px;
+      }
       &.visible-xs-h {
         height: 25vh;
       }
