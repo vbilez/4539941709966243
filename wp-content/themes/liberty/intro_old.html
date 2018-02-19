@@ -98,16 +98,16 @@
         });
 
         container = $(window);
-        container_w = container.width();
-        container_h = container.height();
+        viewport_w = container.width();
+        viewport_h = container.height();
 
         $('#top-feather-area').mousemove(function (e) {
 
             pos_x = e.pageX;
             pos_y = e.pageY;
 
-            left_pos = container_w / 2 - pos_x;
-            top_pos = container_h / 2 - pos_y;
+            left_pos = viewport_w / 2 - pos_x;
+            top_pos = viewport_h / 2 - pos_y;
 
 //            for (var prop in pos_obj) {
 //                pos_obj[prop] *= -0.222222222;

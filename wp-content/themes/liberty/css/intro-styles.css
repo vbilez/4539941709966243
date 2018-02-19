@@ -23,7 +23,7 @@ body {
 .feather-img, #stroke-img {
   display: block;
   margin: 0 auto;
-  height: 80vh;
+  height: 60vh;
   max-width: 100%;
   position: absolute;
   top: 50%;
@@ -115,11 +115,11 @@ ul.header-menu li:hover:before {
     width: 100%; }
 
   .production-title {
-    top: 10%;
+    top: 14%;
     width: 100%; }
 
   .wedding-title {
-    bottom: 7%; } }
+    bottom: 14%; } }
 @media (max-width: 767px) {
   .stroke {
     width: 10px; } }

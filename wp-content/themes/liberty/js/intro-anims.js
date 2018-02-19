@@ -47,8 +47,8 @@ $(document).ready(function () {
         if (isIntroPage) {
             stroke.animate({'height': '100vh'}, 1500, function () {
                 if (viewport_w <= 1024) {
-                    stroke.animate({'height': '50%'}, 1500);
-                    strokeImg.css({'height': '50%'});
+                    stroke.animate({'height': '40%'}, 1500);
+                    strokeImg.css({'height': '40%'});
                 } else {
                     // stroke.animate({'height': strokeImg.height() + 'px'}, 1500);
                     stroke.animate({'height': 70 + 'vh'}, 1500);

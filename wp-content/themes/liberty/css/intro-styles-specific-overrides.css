@@ -89,9 +89,32 @@
 .navbar-brand {
   font-family: "HelveticaNeueCyr Thin", sans-serif;
   color: #66FAF9 !important;
-  font-size: 30px; }
+  font-size: 20px; }
 
 .header-menu > li:last-child {
   border-bottom: none; }
+
+.social-connect {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  width: 100vw;
+  align-items: center;
+  margin-right: 0;
+  margin-left: 0; }
+  @media (min-width: 1200px) {
+    .social-connect {
+      height: 35px; } }
+
+.wedding-title {
+  font-size: 12vh; }
+
+.production-title {
+  font-size: 6vh; }
+
+@media (min-width: 1200px) {
+  i {
+    font-size: 20px; } }
 
 /*# sourceMappingURL=intro-styles-specific-overrides.css.map */

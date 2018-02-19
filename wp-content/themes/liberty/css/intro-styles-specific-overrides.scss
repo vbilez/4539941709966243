@@ -1,5 +1,6 @@
 @import "partials/responsive-utilities";
 @import "partials/variables";
+@import "partials/utilities";
 /*header style overrides*/
 
 .header-menu > li {
@@ -81,8 +82,34 @@
 .navbar-brand {
   font-family: "HelveticaNeueCyr Thin", sans-serif;
   color: $primary-theme-color !important;
-  font-size: 30px;
+  font-size: 20px;
 }
 .header-menu > li:last-child {
   border-bottom: none;
+}
+
+.social-connect {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  width: 100vw;
+  align-items: center;
+  @include margin-left-right(0);
+  @include media-for-lg {
+    height: 35px;
+  }
+}
+
+.wedding-title {
+  font-size: 12vh;
+}
+.production-title {
+  font-size: 6vh;
+}
+
+i {
+  @include media-for-lg {
+    font-size: 20px;
+  }
 }
