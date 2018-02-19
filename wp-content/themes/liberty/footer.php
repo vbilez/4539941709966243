@@ -1,6 +1,6 @@
 
 <footer id="footer">
-    <section class="brand-slider hiden-xs" id="">
+    <section class="brand-slider hiden-xs" id="brand-slider">
         <span style="display:block;height:40vh;background:#000;opacity:.84;"></span>
         <div  class="carousel-wrap" style="margin-top:-275px;">
             <div id="" class="owl-carousel slider-active">
