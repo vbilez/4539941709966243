@@ -862,6 +862,10 @@ footer {
   background-size: cover;
   text-align: center;
   font-size: 13px; }
+  .social-connect a {
+    text-decoration: none;
+    padding-right: 15px;
+    padding-left: 15px; }
 
 @media only screen and (max-width: 768px) {
   .footer-list-header {
