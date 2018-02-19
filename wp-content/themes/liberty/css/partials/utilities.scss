@@ -1,0 +1,8 @@
+@mixin padding-left-right($padding-size) {
+  padding-right: $padding-size;
+  padding-left: $padding-size;
+}
+@mixin margin-left-right($margin-size) {
+  margin-right: $margin-size;
+  margin-left: $margin-size;
+}
