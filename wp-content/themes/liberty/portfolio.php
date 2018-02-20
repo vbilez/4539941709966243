@@ -268,6 +268,9 @@ array(
     'post_type' => 'attachment',
     'post_mime_type'=>'video/mp4',
     'post_status'    => 'inherit',
+    's'=>$s,
+    'posts_per_page'=>3,
+    'paged' => $paged,
     'cat'=>6
 );
 $q = new WP_Query( $args );
