@@ -285,7 +285,7 @@ $q2 = new WP_Query( $args2 );
     </div>
     
     
-    <div style="position:absolute;margin-top:190px;margin-left:100%;float:right;vertical-align:middle;margin-right:5px;">
+    <div style="position:absolute;margin-top:190px;margin-left:98%;float:right;vertical-align:middle;margin-right:5px;">
         
         <?php next_posts_link('<i style="color:#66FAF9;font-family: FontAwesome!important" class="icon-4x icon-chevron-right" ></i>',$q->max_num_pages);?>
     </div>
