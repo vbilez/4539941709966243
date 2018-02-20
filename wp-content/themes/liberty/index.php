@@ -83,6 +83,12 @@ $currentSegment=urldecode($currentSegment);
 $weddingpage = 'weddingpage';
 $productionpage = 'productionpage';
 if(in_array($currentSegment, [$weddingpage, $productionpage])){include('home_page.php');}?>
+
+<?php
+$portfolio_wedding = 'portfolio-wedding';
+$portfolio_production = 'portfolio-production';
+$video='video';
+if(in_array($currentSegment, [$portfolio_wedding, $portfolio_production,$video])){include('portfolio.php');}?>
 <?php //if($currentSegment=='productionpage'){include('production.php');}?>
 <!--todo: add 404 page-->
 
