@@ -22,6 +22,7 @@ function test_init(){
                         <option value="5">Wedding</option>
                         <option value="6">Production</option>
                 </select><br>
+                <label>Youtube link:</label><br><input type='text' id='link' name='link'></input><br>
                 <input type='file' id='video' name='video' accept="video/*"></input><br>
                 <label>Title:</label><br><input type='text' id='title' name='title'></input><br>
                 <label>Description:</label><br><textarea id='description' name='description'></textarea><br>
@@ -33,28 +34,42 @@ function test_init(){
  
 function test_handle_post(){
         // First check if the file appears on the _FILES array
-        if(isset($_FILES['video'])){
-                $pdf = $_FILES['video'];
+        if(isset($_POST['link'])){
+                //$pdf = $_FILES['video'];
  
                 // Use the wordpress function to upload
                 // video corresponds to the position in the $_FILES array
                 // 0 means the content is not associated with any other posts
-                $uploaded=media_handle_upload('video', 0);
+                //$uploaded=media_handle_upload('video', 0);
+                $link=$_POST['link'];
                 $thumbnail=media_handle_upload('thumbnail', 0);
                 $category=$_POST['category'];
                 $title=$_POST['title'];
                 $description=$_POST['description'];
+                $my_post = array(
+                    'post_title'    => wp_strip_all_tags( $title ),
+                    'post_content'  => $description,
+                    'post_status'=>'open',
+                    'post_author'=>1,
+                    'guid'=>$link,
+                    'post_name'=>'youtubelink',
+                    'post_type'=>'attachment',
+                    'post_mime_type'=>'video/mp4'
+                    
+                );
+ 
+
+                $newpost=wp_insert_post( $my_post );
                 //echo $uploaded;
                 // Error checking using WP functions
-                if(is_wp_error($uploaded)){
-                        echo "Error uploading file: " . $uploaded->get_error_message();
+                if(is_wp_error( $newpost)){
+                        echo "Error uploading file: " .  $newpost->get_error_message();
                 }else{
                         //echo 'ct='.$category;
-                        wp_set_post_categories( $uploaded, $category );
+                        wp_set_post_categories( $newpost, $category );
                          $my_post = array(
-                                'ID'           => $uploaded,
-                        'post_title'   => $title,
-                        'post_content'   => $description,
+                                'ID'           => $newpost,
+                       
                          );
 
                          wp_update_post( $my_post );
@@ -63,11 +78,12 @@ function test_handle_post(){
                         echo "Error uploading thumbnail: " . $thumbnail->get_error_message();
                    }
                    else{
-                        if(set_post_thumbnail($uploaded,$thumbnail))
+                        if(set_post_thumbnail($newpost,$thumbnail))
                         {
                                 echo 'thumbnail ok';
                         }
-                        else {
+                        else 
+                        {
                                 echo 'thumbnail set fail';
                         }
                    }

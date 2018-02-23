@@ -32,7 +32,7 @@ else {
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <?php 
         if($currentSegment=='video'){
-          echo '<link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet">';
+          echo '<link href="'.get_template_directory_uri().'/css/video-js.css" rel="stylesheet">';
     }
     ?>
     <?php wp_head(); ?>
@@ -426,7 +426,7 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
         
         <div>   
             <form>
-                <input type="text" name="s" style="width:200px;height:30px;opacity:0.45;background-color:gray;border:none;display:inline-block"> <span class="glyphicon glyphicon-search"></span>
+                <input type="text" name="s" style="width:200px;height:30px;opacity:0.45;background-color:gray;border:none;display:inline-block"> <span class="glyphicon glyphicon-search" style="color:white"></span>
              </form>               
         </div>
 
