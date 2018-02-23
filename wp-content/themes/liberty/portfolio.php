@@ -93,7 +93,7 @@ else {
     }
    .description{
         padding-top: 20px;
-        background-color: gray;
+        background-color: #C8C8C8;
         height: 400px;
         padding-left: 0px!important;
         padding-right: 0px!important;
@@ -101,10 +101,10 @@ else {
     }
    .title-text{
     font-family:'Corinthia',sans-serif;
-    opacity: 1;float:left;
-    margin-left:15px;
-    margin-top:-5px;
-    font-size:50px;
+    opacity: 1;
+    float:left;
+    margin-left:7px;
+    font-size:42px;
     vertical-align:middle;
     color:white;
    }
@@ -119,7 +119,7 @@ else {
    }
     .title{
         height: 63px;
-         background: rgba(0, 170, 238, 0.7);
+         background: rgba(120, 250, 249, 0.7);
         margin-top:-63px;
         
 
