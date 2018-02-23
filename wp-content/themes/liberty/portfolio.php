@@ -114,7 +114,7 @@ else {
     margin-right:15px;
     font-size:32px;
     margin-top:5px;
-    vertical-align:middle
+    vertical-align:middle;
     font-weight:bold;
    }
     .title{
