@@ -43,7 +43,7 @@ $currentSegment=urldecode($currentSegment);
         </div>
         <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav header-menu">
-                <li><a href="<?php echo get_home_url(); ?>/productionpage">Про нас</a></li>
+                <li><a href="<?php echo get_home_url(); ?>/weddingpage">Про нас</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Портфоліо</a>
                     <ul class="dropdown-menu">
@@ -52,8 +52,8 @@ $currentSegment=urldecode($currentSegment);
                     </ul>
                 </li>
                 <li><a href="blog">Блог</a></li>
-                <li><a href="<?php echo get_home_url(); ?>/productionpage#footer">Контакти</a></li>
-                <li><a href="<?php echo get_home_url(); ?>/productionpage#brand-slider">Наші клієнти</a></li>
+                <li><a href="<?php echo get_home_url(); ?>/weddingpage#footer">Контакти</a></li>
+                <li><a href="<?php echo get_home_url(); ?>/weddingpage#brand-slider">Наші клієнти</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -86,6 +86,12 @@ $weddingpage = 'weddingpage';
 $productionpage = 'productionpage';
 if($currentSegment=='error'){include('error.php');} else
 if(in_array($currentSegment, [$weddingpage, $productionpage])){include('home_page.php');}?>
+
+<?php
+$portfolio_wedding = 'portfolio-wedding';
+$portfolio_production = 'portfolio-production';
+$video='video';
+if(in_array($currentSegment, [$portfolio_wedding, $portfolio_production,$video])){include('portfolio.php');}?>
 <?php //if($currentSegment=='productionpage'){include('production.php');}?>
 <!--todo: add 404 page-->
 

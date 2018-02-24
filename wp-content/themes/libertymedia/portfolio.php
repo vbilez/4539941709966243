@@ -50,6 +50,7 @@ else {
     -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
     -o-background-size: 100%; /* Opera 9.6+ */
     background-size: cover; /* Современные браузеры */
+
    }
    @media only screen and (min-width: 1024px) and (max-width: 2500px){
         .portfolio-title{
@@ -210,7 +211,7 @@ else {
 <!--<?php //get_header(); ?>-->
 <center>
 
-    <div class="container">
+    <div class="container" style="height:75vh">
 
     <div class="row">
 

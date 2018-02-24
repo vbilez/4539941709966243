@@ -1,41 +1,7 @@
 
 <footer>
     <div class="footer_grid">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="footer-op">
-                    <div class="col-md-4">
-                        <h3>Контакти:</h3>
-                        <div class="footer-text">
-                            <a class="cellphone" href="tel:+38 063 275 28 61">+38 063 275 28 61</a><br>
-                            <a class="cellphone" href="tel:+38 067 159 19 42">+38 067 159 19 42</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 hidden-xs">
-                        <h3>Latest Instagram</h3>
-                        <div class="footer-menu">
-                            <!--<iframe style="border: none" src="https://codepen.io" id="frame_1"></iframe>-->
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="row">
-                            <h3>Напишіть нам:</h3>
-                            <div class="wrap">
-                                <div class="mat-div">
-                                    <label for="customer-email-address" class="mat-label">Email:</label>
-                                    <input type="text" class="mat-input" id="customer-email-address">
-                                </div>
-                                <div class="mat-div">
-                                    <label for="customer-name" class="mat-label">Повідомлення:</label>
-                                    <input type="text" class="mat-input" id="customer-name">
-                                </div>
-                                <button class="submit-send-email">Надіслати:</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
         <div class="container-fluid">
             <div class="footer-copy">
                 <div class="row">
