@@ -47,12 +47,9 @@
                     <li><a href="#footer">Контакти</a></li>
                     <li><a href="#brand-slider">Наші клієнти</a></li>
                 </ul>
-                <ul class="nav navbar-nav hidden-sm hidden-xs">
-                    <li><a href="#"><i class="liberty-icon-vimeo"></i></a></li>
-                    <li><a href="#"><i class="liberty-icon-facebook"></i></a></li>
-                    <li><a href="#"><i class="liberty-icon-youtube"></i></a></li>
-                    <li><a href="#"><i class="liberty-icon-instagram"></i></a></li>
-                </ul>
+                <?= liberty\widgets\SocialButtons::renderItems([
+                    'class' => 'nav navbar-nav hidden-sm hidden-xs'
+                ]) ; ?>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

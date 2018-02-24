@@ -1,4 +1,6 @@
 <?php
+require_once('_partials/widgets/SocialButtons.php');
+
 $urlArray = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $segments = explode('/', $urlArray);
 //$numSegments = count($segments);
@@ -82,6 +84,7 @@ $currentSegment=urldecode($currentSegment);
 <?php
 $weddingpage = 'weddingpage';
 $productionpage = 'productionpage';
+if($currentSegment=='error'){include('error.php');} else
 if(in_array($currentSegment, [$weddingpage, $productionpage])){include('home_page.php');}?>
 <?php //if($currentSegment=='productionpage'){include('production.php');}?>
 <!--todo: add 404 page-->

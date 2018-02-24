@@ -861,7 +861,12 @@ footer {
   background: #66FAF9 no-repeat center;
   background-size: cover;
   text-align: center;
-  font-size: 13px; }
+  font-size: 13px;
+  list-style: none;
+  margin-bottom: 0; }
+  .social-connect li {
+    margin-right: 0;
+    margin-left: 0; }
   .social-connect a {
     text-decoration: none;
     padding-right: 15px;
