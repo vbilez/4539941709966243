@@ -38,6 +38,9 @@ else {
     <?php wp_head(); ?>
 </head>
 <style type="text/css">
+.social-connect{
+    display: block !important;
+}
 .nodecor{
     text-decoration: none !important;
 }
@@ -66,6 +69,10 @@ else {
             position: relative;
     min-height: 1px;
         }
+
+        .contheight{
+            height: 94vh;
+        }
      
     }
     @media only screen and (min-width: 350px) and (max-width: 768px){
@@ -76,6 +83,10 @@ else {
         background-color: transparent;
         height: 200px;
         width: 100% !important;
+        }
+
+        .contheight{
+            height: 160vh;
         }
     
     }
@@ -88,6 +99,10 @@ else {
         background-color: transparent;
         height: 400px;
         width: 58.33333333%;
+        }
+
+        .contheight{
+            height: 120vh;
         }
     
     }
@@ -211,7 +226,7 @@ else {
 <!--<?php //get_header(); ?>-->
 <center>
 
-    <div class="container" style="height:160vh;padding-right:0!important;padding-left:0!important">
+    <div class="container contheight" style="padding-right:0!important;padding-left:0!important">
 
     <div class="row">
 
@@ -433,8 +448,9 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
     </div>
 
     </div>
+<?php include('_partials/_footer_social_fix.php');?>
 </center>
-<?php include('_partials/_footer_social.php')?>
+
 
 <!--for debug purpose-->
 
