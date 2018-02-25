@@ -1,6 +1,6 @@
 
 <footer id="footer">
-    <section class="brand-slider hiden-xs" id="brand-slider">
+    <section class="brand-slider hidden-xs" id="brand-slider">
         <span style="display:block;height:40vh;background:#000;opacity:.84;"></span>
         <div  class="carousel-wrap" style="margin-top:-275px;">
             <div id="" class="owl-carousel slider-active">
@@ -74,7 +74,9 @@
                         </ul>
                     </div>
                 </div>
-                <?php include('_partials/_footer_social.php')?>
+                <?= \liberty\widgets\SocialButtons::renderItems([
+                    'class' => 'row social-connect'
+                ]) ; ?>
                 <!--<div class="row">-->
                     <!--<@created by web.adv.solution-->
                 <!--</div>-->

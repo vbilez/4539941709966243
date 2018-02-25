@@ -1107,6 +1107,19 @@ footer {
   }
 }
 
+.social-connect-one-screen-layout {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  width: 100vw;
+  align-items: center;
+  @include margin-left-right(0);
+  @include media-for-lg {
+    height: 35px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
     .footer-list-header {
         font-size: 2em

@@ -872,6 +872,19 @@ footer {
     padding-right: 15px;
     padding-left: 15px; }
 
+.social-connect-one-screen-layout {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  width: 100vw;
+  align-items: center;
+  margin-right: 0;
+  margin-left: 0; }
+  @media (min-width: 1200px) {
+    .social-connect-one-screen-layout {
+      height: 35px; } }
+
 @media only screen and (max-width: 768px) {
   .footer-list-header {
     font-size: 2em; }

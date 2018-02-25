@@ -38,11 +38,13 @@ else {
     <?php wp_head(); ?>
 </head>
 <style type="text/css">
-.social-connect{
-    display: block !important;
-}
 .nodecor{
     text-decoration: none !important;
+}
+@media (min-width: 1200px) {
+    i {
+        font-size: 20px;
+    }
 }
 @font-face {
   font-family: 'Corinthia';
@@ -448,7 +450,9 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
     </div>
 
     </div>
-<?php include('_partials/_footer_social_fix.php');?>
+    <?= \liberty\widgets\SocialButtons::renderItems([
+        'class' => 'social-connect social-connect-one-screen-layout'
+    ]) ; ?>
 </center>
 
 

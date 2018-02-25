@@ -88,19 +88,6 @@
   border-bottom: none;
 }
 
-.social-connect {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  bottom: 0;
-  width: 100vw;
-  align-items: center;
-  @include margin-left-right(0);
-  @include media-for-lg {
-    height: 35px;
-  }
-}
-
 .wedding-title {
   font-size: 12vh;
 }

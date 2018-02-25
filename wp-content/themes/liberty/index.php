@@ -68,7 +68,9 @@ $currentSegment=urldecode($currentSegment);
     <area id="bottom-feather-area" href="weddingpage" coords="311,1741,627,1993,781,2020,1525,2025,1820,2004,1947,1933,1997,1845,1998,1686,1870,1456,1692,1244,1547,1120,1059,982" shape="poly">
 </map>
 <span class="stroke"></span>
-<?php include('_partials/_footer_social.php')?>
+<?= \liberty\widgets\SocialButtons::renderItems([
+    'class' => 'social-connect social-connect-one-screen-layout'
+]) ; ?>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery-ui/jquery-ui.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>

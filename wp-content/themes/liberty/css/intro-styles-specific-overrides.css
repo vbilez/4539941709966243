@@ -94,19 +94,6 @@
 .header-menu > li:last-child {
   border-bottom: none; }
 
-.social-connect {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  bottom: 0;
-  width: 100vw;
-  align-items: center;
-  margin-right: 0;
-  margin-left: 0; }
-  @media (min-width: 1200px) {
-    .social-connect {
-      height: 35px; } }
-
 .wedding-title {
   font-size: 12vh; }
 
