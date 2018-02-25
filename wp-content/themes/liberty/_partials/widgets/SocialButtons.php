@@ -55,12 +55,14 @@ class SocialButtons {
             } else self::on_error("parameter must be an associative array");
         };
 
-        return "<ul{$htmlAttrs}>
-                    <li><a href=\"#\"><i class=\"liberty-icon-vimeo\"></i></a></li>
-                    <li><a href=\"#\"><i class=\"liberty-icon-facebook\"></i></a></li>
-                    <li><a href=\"#\"><i class=\"liberty-icon-youtube\"></i></a></li>
-                    <li><a href=\"#\"><i class=\"liberty-icon-instagram\"></i></a></li>
-               </ul>" ;
+        return <<<EOT
+                <ul{$htmlAttrs}>
+                    <li><a href="#"><i class="liberty-icon-vimeo"></i></a></li>
+                    <li><a href="#"><i class="liberty-icon-facebook"></i></a></li>
+                    <li><a href="#"><i class="liberty-icon-youtube"></i></a></li>
+                    <li><a href="#"><i class="liberty-icon-instagram"></i></a></li>
+               </ul>
+EOT;
     }
 }
 
