@@ -93,7 +93,7 @@ ul.header-menu li:hover:before {
   z-index: 10; }
   .intro-title a {
     color: #66FAF9; }
-    .intro-title a:hover {
+    .intro-title a:hover, .intro-title a:focus {
       text-decoration: none; }
 
 .production-title {
