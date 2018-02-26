@@ -10,7 +10,7 @@ Author URI: http://w3guy.com
   
 
   function html_form_code() {
-    echo '<form id="contactform" action="' . esc_url( get_home_url().'/thankyou/' ) . '" method="post"
+    echo '<form id="contactform" action="' . esc_url( get_home_url().'/thankyou' ) . '" method="post"
     onsubmit="showHide(); return false;" >';
 
     echo '<div class="mat-div">
@@ -49,17 +49,16 @@ function deliver_mail() {
         if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
             //Valid email!
 
+        ob_start();
+             header('Location: '.get_home_url().'/thankyou');
         // If email has been process for sending, display a success message
-        if ( wp_mail( $to, $subject, $message, $headers ) ) {
-        	
-            //echo '<div>';
-            //echo '<p>Thanks for contacting me, expect a response soon.</p>';
-            //echo '</div>';
-            //header('Location: '.get_home_url().'/дякую-шо-поділились-з-нами/');
+        wp_mail( $to, $subject, $message, $headers );
 
-        } else {
-           // echo 'An unexpected error occurred';
-        }
+         
+
+        
+        ob_end_clean();
+
         }
     }
 }
@@ -68,8 +67,8 @@ function cf_shortcode() {
     ob_start();
     deliver_mail();
     html_form_code();
-	$_POST= array();
-	unset($_POST); 
+	//$_POST= array();
+	//unset($_POST); 
     return ob_get_clean();
     
 }

@@ -1,4 +1,3 @@
-<?php
-    $content=get_post_field('post_content', get_the_ID());
-    echo  $content;
-?>
+
+<div>Дякуємо, ми зв'яжемось із вами якнайшвидше</div>
+
