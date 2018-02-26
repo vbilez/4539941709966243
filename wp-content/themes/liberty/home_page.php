@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/intro-styles.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
-    <?php if($currentSegment==$weddingpage){?>
+    <?php if(($currentSegment==$weddingpage)||($currentSegment==$productionpage)){?>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/owl.carousel/dist/assets/owl.carousel.min.css" />
     <?php }; ?>
     <?php wp_head(); ?>
@@ -430,7 +430,7 @@ else {
 <?php get_footer(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery-ui/jquery-ui.js" type="text/javascript"></script>
-<?php if($currentSegment==$weddingpage){?>
+<?php if(($currentSegment==$weddingpage)||($currentSegment==$productionpage)){?>
     <script src="<?php echo get_template_directory_uri(); ?>/bower_components/owl.carousel/dist/owl.carousel.min.js" type="text/javascript"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/brandslider.js" type="text/javascript"></script>
 <?php }; ?>

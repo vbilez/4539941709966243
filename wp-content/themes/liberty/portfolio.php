@@ -73,7 +73,7 @@ else {
         }
 
         .contheight{
-            height: 94vh;
+            height: 100vh;
         }
      
     }
@@ -88,7 +88,7 @@ else {
         }
 
         .contheight{
-            height: 160vh;
+            height: 260vh;
         }
     
     }
@@ -104,7 +104,7 @@ else {
         }
 
         .contheight{
-            height: 120vh;
+            height: 150vh;
         }
     
     }
@@ -275,7 +275,7 @@ array(
     'post_mime_type'=>'video/mp4',
     'post_status'    => 'inherit',
     's'=>$s,
-    'posts_per_page'=>3,
+    'posts_per_page'=>6,
     'paged' => $paged,
     'cat'=>5
 );
@@ -286,7 +286,7 @@ array(
     'post_mime_type'=>'video/mp4',
     'post_status'    => 'inherit',
     's'=>$s,
-    'posts_per_page'=>3,
+    'posts_per_page'=>6,
     'paged' => $paged,
     'cat'=>6
 );
@@ -450,12 +450,15 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
     </div>
 
     </div>
-    <?= \liberty\widgets\SocialButtons::renderItems([
+  
+</center>
+<footer>
+    <section class="socwidget" style="position:relative">
+  <?= \liberty\widgets\SocialButtons::renderItems([
         'class' => 'social-connect social-connect-one-screen-layout'
     ]) ; ?>
-</center>
-
-
+    </section>
+</footer>
 <!--for debug purpose-->
 
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
