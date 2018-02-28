@@ -31,7 +31,7 @@
                     <h3>Instagram-clip</h3>
                     <h4>в подарунок</h4>
                     <p>Передвесільна консультація<br>1 відеограф<br>Авторський фільм 30-40хв<br>Кліп 2-4 хв.<br>Виготовлення 2-4 місяці</p>
-                    <div class="wedding-img">300$</div>
+                    <div class="wedding-img"></div>
                     <button type="submit" id="submit-order0" class="submit-order btn btn-primary" name="submit">Замовити</button>
                 </div>
                 <div class="col-sm-6 col-md-4 clearfix">
@@ -41,7 +41,7 @@
                     <h3>Instagram-clip</h3>
                     <h4>в подарунок</h4>
                     <p>Передвесільна консультація<br>1 відеограф<br>Авторський фільм 30-40хв<br>Кліп 2-4 хв.<br>Виготовлення 2-4 місяці</p>
-                    <div class="wedding-img">500$</div>
+                    <div class="wedding-img"></div>
                     <button type="submit" id="submit-order1" class="submit-order btn btn-primary" name="submit">Замовити</button>
                 </div>
                 <div class="col-sm-6 col-md-4 clearfix">
@@ -51,7 +51,7 @@
                     <h3>Instagram-clip</h3>
                     <h4>в подарунок</h4>
                     <p>Передвесільна консультація<br>1 відеограф<br>Авторський фільм 30-40хв<br>Кліп 2-4 хв.<br>Виготовлення 2-4 місяці</p>
-                    <div class="wedding-img">800$</div>
+                    <div class="wedding-img"></div>
                     <button type="submit" id="submit-order2" class="submit-order btn btn-primary" name="submit">Замовити</button>
                 </div>
             </div>

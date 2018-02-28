@@ -10,12 +10,12 @@
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/trecnutrition.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/kyivstar.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/00001-01 copy.png"></div>
-                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/LogoTrecCzerwone.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/mamochka.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/dzerelo.png"></div>
-                <div class="item"><img src="http://placehold.it/150x150"></div>
-                <div class="item"><img src="http://placehold.it/150x150"></div>
-                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/brand_img_sm.png"></div>
-                <div class="item"><img src="http://placehold.it/150x150"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/dimleva.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/duda.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/edema.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/rentfurniture.png"></div>
             </div>
         </div>
     </section>

@@ -376,11 +376,9 @@
                         <div class="about-team col-sm-6 col-md-3 clearfix">
                             <div class="wtp">
                                 <img class="about-team-img img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/4.jpg"/>
-                                Макс
+                                Олексій
                             </div>
-                            <p>В Киеве Роман работал на позиции бренд-менеджера Lucky Strike в British American Tobacco. В 1998 году Роман вместе с партнером Дарко Скульским основали Radioaktive Film.
-
-                                В 1998  Дарко и Роман основали первую в Украине продакшн компанию Radioaktive Film, которая уже 16 лет является лидером на украинском рынке.
+                            <p>
                             </p>
                         </div>
                     </div>
