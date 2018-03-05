@@ -13,6 +13,12 @@ if($currentSegment=='page')
 else {
 //$paged=$_GET['page'];
 }
+ if($currentSegment=='portfolio-production'){
+        $bg='banner_bg_filter.jpg';
+    }
+ if($currentSegment=='portfolio-wedding'){
+        $bg='wedding_filter.jpg';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,14 +56,17 @@ else {
   font-family: 'Corinthia';
   src: local("Corinthia"), url("assets/fonts/corinthia.ttf") format("woff"), url("https://nomail.com.ua/files/woff/d9af980a0070a31725a941a825f01086.woff") format("woff"); }
  body {
-    background: url(<?php echo get_template_directory_uri(); ?>/assets/img/banner_bg.jpg) no-repeat;
+
+    background: url(<?php echo get_template_directory_uri(); ?>/assets/img/<?php echo $bg; ?>) no-repeat;
     -moz-background-size: 100%; /* Firefox 3.6+ */
     -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
     -o-background-size: 100%; /* Opera 9.6+ */
     background-size: cover; /* Современные браузеры */
 
    }
-   @media only screen and (min-width: 1024px) and (max-width: 2500px){
+
+   
+   @media all and (min-width: 1024px) and (max-width: 2500px){
         .portfolio-title{
             margin-left:460px;
            height:0.5em;
@@ -68,14 +77,32 @@ else {
         height: 400px;
         width: 58.33333333%;
         float: left;
-            position: relative;
-    min-height: 1px;
+        position: relative;
+        min-height: 1px;
         }
 
-        .contheight{
+       @media all and (orientation: portrait){
+         .contheight{
             height: 100vh;
+            padding-right:0!important;padding-left:0!important;
         }
-     
+       }
+       @media all and (orientation: landscape)and (max-height: 768px){
+         .contheight{
+            height: 150vh;
+            padding-right:0!important;padding-left:0!important;
+        }
+       }
+
+        @media all and (orientation: landscape)and (min-height: 769px)and (max-height: 2560px){
+         .contheight{
+            height: 100vh;
+            padding-right:0!important;padding-left:0!important;
+        }
+       }
+     .mt20px{
+        margin-top: 20px;
+     }
     }
     @media only screen and (min-width: 350px) and (max-width: 768px){
         .portfolio-title{
@@ -89,11 +116,18 @@ else {
 
         .contheight{
             height: 260vh;
+            <?php if(($currentSegment=='portfolio-production')||($currentSegment=='portfolio-wedding')) {?>
+                padding-right:0!important;padding-left:0!important;
+                <?php }?>
         }
-    
-    }
+     .mt20px{
+        margin-top: 20px;
+     }
+ }
 
-    @media only screen and (min-width: 768px) and (max-width: 1023px){
+
+
+    @media only screen and (min-width: 993px) and (max-width: 1023px){
         .portfolio-title{
             padding-top:70px;
         }
@@ -106,6 +140,28 @@ else {
         .contheight{
             height: 150vh;
         }
+         .mt20px{
+            margin-top: 20px;
+        }
+    
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 992px){
+        .portfolio-title{
+            padding-top:70px;
+        }
+           .videoplayer{
+        background-color: transparent;
+        height: 400px;
+        width: 58.33333333%;
+        }
+
+        .contheight{
+            height: 190vh;
+        }
+         .mt20px{
+        margin-top: 20px;
+     }
     
     }
    .description{
@@ -138,8 +194,6 @@ else {
         height: 63px;
          background: rgba(120, 250, 249, 0.7);
         margin-top:-63px;
-        
-
         width: 350px;
     }
 
@@ -225,10 +279,10 @@ else {
 </style>
 
 <body >
-<!--<?php //get_header(); ?>-->
+
 <center>
 
-    <div class="container contheight" style="padding-right:0!important;padding-left:0!important">
+    <div class="container contheight" style="">
 
     <div class="row">
 
@@ -244,6 +298,10 @@ else {
                 Wedding</div>';
             $prod='<div style="margin-top:5px;font-family:\'GothamPro-Bold\', sans-serif;font-size: calc(3vw + 2vh + 2vmin);color:white">
                 Production</div>';
+                $wed_v='<div style="margin-top:-25px;font-size:100px;font-family:\'Corinthia\', sans-serif;font-size: calc(7vw + 2vh + 2vmin);color:#C8C8C8">
+                Wedding</div>';
+                $prod_v='<div style="margin-top:5px;font-family:\'GothamPro-Bold\', sans-serif;font-size: calc(3vw + 2vh + 2vmin);color:#C8C8C8">
+                Production</div>';
             if($currentSegment=='portfolio-wedding'){
                 echo $wed;
             }
@@ -253,11 +311,11 @@ else {
              if($currentSegment=='video'){
                 if($seg3==5)
                 {
-                    echo $wed;
+                    echo $wed_v;
                 }
                 if($seg3==6)
                 {
-                   echo $prod;
+                   echo $prod_v;
                 }
             }
             ?>
@@ -312,7 +370,7 @@ $q2 = new WP_Query( $args2 );
     
     <div style="clear:both"></div>
     <?php }?>
-<div class="row">
+<div class="row <?php if($currentSegment=='video'){echo 'trscale';}?>" style="padding 5px 10px;">
 
 <?php
 /**
@@ -376,7 +434,7 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
                 $post_title=mb_strimwidth(get_the_title(),0,15); 
                 $post_thumbnail=get_the_post_thumbnail_url(get_the_ID(),'post_thumbnail');
                 echo'
-                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-4" style="opacity:1;">
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-4 mt20px" style="opacity:1;">
                 <a href='.get_home_url().'/video/'.get_the_ID() .'/'.$category_use.'">'.'
                 <img width="350" height="200" src="'.$post_thumbnail.'" style="opacity:1;">
                 '.'</a>'.'
@@ -405,7 +463,7 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
                 $post_title=mb_strimwidth(get_the_title(),0,15);
                 $post_thumbnail=get_the_post_thumbnail_url(get_the_ID(),'post_thumbnail');
                echo'
-                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-4" style="opacity:1;">
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-4 mt20px" style="opacity:1;">
                 <a href='.get_home_url().'/video/'.get_the_ID() .'/'.$category_use.'">'.'
                 <img width="350" height="200" src="'.$post_thumbnail.'" style="opacity:1;">
                 '.'</a>'.'
@@ -439,6 +497,7 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
 </div>
 <div style="clear:both"></div>
 <div style="width:100%;height:30px;"></div>
+<?php if(($currentSegment=='portfolio-production')||($currentSegment=='portfolio-wedding')) {?>
     <div class="row">
         
         <div>   
@@ -448,6 +507,8 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
         </div>
 
     </div>
+    <?php }?>
+ 
 
     </div>
   
