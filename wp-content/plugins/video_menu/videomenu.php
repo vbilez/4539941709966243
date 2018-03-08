@@ -22,7 +22,7 @@ function test_init(){
                         <option value="5">Wedding</option>
                         <option value="6">Production</option>
                 </select><br>
-                <label>Youtube link:</label><br><input type='text' id='link' name='link'></input><br>
+                <label>Youtube link:</label><br><input type='text' id='link' name='link' style="width: 35%"></input><br>
                 <!--<input type='file' id='video' name='video' accept="video/*"></input><br>-->
                 <label>Title:</label><br><input type='text' id='title' name='title'></input><br>
                 <label>Description:</label><br><textarea id='description' name='description'></textarea><br>
