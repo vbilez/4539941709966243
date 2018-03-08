@@ -6,3 +6,13 @@
   margin-right: $margin-size;
   margin-left: $margin-size;
 }
+@mixin background-size($size) {
+  -moz-background-size: $size;
+  -webkit-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+}
+@mixin square-width-height($size){
+  height: $size;
+  width: $size;
+}
