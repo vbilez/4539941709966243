@@ -1,0 +1,50 @@
+.visible-xs-h {
+  display: none !important; }
+
+@media (max-height: 459px) {
+  .visible-xs-h {
+    display: block !important; } }
+
+@media (max-height: 459px) {
+  .hidden-xs-h {
+    display: none !important; } }
+
+@media (max-width: 459px) {
+  .hidden-xs-v {
+    display: none !important; } }
+
+@media (min-width: 768px) {
+  .hidden-xs-sm {
+    display: none !important; } }
+
+.videoplayer {
+  background-color: transparent; }
+  @media (max-width: 480px) {
+    .videoplayer {
+      height: 200px;
+      width: 100%; } }
+  @media (min-width: 768px) {
+    .videoplayer {
+      height: 400px; } }
+  @media (min-width: 1200px) {
+    .videoplayer {
+      height: 400px; } }
+
+.description {
+  padding-top: 20px;
+  background-color: #C8C8C8;
+  color: #fff;
+  height: 400px;
+  overflow-y: scroll; }
+  .description .description-title, .description .description-date {
+    font-family: 'GothamPro-Bold', sans-serif;
+    font-size: 41px;
+    line-height: 1; }
+  .description .description-text {
+    font-family: 'GothamPro', sans-serif;
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 600; }
+
+/*# sourceMappingURL=video.css.map */

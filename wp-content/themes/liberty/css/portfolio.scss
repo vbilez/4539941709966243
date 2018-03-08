@@ -1,0 +1,138 @@
+@import "partials/variables";
+@import "partials/utilities";
+@import "partials/responsive-utilities";
+
+body {
+  @include background-size(cover);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #002529d1;
+}
+
+body.production {
+  background-image: url('../assets/img/banner_bg.jpg');
+  background-repeat: no-repeat;
+}
+
+body.wedding {
+  @include media-for-sm {
+    background-image: url('../assets/img/portfolio-wedding-bodybg-sm.jpg');
+  }
+  @include media-for-lg {
+    background-image: url('../assets/img/portfolio-wedding-bodybg-lg.jpg');
+  }
+}
+
+.home-button {
+  position: absolute;
+  top: 70px;
+  right: 70px;
+  background-color: #66FAF9;
+  border-radius: 10%;
+  @include square-width-height(50px);
+  & i {
+    color: #fff;
+    font-size: 36px;
+    position: relative;
+    left: 50%;
+    transform: translate(-53%, -50%);
+    top: 50%;
+  }
+}
+
+.portfolio-title {
+  padding-top:30px;
+  & .parallelogram {
+    position: relative;
+    left: 53%;
+    top: 60px;
+    & .parallelogram-inner-text{
+      padding: 0 40px;
+      font-family: 'GothamPro', sans-serif;
+      font-size: 27px;
+      font-weight: bold;
+    }
+  }
+  & .wedding-title, & .production-title {
+    position: relative;
+    color: #fff;
+    //dummy transform property - somehow resolves conflict with bod'ys ::before attributes
+    transform: skew(0);
+  }
+  & .wedding-title {
+    right: 4%;
+  }
+}
+
+
+
+/**
+video-thumbnails
+ */
+
+.video-thumbs-table {
+
+  & > .row {
+    & > div {
+      height: 28vh;
+      @include padding-left-right(7px);
+      padding-bottom: 14px;
+      & > a {
+        & img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      & .video-thumb-caption-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 30%;
+        background: rgba(120, 250, 249, 0.7);
+        top: -30%;
+        position: relative;
+        & .video-thumb-title-text {
+          font-family: 'Corinthia', sans-serif;
+          float: left;
+          padding-left: 20px;
+          font-size: 40px;
+          color: white;
+        }
+        & .video-thumb-title-date {
+          font-family: 'Gotham Pro', sans-serif;
+          float: right;
+          padding-right: 15px;
+          font-size: 25px;
+          font-weight: 900;
+        }
+      }
+
+    }
+  }
+  & .next-video-thumbs-arrow, & .prev-video-thumbs-arrow {
+    transform: translateY(-50%);
+    position: absolute;
+    top: 49%;
+  }
+  & .next-video-thumbs-arrow {
+    right: -60px;
+  }
+  & .prev-video-thumbs-arrow {
+    left: -60px;
+  }
+}
+
+/**
+footer
+ */
+
+.social-connect-one-screen-layout i {
+  @include media-for-lg {
+    font-size: 20px;
+  }
+}

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/video.css">
 <?php
             $id= $template_args['option'];
             //echo '<video src="'.get_the_guid($id).'  "></video>';
@@ -38,16 +39,10 @@ echo '
     </p>
   </video>
 		</div>
-		<div class="filler">
-			
-        </div> 
-        <div class="col-md-4  col-lg-4 col-sm-12 col-xs-12 description">
-			<span class="description-title">'.$title.'</span><br>
-			<span class="description-date">'.$postdate.'</span><br>
-			<div style="margin-bottom:20px;"></div>
-            <div class="description-text">'.$content.'
-
-			</div>
+        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 description">
+			<div class="description-title">'.$title.'</div>
+			<div class="description-date">'.$postdate.'</div>
+            <div class="description-text">'.$content.'</div>
 		
 
   ';

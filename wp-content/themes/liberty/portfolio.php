@@ -13,6 +13,10 @@ if($currentSegment=='page')
 else {
 //$paged=$_GET['page'];
 }
+/**
+ * variable to conditionally switch between specific stylesheet rules
+ */
+$portfolioCssClass = ($currentSegment=='portfolio-wedding') ? (($currentSegment=='portfolio-production') ? 'production' : 'wedding') : null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,253 +28,46 @@ else {
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-
-
-
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/portfolio.css">
     <script src="<?php echo get_template_directory_uri(); ?>/js/send-text-input.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <?php 
+    <?php
         if($currentSegment=='video'){
           echo '<link href="'.get_template_directory_uri().'/css/video-js.css" rel="stylesheet">';
     }
     ?>
     <?php wp_head(); ?>
 </head>
-<style type="text/css">
-.nodecor{
-    text-decoration: none !important;
-}
-@media (min-width: 1200px) {
-    i {
-        font-size: 20px;
-    }
-}
-@font-face {
-  font-family: 'Corinthia';
-  src: local("Corinthia"), url("assets/fonts/corinthia.ttf") format("woff"), url("https://nomail.com.ua/files/woff/d9af980a0070a31725a941a825f01086.woff") format("woff"); }
- body {
-    background: url(<?php echo get_template_directory_uri(); ?>/assets/img/banner_bg.jpg) no-repeat;
-    -moz-background-size: 100%; /* Firefox 3.6+ */
-    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-    -o-background-size: 100%; /* Opera 9.6+ */
-    background-size: cover; /* Современные браузеры */
-
-   }
-   @media only screen and (min-width: 1024px) and (max-width: 2500px){
-        .portfolio-title{
-            margin-left:460px;
-           height:0.5em;
-            padding-top:70px;
-        }
-        .videoplayer{
-        background-color: transparent;
-        height: 400px;
-        width: 58.33333333%;
-        float: left;
-            position: relative;
-    min-height: 1px;
-        }
-
-        .contheight{
-            height: 100vh;
-        }
-     
-    }
-    @media only screen and (min-width: 350px) and (max-width: 768px){
-        .portfolio-title{
-            padding-top:70px;
-        }
-           .videoplayer{
-        background-color: transparent;
-        height: 200px;
-        width: 100% !important;
-        }
-
-        .contheight{
-            height: 260vh;
-        }
-    
-    }
-
-    @media only screen and (min-width: 768px) and (max-width: 1023px){
-        .portfolio-title{
-            padding-top:70px;
-        }
-           .videoplayer{
-        background-color: transparent;
-        height: 400px;
-        width: 58.33333333%;
-        }
-
-        .contheight{
-            height: 150vh;
-        }
-    
-    }
-   .description{
-        padding-top: 20px;
-        background-color: #C8C8C8;
-        height: 400px;
-        padding-left: 0px!important;
-        padding-right: 0px!important;
-        overflow-y:scroll;
-    }
-   .title-text{
-    font-family:'Corinthia',sans-serif;
-    opacity: 1;
-    float:left;
-    margin-left:7px;
-    font-size:42px;
-    vertical-align:middle;
-    color:white;
-   }
-   .title-date{
-    opacity: 1;
-    float:right;
-    margin-right:15px;
-    font-size:32px;
-    margin-top:5px;
-    vertical-align:middle;
-    font-weight:bold;
-   }
-    .title{
-        height: 63px;
-         background: rgba(120, 250, 249, 0.7);
-        margin-top:-63px;
-        
-
-        width: 350px;
-    }
-
-
-    .title-wedding{
-
-    }
-    .parallelogram-inner-text-modified{
-        color: #4f504f;
-        
-        padding: 0 40px;
-        
-        color: #fff;
-        display: table-cell;
-        vertical-align: middle;
-        -webkit-transform: skew(20deg);
-        -moz-transform: skew(20deg);
-        -o-transform: skew(20deg);
-         color: #fff;
-        font-family: 'GothamPro', sans-serif;
-        font-size: 27px;
-        font-weight: bold;
-
-    }
-
-    .parallelogram-modified{
-        
-        color: #fff;
-        display: table-cell;
-        vertical-align: middle;
-        -webkit-transform: skew(-20deg);
-        -moz-transform: skew(-20deg);
-        -o-transform: skew(-20deg);
-         color: #fff;
-         font-family: 'GothamPro-Bold', sans-serif;
-         width: 200px;
-         height: 30px;
-         text-align: center;
-         padding: 0px 7px;
-         background: #66FAF9;
-         margin-left: 20px;
-        
-         
-    }
-    
-    
-
-    .filler{
-        float: left;
-        width: 2.7%;
-        position: relative;
-        min-height: 40px;
-        min-width: 20px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-    .description-title
-    {
-        font-family: 'GothamPro-Bold', sans-serif!important;
-        font-size: 41px;
-        color:white;
-        line-height: 1;
-
-    }
-    .description-date
-    {
-        font-family: 'GothamPro-Bold', sans-serif!important;
-        font-size: 41px;
-        color:white;
-        line-height: 1;
-    }
-    .description-text
-    {
-        font-family: 'GothamPro', sans-serif!important;
-        text-align: justify;
-        padding-left: 20px;
-        padding-right: 20px;
-        color:white;
-        font-weight: 600;
-        
-    }
-</style>
-
-<body >
-<!--<?php //get_header(); ?>-->
-<center>
-
-    <div class="container contheight" style="padding-right:0!important;padding-left:0!important">
-
-    <div class="row">
-
-        <div class="portfolio-title">
-        <div class="parallelogram-modified" style="opacity: 1;">
-                 <div class="parallelogram-inner-text-modified" >Портфоліо</div>
-            </div>
+<body class="<?= $portfolioCssClass ?>">
+<div class="home-button"><a href="/"><i class="glyphicon glyphicon-home"></i></a></div>
+<div class="container">
+    <div class="portfolio-title">
+        <div class="parallelogram">
+            <div class="parallelogram-inner-text">Портфоліо</div>
         </div>
-
-        <div class="title-wedding">
-            <?php 
-            $wed='<div style="margin-top:-25px;font-size:100px;font-family:\'Corinthia\', sans-serif;font-size: calc(7vw + 2vh + 2vmin);color:white">
-                Wedding</div>';
-            $prod='<div style="margin-top:5px;font-family:\'GothamPro-Bold\', sans-serif;font-size: calc(3vw + 2vh + 2vmin);color:white">
-                Production</div>';
+            <?php
+            $wed='<div class="wedding-title">Wedding</div>';
+            $prod='<div class="production-title">Production</div>';
             if($currentSegment=='portfolio-wedding'){
                 echo $wed;
             }
             if($currentSegment=='portfolio-production'){
                 echo $prod;
             }
-             if($currentSegment=='video'){
+            if($currentSegment=='video'){
                 if($seg3==5)
                 {
                     echo $wed;
                 }
                 if($seg3==6)
                 {
-                   echo $prod;
+                    echo $prod;
                 }
             }
             ?>
-                
-        </div>
     </div>
 
-
-        
 <?php
-$args =
-
-array(
+$args = array(
     'post_type' => 'attachment',
     'post_mime_type'=>'video/mp4',
     'post_status'    => 'inherit',
@@ -279,9 +76,7 @@ array(
     'paged' => $paged,
     'cat'=>5
 );
-$args2 =
-
-array(
+$args2 = array(
     'post_type' => 'attachment',
     'post_mime_type'=>'video/mp4',
     'post_status'    => 'inherit',
@@ -292,25 +87,16 @@ array(
 );
 $q = new WP_Query( $args );
 $q2 = new WP_Query( $args2 );
-
- 
- 
 ?>
    
-<div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+<div class="video-thumbs-table col-xs-12">
     <?php if(($currentSegment=='portfolio-wedding')||($currentSegment=='portfolio-production')){?>
-   
-    <div style="position:absolute;margin-top:190px;vertical-align:middle;float:left;margin-left:-50px;">
-        <?php previous_posts_link('<i style="color:#66FAF9;font-family: FontAwesome!important" class="icon-4x icon-chevron-left" ></i>',$q->max_num_pages);?>
+    <div class="prev-video-thumbs-arrow">
+        <?php previous_posts_link('<i style="color:#66FAF9" class="fa fa-4x fa-chevron-left"></i>',$q->max_num_pages);?>
     </div>
-    
-    
-    <div style="position:absolute;margin-top:190px;margin-left:98%;float:right;vertical-align:middle;margin-right:5px;">
-        
-        <?php next_posts_link('<i style="color:#66FAF9;font-family: FontAwesome!important" class="icon-4x icon-chevron-right" ></i>',$q->max_num_pages);?>
+    <div class="next-video-thumbs-arrow">
+        <?php next_posts_link('<i style="color:#66FAF9" class="fa fa-4x fa-chevron-right"></i>',$q->max_num_pages);?>
     </div>
-    
-    <div style="clear:both"></div>
     <?php }?>
 <div class="row">
 
@@ -376,13 +162,13 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
                 $post_title=mb_strimwidth(get_the_title(),0,15); 
                 $post_thumbnail=get_the_post_thumbnail_url(get_the_ID(),'post_thumbnail');
                 echo'
-                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-4" style="opacity:1;">
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-4">
                 <a href='.get_home_url().'/video/'.get_the_ID() .'/'.$category_use.'">'.'
-                <img width="350" height="200" src="'.$post_thumbnail.'" style="opacity:1;">
+                <img src="'.$post_thumbnail.'">
                 '.'</a>'.'
-            <div class="title" style="position:relative;">
-                <div class="title-text" >'.$post_title .'</div>
-                <div class="title-date" >'.$postdate.'</div>
+            <div class="video-thumb-caption-box">
+                <div class="video-thumb-title-text" >'.$post_title .'</div>
+                <div class="video-thumb-title-date" >'.$postdate.'</div>
             </div>
         </div>';
                 // Your loop
@@ -405,13 +191,13 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
                 $post_title=mb_strimwidth(get_the_title(),0,15);
                 $post_thumbnail=get_the_post_thumbnail_url(get_the_ID(),'post_thumbnail');
                echo'
-                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-4" style="opacity:1;">
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-4">
                 <a href='.get_home_url().'/video/'.get_the_ID() .'/'.$category_use.'">'.'
-                <img width="350" height="200" src="'.$post_thumbnail.'" style="opacity:1;">
+                <img width="350" height="200" src="'.$post_thumbnail.'">
                 '.'</a>'.'
-            <div class="title" style="position:relative;">
-              <div class="title-text" >'.$post_title .'</div>
-              <div class="title-date" >'.$postdate.'</div>
+            <div class="video-thumb-caption-box"">
+              <div class="video-thumb-title-text" >'.$post_title .'</div>
+              <div class="video-thumb-title-date" >'.$postdate.'</div>
             </div>
         </div>';
                 // Your loop
@@ -437,43 +223,47 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
 ?>
     </div>
 </div>
-<div style="clear:both"></div>
-<div style="width:100%;height:30px;"></div>
-    <div class="row">
-        
-        <div>   
-            <form>
-                <input type="text" name="s" style="width:200px;height:30px;opacity:0.45;background-color:gray;border:none;display:inline-block"> <span class="glyphicon glyphicon-search" style="color:white"></span>
-             </form>               
-        </div>
+<!--    <div class="row">-->
+<!--        -->
+<!--        <div>   -->
+<!--            <form>-->
+<!--                <input type="text" name="s" style="width:200px;height:30px;opacity:0.45;background-color:gray;border:none;display:inline-block"> <span class="glyphicon glyphicon-search" style="color:white"></span>-->
+<!--             </form>               -->
+<!--        </div>-->
+<!---->
+<!--    </div>-->
 
     </div>
-
-    </div>
-  
-</center>
 <footer>
-    <section class="socwidget" style="position:relative">
   <?= \liberty\widgets\SocialButtons::renderItems([
-        'class' => 'social-connect social-connect-one-screen-layout'
+        'class' => 'social-connect social-connect-one-screen-layout hidden-lg'
     ]) ; ?>
-    </section>
 </footer>
-<!--for debug purpose-->
-
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery-ui/jquery-ui.js" type="text/javascript"></script>
 <script>
     $(document).ready(function () {
         $('#viewportInf p:first-child').append(function () {
             return $(window).width();
-        })
+        });
         $('#viewportInf p:last-child').append(function () {
             return $(window).height();
-        })
+        });
     });
 </script>
 <!--//for debug purpose-->
+<!--<script>-->
+<!--    $(document).ready(function () {-->
+<!--        /**-->
+<!--         * Adjust arrows render when less then three video items-->
+<!--         */-->
+<!--        var videoThumbsQty = $('.video-thumbs-table > .row > div').length;-->
+<!--//    todo: make compatible with responsive behaviour-->
+<!--        if (videoThumbsQty <= 3) {-->
+<!--            $('.prev-video-thumbs-arrow, .next-video-thumbs-arrow').css({'top' : '100%'});-->
+<!--        };-->
+<!--    });-->
+<!--</script>-->
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/anims.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/send-text-input.js" type="text/javascript"></script>

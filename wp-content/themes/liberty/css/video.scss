@@ -1,0 +1,37 @@
+@import "partials/variables";
+@import "partials/utilities";
+@import "partials/responsive-utilities";
+
+.videoplayer {
+  background-color: transparent;
+  @include media-for-xs {
+    height: 200px;
+    width: 100%;
+  }
+  @include media-for-sm {
+    height: 400px;
+  }
+  @include media-for-lg {
+    height: 400px;
+  }
+}
+
+.description{
+  padding-top: 20px;
+  background-color: #C8C8C8;
+  color: #fff;
+  height: 400px;
+  overflow-y:scroll;
+  & .description-title, & .description-date {
+    font-family: 'GothamPro-Bold', sans-serif;
+    font-size: 41px;
+    line-height: 1;
+  }
+  & .description-text {
+    font-family: 'GothamPro', sans-serif;
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 600;
+  }
+}
