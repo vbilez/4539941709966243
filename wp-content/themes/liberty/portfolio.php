@@ -41,12 +41,14 @@ $portfolioCssClass = ($currentSegment=='portfolio-wedding') ? (($currentSegment=
 <div class="home-button"><a href="/"><i class="glyphicon glyphicon-home"></i></a></div>
 <div class="container">
     <div class="portfolio-title">
-        <div class="parallelogram">
-            <div class="parallelogram-inner-text">Портфоліо</div>
-        </div>
             <?php
-            $wed='<div class="wedding-title">Wedding</div>';
-            $prod='<div class="production-title">Production</div>';
+            $parallelogram = '<div class="parallelogram"><div class="parallelogram-inner-text">Портфоліо</div></div>';
+            $wed = <<<EOT
+                    <div class="wedding-title">Wedding{$parallelogram}</div>
+EOT;
+            $prod= <<<EOT
+                    <div class="production-title">Production{$parallelogram}</div>
+EOT;
             if($currentSegment=='portfolio-wedding'){
                 echo $wed;
             }

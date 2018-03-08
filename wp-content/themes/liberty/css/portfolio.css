@@ -59,21 +59,24 @@ body.production {
 
 .portfolio-title {
   padding-top: 30px; }
-  .portfolio-title .parallelogram {
-    position: relative;
-    left: 53%;
-    top: 60px; }
-    .portfolio-title .parallelogram .parallelogram-inner-text {
-      padding: 0 40px;
-      font-family: 'GothamPro', sans-serif;
-      font-size: 27px;
-      font-weight: bold; }
   .portfolio-title .wedding-title, .portfolio-title .production-title {
     position: relative;
     color: #fff;
     transform: skew(0); }
+    .portfolio-title .wedding-title .parallelogram, .portfolio-title .production-title .parallelogram {
+      position: absolute;
+      right: 10px;
+      top: 38px; }
+      .portfolio-title .wedding-title .parallelogram .parallelogram-inner-text, .portfolio-title .production-title .parallelogram .parallelogram-inner-text {
+        padding: 0 40px;
+        font-family: 'GothamPro', sans-serif;
+        font-size: 27px;
+        font-weight: bold; }
   .portfolio-title .wedding-title {
-    right: 4%; }
+    margin: 0 auto;
+    padding-right: 110px;
+    width: 600px;
+    font-size: 100pt; }
 
 /**
 video-thumbnails
