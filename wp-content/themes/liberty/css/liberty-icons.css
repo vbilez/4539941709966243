@@ -11,7 +11,7 @@
 
 i {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'liberty-icons' !important;
+  font-family: 'liberty-icons';
   speak: none;
   font-style: normal;
   font-size: 25px;
