@@ -1,11 +1,4 @@
 <?php
-$urlArray = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$segments = explode('/', $urlArray);
-//$numSegments = count($segments);
-$currentSegment = $segments[1];
-$idseg = $segments[2];
-$seg3=$segments[3];
-
 $currentSegment=urldecode($currentSegment);
 $s=$_GET['s'];
 if($currentSegment=='page')
@@ -225,15 +218,13 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
 ?>
     </div>
 </div>
-    <?php if(($currentSegment=='portfolio-production')||($currentSegment=='portfolio-wedding')) {?>
+    <?php if(in_array($currentSegment, [$portfolio_wedding, $portfolio_production])) {?>
     <div class="row">
-
         <div>
             <form>
                 <input type="text" name="s" style="width:200px;height:30px;opacity:0.45;background-color:gray;border:none;display:inline-block"> <span class="glyphicon glyphicon-search" style="color:white"></span>
              </form>
         </div>
-
     </div>
     <?php }?>
     </div>
