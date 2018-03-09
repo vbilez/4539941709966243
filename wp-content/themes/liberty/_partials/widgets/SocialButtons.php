@@ -57,10 +57,10 @@ class SocialButtons {
 
         return <<<EOT
                 <ul{$htmlAttrs}>
-                    <li><a href="#"><i class="liberty-icon-vimeo"></i></a></li>
-                    <li><a href="#"><i class="liberty-icon-facebook"></i></a></li>
-                    <li><a href="#"><i class="liberty-icon-youtube"></i></a></li>
-                    <li><a href="#"><i class="liberty-icon-instagram"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="liberty-icon-vimeo"></i></a></li>
+                    <li><a href="https://www.facebook.com/libertyproduction/" target="_blank"><i class="liberty-icon-facebook"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="liberty-icon-youtube"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="liberty-icon-instagram"></i></a></li>
                </ul>
 EOT;
     }

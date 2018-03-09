@@ -43,7 +43,7 @@
                             <li><a href="portfolio-wedding">Wedding</a></li>
                         </ul>
                     </li>
-                    <li><a href="blog">Блог</a></li>
+                    <li><a href="#">Блог</a></li>
                     <li><a href="#footer">Контакти</a></li>
                     <li><a href="#brand-slider">Наші клієнти</a></li>
                 </ul>
@@ -390,7 +390,7 @@
 </section>
 <!--todo: fix portfolio animation window width on xs-->
 <!--todo: make animation work on scroll on mobile-->
-<section class="portfolio">
+<section class="portfolio" id="portfolio">
     <img class="feather-img feather-img-bg-top" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_top_bg.jpg" alt="">
     <div class="intro-title production-title opacity-0"><a href="portfolio-production">Production</a></div>
     <img class="feather-img feather-img-bg-bottom" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_bottom_bg.jpg" alt="">

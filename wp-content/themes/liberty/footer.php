@@ -66,8 +66,8 @@
                     <div class="footer-navigation hidden-xs">
                         <ul>
                             <li><a href="#"><img alt="Logo" class="footer-logo img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/brand_img_sm.png"></a></li>
-                            <li><a href="#">Про нас</a></li>
-                            <li><a href="#">Портфоліо</a></li>
+                            <li><a href="#ourteam">Про нас</a></li>
+                            <li><a href="#portfolio">Портфоліо</a></li>
                             <li><a href="#">Блог</a></li>
                             <li><a href="#">Новини</a></li>
                         <!--<li><a href="#">Наші клієнти</a></li>-->
