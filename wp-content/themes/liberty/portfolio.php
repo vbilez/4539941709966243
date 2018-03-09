@@ -164,7 +164,7 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
                 $post_title=mb_strimwidth(get_the_title(),0,15); 
                 $post_thumbnail=get_the_post_thumbnail_url(get_the_ID(),'post_thumbnail');
                 echo'
-                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-4">
+                <div class="col-md-6 col-xs-12 col-sm-6 col-lg-4">
                 <a href='.get_home_url().'/video/'.get_the_ID() .'/'.$category_use.'">'.'
                 <img src="'.$post_thumbnail.'">
                 '.'</a>'.'

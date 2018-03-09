@@ -4,6 +4,14 @@
 
 body {
   @include background-size(cover);
+  & > .container {
+    @include media-for-sm {
+      width: 85%;
+    }
+    @include media-for-lg {
+      width: 80%;
+    }
+  }
 }
 
 body::before {
@@ -20,8 +28,11 @@ body.production {
 }
 
 body.wedding {
-  @include media-for-sm {
+  @include media-for-sm-max {
     background-image: url('../assets/img/portfolio-wedding-bodybg-sm.jpg');
+    background-size: 190vh;
+    background-position-x: -320px;
+    background-position-y: -210px;
   }
   @include media-for-lg {
     background-image: url('../assets/img/portfolio-wedding-bodybg-lg.jpg');
@@ -46,7 +57,8 @@ body.wedding {
 }
 
 .portfolio-title {
-  padding-top: 30px;
+  margin-top: 10%;
+  margin-bottom: 9%;
   & .wedding-title, & .production-title {
     position: relative;
     color: #fff;
@@ -54,12 +66,12 @@ body.wedding {
     transform: skew(0);
     & .parallelogram {
       position: absolute;
-      right: 10px;
-      top: 38px;
+      right: 72px;
+      top: 18px;
       & .parallelogram-inner-text{
         padding: 0 40px;
         font-family: 'GothamPro', sans-serif;
-        font-size: 27px;
+        font-size: 22px;
         font-weight: bold;
       }
     }
@@ -68,7 +80,7 @@ body.wedding {
     margin: 0 auto;
     padding-right: 110px;
     width: 600px;
-    font-size: 100pt;
+    font-size: 70pt;
   }
 }
 
@@ -81,7 +93,12 @@ video-thumbnails
 .video-thumbs-table {
   & > .row {
     & > div {
-      height: 28vh;
+      @include media-for-sm {
+        height: 21vh;
+      }
+      @include media-for-lg {
+        height: 26vh;
+      }
       @include padding-left-right(7px);
       padding-bottom: 14px;
       & > a {
@@ -109,8 +126,13 @@ video-thumbnails
           font-family: 'Gotham Pro', sans-serif;
           float: right;
           padding-right: 15px;
-          font-size: 25px;
           font-weight: 900;
+          @include media-for-sm {
+            font-size: 20px;
+          }
+          @include media-for-lg {
+            font-size: 25px;
+          }
         }
       }
 

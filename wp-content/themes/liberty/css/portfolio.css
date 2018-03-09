@@ -22,6 +22,12 @@ body {
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+  @media (min-width: 768px) {
+    body > .container {
+      width: 85%; } }
+  @media (min-width: 1200px) {
+    body > .container {
+      width: 80%; } }
 
 body::before {
   content: "";
@@ -34,9 +40,12 @@ body.production {
   background-image: url("../assets/img/banner_bg.jpg");
   background-repeat: no-repeat; }
 
-@media (min-width: 768px) {
+@media (max-width: 991px) {
   body.wedding {
-    background-image: url("../assets/img/portfolio-wedding-bodybg-sm.jpg"); } }
+    background-image: url("../assets/img/portfolio-wedding-bodybg-sm.jpg");
+    background-size: 190vh;
+    background-position-x: -320px;
+    background-position-y: -210px; } }
 @media (min-width: 1200px) {
   body.wedding {
     background-image: url("../assets/img/portfolio-wedding-bodybg-lg.jpg"); } }
@@ -58,34 +67,40 @@ body.production {
     top: 50%; }
 
 .portfolio-title {
-  padding-top: 30px; }
+  margin-top: 10%;
+  margin-bottom: 9%; }
   .portfolio-title .wedding-title, .portfolio-title .production-title {
     position: relative;
     color: #fff;
     transform: skew(0); }
     .portfolio-title .wedding-title .parallelogram, .portfolio-title .production-title .parallelogram {
       position: absolute;
-      right: 10px;
-      top: 38px; }
+      right: 72px;
+      top: 18px; }
       .portfolio-title .wedding-title .parallelogram .parallelogram-inner-text, .portfolio-title .production-title .parallelogram .parallelogram-inner-text {
         padding: 0 40px;
         font-family: 'GothamPro', sans-serif;
-        font-size: 27px;
+        font-size: 22px;
         font-weight: bold; }
   .portfolio-title .wedding-title {
     margin: 0 auto;
     padding-right: 110px;
     width: 600px;
-    font-size: 100pt; }
+    font-size: 70pt; }
 
 /**
 video-thumbnails
  */
 .video-thumbs-table > .row > div {
-  height: 28vh;
   padding-right: 7px;
   padding-left: 7px;
   padding-bottom: 14px; }
+  @media (min-width: 768px) {
+    .video-thumbs-table > .row > div {
+      height: 21vh; } }
+  @media (min-width: 1200px) {
+    .video-thumbs-table > .row > div {
+      height: 26vh; } }
   .video-thumbs-table > .row > div > a img {
     height: 100%;
     width: 100%; }
@@ -107,8 +122,13 @@ video-thumbnails
       font-family: 'Gotham Pro', sans-serif;
       float: right;
       padding-right: 15px;
-      font-size: 25px;
       font-weight: 900; }
+      @media (min-width: 768px) {
+        .video-thumbs-table > .row > div .video-thumb-caption-box .video-thumb-title-date {
+          font-size: 20px; } }
+      @media (min-width: 1200px) {
+        .video-thumbs-table > .row > div .video-thumb-caption-box .video-thumb-title-date {
+          font-size: 25px; } }
 .video-thumbs-table .next-video-thumbs-arrow, .video-thumbs-table .prev-video-thumbs-arrow {
   transform: translateY(-50%);
   position: absolute;
