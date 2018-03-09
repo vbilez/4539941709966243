@@ -51,7 +51,7 @@ $currentSegment=urldecode($currentSegment);
                         <li><a href="<?php echo get_home_url(); ?>/portfolio-wedding">Wedding</a></li>
                     </ul>
                 </li>
-                <li><a href="blog">Блог</a></li>
+                <li><a href="#">Блог</a></li>
                 <li><a href="<?php echo get_home_url(); ?>/weddingpage#footer">Контакти</a></li>
                 <li><a href="<?php echo get_home_url(); ?>/weddingpage#brand-slider">Наші клієнти</a></li>
             </ul>
