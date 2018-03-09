@@ -10,12 +10,12 @@
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/trecnutrition.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/kyivstar.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/00001-01 copy.png"></div>
-                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/LogoTrecCzerwone.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/mamochka.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/dzerelo.png"></div>
-                <div class="item"><img src="http://placehold.it/150x150"></div>
-                <div class="item"><img src="http://placehold.it/150x150"></div>
-                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/brand_img_sm.png"></div>
-                <div class="item"><img src="http://placehold.it/150x150"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/dimleva.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/duda.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/edema.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/rentfurniture.png"></div>
             </div>
         </div>
     </section>
@@ -66,8 +66,8 @@
                     <div class="footer-navigation hidden-xs">
                         <ul>
                             <li><a href="#"><img alt="Logo" class="footer-logo img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/brand_img_sm.png"></a></li>
-                            <li><a href="#">Про нас</a></li>
-                            <li><a href="#">Портфоліо</a></li>
+                            <li><a href="#ourteam">Про нас</a></li>
+                            <li><a href="#portfolio">Портфоліо</a></li>
                             <li><a href="#">Блог</a></li>
                             <li><a href="#">Новини</a></li>
                         <!--<li><a href="#">Наші клієнти</a></li>-->

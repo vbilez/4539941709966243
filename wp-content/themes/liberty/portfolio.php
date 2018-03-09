@@ -58,11 +58,11 @@ EOT;
             if($currentSegment=='video'){
                 if($seg3==5)
                 {
-                    echo $wed;
+                    echo $wed_v;
                 }
                 if($seg3==6)
                 {
-                    echo $prod;
+                   echo $prod_v;
                 }
             }
             ?>
@@ -195,7 +195,7 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
                echo'
                 <div class="col-md-6 col-xs-12 col-sm-12 col-lg-4">
                 <a href='.get_home_url().'/video/'.get_the_ID() .'/'.$category_use.'">'.'
-                <img width="350" height="200" src="'.$post_thumbnail.'">
+                <img src="'.$post_thumbnail.'">
                 '.'</a>'.'
             <div class="video-thumb-caption-box"">
               <div class="video-thumb-title-text" >'.$post_title .'</div>
@@ -225,16 +225,17 @@ if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-productio
 ?>
     </div>
 </div>
-<!--    <div class="row">-->
-<!--        -->
-<!--        <div>   -->
-<!--            <form>-->
-<!--                <input type="text" name="s" style="width:200px;height:30px;opacity:0.45;background-color:gray;border:none;display:inline-block"> <span class="glyphicon glyphicon-search" style="color:white"></span>-->
-<!--             </form>               -->
-<!--        </div>-->
-<!---->
-<!--    </div>-->
+    <?php if(($currentSegment=='portfolio-production')||($currentSegment=='portfolio-wedding')) {?>
+    <div class="row">
 
+        <div>
+            <form>
+                <input type="text" name="s" style="width:200px;height:30px;opacity:0.45;background-color:gray;border:none;display:inline-block"> <span class="glyphicon glyphicon-search" style="color:white"></span>
+             </form>
+        </div>
+
+    </div>
+    <?php }?>
     </div>
 <footer>
   <?= \liberty\widgets\SocialButtons::renderItems([

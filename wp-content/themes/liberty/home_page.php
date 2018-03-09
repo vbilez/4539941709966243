@@ -43,7 +43,7 @@
                             <li><a href="portfolio-wedding">Wedding</a></li>
                         </ul>
                     </li>
-                    <li><a href="blog">Блог</a></li>
+                    <li><a href="#">Блог</a></li>
                     <li><a href="#footer">Контакти</a></li>
                     <li><a href="#brand-slider">Наші клієнти</a></li>
                 </ul>
@@ -376,11 +376,9 @@
                         <div class="about-team col-sm-6 col-md-3 clearfix">
                             <div class="wtp">
                                 <img class="about-team-img img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/4.jpg"/>
-                                Макс
+                                Олексій
                             </div>
-                            <p>В Киеве Роман работал на позиции бренд-менеджера Lucky Strike в British American Tobacco. В 1998 году Роман вместе с партнером Дарко Скульским основали Radioaktive Film.
-
-                                В 1998  Дарко и Роман основали первую в Украине продакшн компанию Radioaktive Film, которая уже 16 лет является лидером на украинском рынке.
+                            <p>
                             </p>
                         </div>
                     </div>
@@ -392,7 +390,7 @@
 </section>
 <!--todo: fix portfolio animation window width on xs-->
 <!--todo: make animation work on scroll on mobile-->
-<section class="portfolio">
+<section class="portfolio" id="portfolio">
     <img class="feather-img feather-img-bg-top" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_top_bg.jpg" alt="">
     <div class="intro-title production-title opacity-0"><a href="portfolio-production">Production</a></div>
     <img class="feather-img feather-img-bg-bottom" src="<?php echo get_template_directory_uri(); ?>/assets/img/feather_bottom_bg.jpg" alt="">
