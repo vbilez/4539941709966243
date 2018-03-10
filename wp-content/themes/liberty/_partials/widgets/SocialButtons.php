@@ -14,6 +14,16 @@ use Exception;
 class SocialButtons {
 
     /**
+     * href values for respective social links
+     * @var array
+     */
+    private static $SocLinks = [
+        'vimeo' => '#',
+        'facebook' => 'https://www.facebook.com/libertyproduction/',
+        'youtube' => '#',
+        'instagram' => '#',
+    ];
+    /**
      * Returns true if param is a valid associative array
      * @param array $array
      * The array being evaluated
@@ -44,25 +54,31 @@ class SocialButtons {
      * <ul> tag html attributes and values specified respectively as array keys and values
      * @return string
      */
-    public static function renderItems($args = [])
+    public static function renderItems($args = [], $svg = false)
     {
+        $method = __METHOD__;
         $htmlAttrs = "";
         if (!empty($args)) {
             if (is_array($args) && self::is_assoc($args)) {
                 foreach ($args as $key => $val) {
                     $htmlAttrs .= " {$key}=\"{$val}\"";
                 }
-            } else self::on_error("parameter must be an associative array");
+            } else self::on_error("first parameter for method {$method} must be an associative array");
         };
+        if (!is_bool($svg)){self::on_error("second parameter for method {$method} must be a boolean");}
 
-        return <<<EOT
-                <ul{$htmlAttrs}>
-                    <li><a href="#" target="_blank"><i class="liberty-icon-vimeo"></i></a></li>
-                    <li><a href="https://www.facebook.com/libertyproduction/" target="_blank"><i class="liberty-icon-facebook"></i></a></li>
-                    <li><a href="#" target="_blank"><i class="liberty-icon-youtube"></i></a></li>
-                    <li><a href="#" target="_blank"><i class="liberty-icon-instagram"></i></a></li>
-               </ul>
-EOT;
+        $gtdu = get_template_directory_uri();
+        $pathToIcons = '/assets/fonts/liberty-icons-sprites.svg';
+
+        $icon = '';
+        $liArr = '';
+        foreach (self::$SocLinks as $key => $item) {
+            $icon = $svg ?
+                "<svg><use xlink:href=\"{$gtdu}/{$pathToIcons}#{$key}\"></use></svg>" :
+                "<i class=\"liberty-icon-{$key}\"></i>";
+            $liArr .= "<li><a href=\"{$item}\" target=\"_blank\">{$icon}</a></li>";
+       }
+        return "<ul{$htmlAttrs}>{$liArr}</ul>";
     }
 }
 
