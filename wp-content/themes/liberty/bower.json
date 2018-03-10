@@ -23,6 +23,7 @@
     "animate.css": "^3.5.2",
     "QTransform": "https://github.com/puppybits/QTransform.git",
     "jQuery-rwdImageMaps": "https://github.com/stowball/jQuery-rwdImageMaps.git",
-    "owl.carousel": "^2.2.1"
+    "owl.carousel": "^2.2.1",
+    "flexibility": "^2.0.1"
   }
 }
