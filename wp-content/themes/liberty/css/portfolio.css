@@ -42,6 +42,10 @@ body.production {
 
 body.wedding {
   background-image: url("../assets/img/portfolio-wedding-bodybg-sm.jpg"); }
+  @media (max-width: 480px) {
+    body.wedding {
+      background-size: 160vh;
+      background-position-x: -130px; } }
   @media (min-width: 768px) {
     body.wedding {
       background-size: 190vh;
@@ -50,7 +54,7 @@ body.wedding {
   @media (min-width: 992px) {
     body.wedding {
       -webkit-background-size: initial;
-      background-size: initial;
+      background-size: cover;
       background-position: initial; } }
   @media (min-width: 1200px) {
     body.wedding {
@@ -70,8 +74,8 @@ body.wedding {
     .home-button {
       top: 20px;
       right: 20px;
-      height: 30px;
-      width: 30px; }
+      height: 25px;
+      width: 25px; }
       .home-button i {
         font-size: 20px; } }
   @media (min-width: 768px) {
@@ -98,7 +102,7 @@ body.wedding {
       position: relative;
       left: 10px;
       margin-top: 20px;
-      margin-bottom: 15%; } }
+      margin-bottom: 8%; } }
   @media (min-width: 768px) {
     .portfolio-title {
       margin-top: 9%; } }
@@ -162,36 +166,41 @@ body.wedding {
 /**
 video-thumbnails
  */
-.video-thumbs-table > .row > div {
+@media (max-width: 480px) {
+  .video-thumbs-table > .row {
+    margin-right: 0;
+    margin-left: 0; } }
+.video-thumbs-table > .row .video-item {
   padding-right: 7px;
   padding-left: 7px;
   padding-bottom: 14px; }
   @media (max-width: 480px) {
-    .video-thumbs-table > .row > div {
-      padding-right: 40px;
-      padding-left: 40px; } }
+    .video-thumbs-table > .row .video-item {
+      padding-right: 0;
+      padding-left: 0;
+      height: 50vh; } }
   @media (min-width: 768px) {
-    .video-thumbs-table > .row > div {
+    .video-thumbs-table > .row .video-item {
       height: 21vh; } }
   @media (min-width: 992px) {
-    .video-thumbs-table > .row > div {
+    .video-thumbs-table > .row .video-item {
       height: auto; } }
   @media (min-width: 1200px) {
-    .video-thumbs-table > .row > div {
+    .video-thumbs-table > .row .video-item {
       height: 26vh; } }
   @media (min-width: 1900px) {
-    .video-thumbs-table > .row > div {
+    .video-thumbs-table > .row .video-item {
       height: 28vh; } }
-  .video-thumbs-table > .row > div > a img {
+  .video-thumbs-table > .row .video-item > a img {
     height: 100%;
     width: 100%; }
     @media (min-width: 992px) {
-      .video-thumbs-table > .row > div > a img {
+      .video-thumbs-table > .row .video-item > a img {
         height: 20vh; } }
     @media (min-width: 1200px) {
-      .video-thumbs-table > .row > div > a img {
+      .video-thumbs-table > .row .video-item > a img {
         height: 100%; } }
-  .video-thumbs-table > .row > div .video-thumb-caption-box {
+  .video-thumbs-table > .row .video-item .video-thumb-caption-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -200,30 +209,30 @@ video-thumbnails
     top: -30%;
     position: relative; }
     @media (min-width: 992px) {
-      .video-thumbs-table > .row > div .video-thumb-caption-box {
+      .video-thumbs-table > .row .video-item .video-thumb-caption-box {
         top: initial; } }
     @media (min-width: 1200px) {
-      .video-thumbs-table > .row > div .video-thumb-caption-box {
+      .video-thumbs-table > .row .video-item .video-thumb-caption-box {
         top: -30%; } }
-    .video-thumbs-table > .row > div .video-thumb-caption-box .video-thumb-title-text {
+    .video-thumbs-table > .row .video-item .video-thumb-caption-box .video-thumb-title-text {
       font-family: 'Corinthia', sans-serif;
       float: left;
       padding-left: 20px;
       font-size: 40px;
       color: white; }
       @media (min-width: 992px) {
-        .video-thumbs-table > .row > div .video-thumb-caption-box .video-thumb-title-text {
+        .video-thumbs-table > .row .video-item .video-thumb-caption-box .video-thumb-title-text {
           font-size: 30px; } }
-    .video-thumbs-table > .row > div .video-thumb-caption-box .video-thumb-title-date {
+    .video-thumbs-table > .row .video-item .video-thumb-caption-box .video-thumb-title-date {
       font-family: 'Gotham Pro', sans-serif;
       float: right;
       padding-right: 15px;
       font-weight: 900; }
       @media (min-width: 768px) {
-        .video-thumbs-table > .row > div .video-thumb-caption-box .video-thumb-title-date {
+        .video-thumbs-table > .row .video-item .video-thumb-caption-box .video-thumb-title-date {
           font-size: 20px; } }
       @media (min-width: 1200px) {
-        .video-thumbs-table > .row > div .video-thumb-caption-box .video-thumb-title-date {
+        .video-thumbs-table > .row .video-item .video-thumb-caption-box .video-thumb-title-date {
           font-size: 25px; } }
 .video-thumbs-table .next-video-thumbs-arrow, .video-thumbs-table .prev-video-thumbs-arrow {
   transform: translateY(-50%);
@@ -246,6 +255,9 @@ video-thumbnails
   display: flex;
   -webkit-justify-content: space-around;
   justify-content: space-around; }
+  @media (max-width: 480px) {
+    .search-field {
+      padding-top: 4px; } }
   @media (min-width: 992px) {
     .search-field {
       padding-right: 120px;
@@ -253,6 +265,9 @@ video-thumbnails
   .search-field .next-video-thumbs-arrow, .search-field .prev-video-thumbs-arrow {
     transform: translateY(-10%);
     font-size: 10px; }
+    @media (max-width: 480px) {
+      .search-field .next-video-thumbs-arrow, .search-field .prev-video-thumbs-arrow {
+        font-size: 7px; } }
     @media (min-width: 992px) {
       .search-field .next-video-thumbs-arrow, .search-field .prev-video-thumbs-arrow {
         display: none; } }
@@ -265,6 +280,10 @@ video-thumbnails
     background-color: gray;
     border: none;
     display: inline-block; }
+    @media (max-width: 480px) {
+      .search-field input {
+        width: 50vw;
+        height: 25px; } }
   .search-field span.glyphicon {
     padding-left: 10px;
     color: #fff; }

@@ -20,6 +20,7 @@ $portfolioCssClass = ($currentSegment=='portfolio-wedding') ? (($currentSegment=
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/animate.css/animate.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/owl.carousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/portfolio.css">
     <script src="<?php echo get_template_directory_uri(); ?>/js/send-text-input.js"></script>
@@ -158,7 +159,7 @@ $q2 = new WP_Query( $args2 );
                             $post_title=mb_strimwidth(get_the_title(),0,15);
                             $post_thumbnail=get_the_post_thumbnail_url(get_the_ID(),'post_thumbnail');
                             echo'
-                <div class="col-md-4 col-xs-12 col-sm-6">
+                <div class="video-item col-md-4 col-xs-12 col-sm-6">
                 <a href='.get_home_url().'/video/'.get_the_ID() .'/'.$category_use.'">'.'
                 <img src="'.$post_thumbnail.'">
                 '.'</a>'.'
@@ -187,7 +188,7 @@ $q2 = new WP_Query( $args2 );
                             $post_title=mb_strimwidth(get_the_title(),0,15);
                             $post_thumbnail=get_the_post_thumbnail_url(get_the_ID(),'post_thumbnail');
                             echo'
-                <div class="col-md-4 col-xs-12 col-sm-12">
+                <div class="video-item col-md-4 col-xs-12 col-sm-12">
                     <a href='.get_home_url().'/video/'.get_the_ID() .'/'.$category_use.'">'.'
                         <img src="'.$post_thumbnail.'">
                     '.'</a>'.'
@@ -279,6 +280,29 @@ $q2 = new WP_Query( $args2 );
             nextArrow.html('<i style="opacity:0" class="fa fa-4x fa-chevron-right"></i>');
         }
     })
+</script>
+<script src="<?php echo get_template_directory_uri(); ?>/bower_components/owl.carousel/dist/owl.carousel.min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function(){
+        var owl = $('.video-thumbs-table > .row');
+        function owlInit(arg) {
+            if ($(window).width() < 440) {
+                if (!arg.hasClass('owl-carousel')) {
+                    arg.addClass('owl-carousel');
+                }
+                $('.owl-carousel').owlCarousel({
+                    items: 1
+                });
+            } else {
+                owl.removeClass('owl-carousel');
+                owl.trigger('destroy.owl.carousel');
+            }
+        }
+        owlInit(owl);
+        $(window).resize(function () {
+            owlInit(owl)
+        });
+    });
 </script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/anims.js" type="text/javascript"></script>
