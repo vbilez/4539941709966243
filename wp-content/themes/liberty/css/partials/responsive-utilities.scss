@@ -54,6 +54,11 @@ $screen-md-max:              ($screen-lg-min - 1);
   @media (min-width: 1200px) { @content; }
 }
 
+@mixin media-for-xl {
+  @media (min-width: 1900px) { @content; }
+}
+
+
 .visible-xs-h {
   display: none !important;
 }
