@@ -40,20 +40,21 @@ body.production {
   background-image: url("../assets/img/banner_bg.jpg");
   background-repeat: no-repeat; }
 
-@media (min-width: 768px) {
-  body.wedding {
-    background-image: url("../assets/img/portfolio-wedding-bodybg-sm.jpg");
-    background-size: 190vh;
-    background-position-x: -320px;
-    background-position-y: -210px; } }
-@media (min-width: 992px) {
-  body.wedding {
-    -webkit-background-size: initial;
-    background-size: initial;
-    background-position: initial; } }
-@media (min-width: 1200px) {
-  body.wedding {
-    background-image: url("../assets/img/portfolio-wedding-bodybg-lg.jpg"); } }
+body.wedding {
+  background-image: url("../assets/img/portfolio-wedding-bodybg-sm.jpg"); }
+  @media (min-width: 768px) {
+    body.wedding {
+      background-size: 190vh;
+      background-position-x: -320px;
+      background-position-y: -210px; } }
+  @media (min-width: 992px) {
+    body.wedding {
+      -webkit-background-size: initial;
+      background-size: initial;
+      background-position: initial; } }
+  @media (min-width: 1200px) {
+    body.wedding {
+      background-image: url("../assets/img/portfolio-wedding-bodybg-lg.jpg"); } }
 
 .home-button {
   position: absolute;
@@ -65,17 +66,26 @@ body.production {
     background-color: #fff; }
     .home-button:hover i, .home-button:focus i, .home-button:active i {
       color: #66FAF9; }
+  @media (max-width: 480px) {
+    .home-button {
+      top: 20px;
+      right: 20px;
+      height: 30px;
+      width: 30px; }
+      .home-button i {
+        font-size: 20px; } }
   @media (min-width: 768px) {
     .home-button {
       top: 30px;
-      right: 30px; } }
+      right: 30px; }
+      .home-button i {
+        font-size: 36px; } }
   @media (min-width: 1200px) {
     .home-button {
       top: 70px;
       right: 70px; } }
   .home-button i {
     color: #fff;
-    font-size: 36px;
     position: relative;
     left: 50%;
     transform: translate(-53%, -50%);
@@ -83,6 +93,12 @@ body.production {
 
 .portfolio-title {
   margin-bottom: 2%; }
+  @media (max-width: 480px) {
+    .portfolio-title {
+      position: relative;
+      left: 10px;
+      margin-top: 20px;
+      margin-bottom: 15%; } }
   @media (min-width: 768px) {
     .portfolio-title {
       margin-top: 9%; } }
@@ -103,6 +119,12 @@ body.production {
       position: absolute;
       right: 67px;
       top: 18px; }
+      @media (max-width: 480px) {
+        .portfolio-title .wedding-title .parallelogram, .portfolio-title .production-title .parallelogram {
+          left: 23px;
+          top: 79px;
+          background-color: transparent;
+          border: 2px solid #66FAF9; } }
       @media (min-width: 1900px) {
         .portfolio-title .wedding-title .parallelogram, .portfolio-title .production-title .parallelogram {
           right: -28px;
@@ -112,14 +134,27 @@ body.production {
         font-family: 'GothamPro', sans-serif;
         font-weight: bold;
         font-size: 22px; }
+        @media (max-width: 480px) {
+          .portfolio-title .wedding-title .parallelogram .parallelogram-inner-text, .portfolio-title .production-title .parallelogram .parallelogram-inner-text {
+            font-family: 'GothamPro-Medium', sans-serif;
+            font-size: 19px;
+            font-weight: normal;
+            padding-right: 30px;
+            padding-left: 30px; } }
         @media (min-width: 1900px) {
           .portfolio-title .wedding-title .parallelogram .parallelogram-inner-text, .portfolio-title .production-title .parallelogram .parallelogram-inner-text {
             font-size: 32px; } }
   .portfolio-title .wedding-title {
     margin: 0 auto;
-    padding-right: 110px;
-    width: 600px;
-    font-size: 70pt; }
+    width: 600px; }
+    @media (max-width: 480px) {
+      .portfolio-title .wedding-title {
+        font-size: 60pt;
+        width: auto; } }
+    @media (min-width: 768px) {
+      .portfolio-title .wedding-title {
+        font-size: 70pt;
+        padding-right: 110px; } }
     @media (min-width: 1900px) {
       .portfolio-title .wedding-title {
         font-size: 110pt; } }
@@ -131,6 +166,10 @@ video-thumbnails
   padding-right: 7px;
   padding-left: 7px;
   padding-bottom: 14px; }
+  @media (max-width: 480px) {
+    .video-thumbs-table > .row > div {
+      padding-right: 40px;
+      padding-left: 40px; } }
   @media (min-width: 768px) {
     .video-thumbs-table > .row > div {
       height: 21vh; } }
@@ -234,13 +273,15 @@ video-thumbnails
 footer
  */
 .social-connect-one-screen-layout {
-  background-color: #66faf985; }
+  background-color: #66faf985;
+  padding: 6px; }
   @media (min-width: 992px) {
     .social-connect-one-screen-layout {
       justify-content: flex-end;
       background-color: transparent;
       height: 55px; } }
   .social-connect-one-screen-layout i {
+    font-size: 14px;
     opacity: 0.7; }
     .social-connect-one-screen-layout i:hover {
       opacity: 1; }
