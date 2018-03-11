@@ -1,0 +1,43 @@
+$ = jQuery;
+$("<style type='text/css'>.invalid-input{ background-color: pink !important;}</style>").appendTo("head");
+$(document).ready(function () {
+    var form = $('form#video-post-form');
+    var fieldsToValidate = form.children('input[type="text"]');
+    var youtubeRegex = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+    function correctInput(handle) {
+        handle.removeClass('invalid-input');
+        handle.next().is("#input-error") ? handle.next().remove() : null;
+    }
+    function invalidInput(handle, errMgs, errSpanId, errCssClass) {
+        console.log(errCssClass);
+        errSpanId === undefined ? errSpanId = 'input-error' : null;
+        errCssClass === undefined ? errCssClass = 'invalid-input' : null;
+        if (typeof errMgs !== 'string') { console.error("errMsg must be of type string")}
+        !handle.next().is("#" + errSpanId) ?
+            handle.addClass(errCssClass).after('<span id="'+ errSpanId +'" style="color: grey"> ' + errMgs + '</span>')
+            : null;
+    }
+    fieldsToValidate.change(function () {
+        var self = $(this);
+        switch(self.attr('id')) {
+            case 'link':
+                youtubeRegex.test(self.val()) ? correctInput(self) : invalidInput(self, "must be a valid youtube link");
+                break;
+            case 'title':
+                var maxChar = 40;
+                self.val().length < maxChar ? correctInput(self) : invalidInput(self, "maximum number of characters is " + maxChar);
+                break;
+            default:
+                break;
+        }
+    });
+    form.submit(function (e) {
+        fieldsToValidate.each(function () {
+            var self = $(this);
+            if (self.hasClass('invalid-input')) {
+                invalidInput($('input[type="submit"]'), 'Invalid input', 'no-submit', 'no-submit');
+                e.preventDefault()
+            }
+        });
+    })
+});

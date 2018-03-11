@@ -9,6 +9,8 @@ add_action('admin_menu', 'test_plugin_setup_menu');
  
 function test_plugin_setup_menu(){
         add_menu_page( 'Test Plugin Page', 'Wedding and Production', 'manage_options', 'test-plugin', 'test_init' );
+    wp_register_script('videomenu_script', plugins_url('/videomenu.js', __FILE__), ['jquery']);
+    wp_enqueue_script('videomenu_script');
 }
  
 function test_init(){
@@ -17,16 +19,16 @@ function test_init(){
         <h1>Video Upload Form</h1>
         <h2>Upload a File</h2>
         <!-- Form to handle the upload - The enctype value here is very important -->
-        <form  method="post" enctype="multipart/form-data">
+        <form id="video-post-form" method="post" enctype="multipart/form-data">
                 <select name="category">
                         <option value="5">Wedding</option>
                         <option value="6">Production</option>
                 </select><br>
-                <label>Youtube link:</label><br><input type='text' id='link' name='link' style="width: 35%"></input><br>
+                <label>Youtube link:</label><br><input type='text' id='link' name='link' style="width: 35%" required><br>
                 <!--<input type='file' id='video' name='video' accept="video/*"></input><br>-->
-                <label>Title:</label><br><input type='text' id='title' name='title'></input><br>
-                <label>Description:</label><br><textarea id='description' name='description'></textarea><br>
-                <label>Cover:</label><br><input type='file' id='thumbnail' name='thumbnail' accept="image/*"></input><br>
+                <label>Title:</label><br><input type='text' id='title' name='title' required><br>
+                <label>Description:</label><br><textarea id='description' name='description' required></textarea><br>
+                <label>Cover:</label><br><input type='file' id='thumbnail' name='thumbnail' accept="image/*" required><br>
                 <?php submit_button('Upload') ?>
         </form>
 <?php
