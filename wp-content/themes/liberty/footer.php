@@ -2,7 +2,7 @@
 <footer id="footer">
     <section class="brand-slider hidden-xs" id="brand-slider">
         <span style="display:block;height:40vh;background:#000;opacity:.84;"></span>
-        <div  class="carousel-wrap" style="margin-top:-300px;">
+        <div  class="carousel-wrap" style="margin-top:-320px;">
             <div id="" class="owl-carousel slider-active">
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/servizantlogo.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/royalty.png"></div>
