@@ -2,20 +2,25 @@
 <footer id="footer">
     <section class="brand-slider hidden-xs" id="brand-slider">
         <span style="display:block;height:40vh;background:#000;opacity:.84;"></span>
-        <div  class="carousel-wrap" style="margin-top:-275px;">
+        <div  class="carousel-wrap" style="margin-top:-300px;">
             <div id="" class="owl-carousel slider-active">
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/servizantlogo.png"></div>
-                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/00001-01 copy.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/royalty.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/trecnutrition.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/kyivstar.png"></div>
-                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/00001-01 copy.png"></div>
-                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/mamochka.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/proventus.png"></div>
+                <div class="item">
+                    <a href="https://www.facebook.com/groups/mamochkahandmade/">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mamochka.png">
+                    </a>
+                </div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/dzerelo.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/dimleva.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/duda.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/edema.png"></div>
                 <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/rentfurniture.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-bugatti.png"></div>
+                <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo_white.png"></div>
             </div>
         </div>
     </section>
