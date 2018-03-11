@@ -117,10 +117,11 @@ body.wedding {
       right: 67px;
       top: 18px;
       @include media-for-xs {
-        left: 23px;
+        left: 50%;
+        transform: translateX(-70%) skew(-20deg);
         top: 79px;
         background-color: transparent;
-        border: 2px solid $primary-theme-color;
+        border: 2px solid #66FAF9;
       }
       @include media-for-xl {
         right: -28px;
@@ -210,6 +211,10 @@ video-thumbnails
         background: rgba(120, 250, 249, 0.7);
         top: -30%;
         position: relative;
+        @include media-for-xs {
+          height: 20%;
+          top: -20%;
+        }
         @include media-for-md {
           top: initial;
         }
