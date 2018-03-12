@@ -47,8 +47,7 @@ function test_handle_post(){
         $image_url = $_POST['thumbnail'];
         $image_name = 'video-thumb.jpg';
         $upload_dir = wp_upload_dir();
-            ini_set('max_execution_time', '300');
-        $image_data = @file_get_contents(urlencode($image_url));
+        $image_data = file_get_contents($image_url);
         $unique_file_name = wp_unique_filename( $upload_dir['path'], $image_name );
         $filename = basename( $unique_file_name );
         // Check folder permission and define file location
