@@ -28,12 +28,12 @@ function test_init(){
                 <!--<input type='file' id='video' name='video' accept="video/*"></input><br>-->
                 <label>Title:</label><br><input type='text' id='title' name='title' required><br>
                 <label>Description:</label><br><textarea id='description' name='description' required></textarea><br>
-                <label>Cover:</label><br><input type='file' id='thumbnail' name='thumbnail' accept="image/*" required><br>
+<!--                <label>Cover:</label><br>-->
+            <input type='hidden' id='thumbnail' name='thumbnail' required><br>
                 <?php submit_button('Upload') ?>
         </form>
 <?php
 }
- 
 function test_handle_post(){
         // First check if the file appears on the _FILES array
         if(isset($_POST['link'])){
@@ -44,33 +44,58 @@ function test_handle_post(){
                 // 0 means the content is not associated with any other posts
                 //$uploaded=media_handle_upload('video', 0);
                 $link=$_POST['link'];
-                $thumbnail=media_handle_upload('thumbnail', 0);
-                $category=$_POST['category'];
-                $title=$_POST['title'];
-                $description=$_POST['description'];
-                $my_post = array(
-                    'post_title'    => wp_strip_all_tags( $title ),
-                    'post_content'  => $description,
-                    'post_status'=>'open',
-                    'post_author'=>1,
-                    'guid'=>$link,
-                    'post_name'=>'youtubelink',
-                    'post_type'=>'attachment',
-                    'post_mime_type'=>'video/mp4'
-                    
-                );
- 
+        $image_url = $_POST['thumbnail'];
+        $image_name = 'video-thumb.jpg';
+        $upload_dir = wp_upload_dir();
+            ini_set('max_execution_time', '300');
+        $image_data = @file_get_contents(urlencode($image_url));
+        $unique_file_name = wp_unique_filename( $upload_dir['path'], $image_name );
+        $filename = basename( $unique_file_name );
+        // Check folder permission and define file location
+        if( wp_mkdir_p( $upload_dir['path'] ) ) {
+            $file = $upload_dir['path'] . '/' . $filename;
+        } else {
+            $file = $upload_dir['basedir'] . '/' . $filename;
+        }
+        // Create the image  file on the server
+        file_put_contents( $file, $image_data );
 
-                $newpost=wp_insert_post( $my_post );
-                //echo $uploaded;
-                // Error checking using WP functions
-                if(is_wp_error( $newpost)){
-                        echo "Error uploading file: " .  $newpost->get_error_message();
+        $category=$_POST['category'];
+        $title=$_POST['title'];
+        $description=$_POST['description'];
+        $my_post = array(
+            'post_title'    => wp_strip_all_tags( $title ),
+            'post_content'  => $description,
+            'post_status'=>'open',
+            'post_author'=>1,
+            'guid'=>$link,
+            'post_name'=>'youtubelink',
+            'post_type'=>'attachment',
+            'post_mime_type'=>'video/mp4'
+        );
+        $wp_filetype = wp_check_filetype( $filename, null );
+        $attachment = array(
+            'post_mime_type' => $wp_filetype['type'],
+            'post_title'     => sanitize_file_name( $filename ),
+            'post_content'   => '',
+            'post_status'    => 'inherit'
+        );
+
+        $post_id=wp_insert_post( $my_post );
+        //echo $uploaded;
+        // Error checking using WP functions
+
+        $thumbnail= wp_insert_attachment( $attachment, $file, $post_id);
+        require_once(ABSPATH . 'wp-admin/includes/image.php');
+        $attach_data = wp_generate_attachment_metadata( $thumbnail, $file );
+        wp_update_attachment_metadata( $thumbnail, $attach_data );
+            if(is_wp_error( $post_id)){
+                echo "Error uploading file: " .  $post_id->get_error_message();
                 }else{
                         //echo 'ct='.$category;
-                        wp_set_post_categories( $newpost, $category );
+                        wp_set_post_categories( $post_id, $category );
                          $my_post = array(
-                                'ID'           => $newpost,
+                                'ID'           => $post_id,
                        
                          );
 
@@ -80,11 +105,11 @@ function test_handle_post(){
                         echo "Error uploading thumbnail: " . $thumbnail->get_error_message();
                    }
                    else{
-                        if(set_post_thumbnail($newpost,$thumbnail))
+                        if(set_post_thumbnail($post_id,$thumbnail))
                         {
                                 echo 'thumbnail ok';
                         }
-                        else 
+                        else
                         {
                                 echo 'thumbnail set fail';
                         }
@@ -92,5 +117,4 @@ function test_handle_post(){
                 }
         }
 }
- 
 ?>

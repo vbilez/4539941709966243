@@ -21,7 +21,10 @@ $(document).ready(function () {
         var self = $(this);
         switch(self.attr('id')) {
             case 'link':
-                youtubeRegex.test(self.val()) ? correctInput(self) : invalidInput(self, "must be a valid youtube link");
+                if (youtubeRegex.test(self.val())) {
+                    correctInput(self);
+                    $('input#thumbnail').val('https://img.youtube.com/vi/' + self.val().substr(self.val().indexOf('=')+1) + '/mqdefault.jpg');
+                } else invalidInput(self, "must be a valid youtube link");
                 break;
             case 'title':
                 var maxChar = 40;
