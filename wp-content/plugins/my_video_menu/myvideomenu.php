@@ -42,7 +42,7 @@ function test_handle_postl(){
                 // 0 means the content is not associated with any other posts
                 //$uploaded=media_handle_upload('video', 0);
                 $link=$_POST['link'];
-                $thumbnail=media_handle_upload('thumbnail', 0);
+                
                 $category=$_POST['category'];
                 $title=$_POST['title'];
                 $description=$_POST['description'];
@@ -60,6 +60,7 @@ function test_handle_postl(){
  
 
                 $newpost=wp_insert_post( $my_post );
+                $thumbnail=media_handle_upload('thumbnail', $newpost);
                 //echo $uploaded;
                 // Error checking using WP functions
                 if(is_wp_error( $newpost)){

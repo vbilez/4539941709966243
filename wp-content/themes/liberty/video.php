@@ -8,6 +8,7 @@ $title=$post->post_title;
 $youtubelink='youtubelink';
 $vimeolink='vimeolink';
 $postname=$post->post_name;
+$deltitle="Delete video";
 if(
     (strpos($postname,$youtubelink)===false)
      &&
@@ -25,7 +26,14 @@ if(strpos($postname,$vimeolink)!==false)
   $video_type="video/vimeo";
 }
 
+  if ( get_current_user_id()==1 )
+   {
+    $before='<div class="dellink">';
+    $after='</div>';
 
+    $link = "<a href='" . wp_nonce_url( get_bloginfo('url') . "/wp-admin/post.php?action=delete&amp;post=" . $id, 'delete-post_' . $id) . "'>".$deltitle."</a>";
+    echo $before . $link . $after;
+    }
 $postdate= get_the_date('d',$post) .'|'.get_the_date('m',$post) ;
 echo '
 <div class="col-md-7  col-lg-7 col-sm-12 col-xs-12 videoplayer" style="padding-left:0 !important;padding-right:0 !important" >

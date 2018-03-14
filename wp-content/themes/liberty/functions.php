@@ -33,3 +33,19 @@ function posts_link_attributes_1() {
 function posts_link_attributes_2() {
     return 'class="nodecor"';
 }
+
+function delete_associated_media( $id ) {
+    $media = get_children( array(
+        'post_parent' => $id,
+        'post_type'   => 'attachment'
+    ) );
+
+    if( empty( $media ) ) {
+        return;
+    }
+
+    foreach( $media as $file ) {
+        wp_delete_attachment( $file->ID );
+    }
+}
+add_action( 'before_delete_post', 'delete_associated_media' );
