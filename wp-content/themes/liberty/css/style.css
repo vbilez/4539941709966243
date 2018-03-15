@@ -854,20 +854,27 @@ footer {
   width: 40%; }
 
 .social-connect {
-  padding: 12px;
-  background: #66FAF9 no-repeat center;
-  background-size: cover;
+  background-color: #66FAF9;
   text-align: center;
   font-size: 13px;
   list-style: none;
+  padding: 6px;
   margin-bottom: 0; }
   .social-connect li {
     margin-right: 0;
-    margin-left: 0; }
+    margin-left: 0;
+    display: inline; }
   .social-connect a {
     text-decoration: none;
     padding-right: 15px;
     padding-left: 15px; }
+    .social-connect a i {
+      font-size: 14px; }
+      .social-connect a i:hover {
+        opacity: 1; }
+      @media (min-width: 768px) {
+        .social-connect a i {
+          font-size: 25px; } }
 
 .social-connect-one-screen-layout {
   position: absolute;

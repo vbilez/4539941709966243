@@ -1088,19 +1088,28 @@ footer {
 }
 
 .social-connect{
-    padding: 12px;
-    background: #66FAF9 no-repeat center;
-    background-size: cover;
+    background-color: $primary-theme-color;
     text-align: center;
     font-size: 13px;
   list-style: none;
+  padding: 6px;
   margin-bottom: 0;
   & li {
     @include margin-left-right(0);
+    display: inline;
   }
   & a {
     text-decoration: none;
-    @include padding-left-right(15px)
+    @include padding-left-right(15px);
+    & i {
+      font-size: 14px;
+      &:hover {
+        opacity: 1;
+      }
+      @include media-for-sm {
+        font-size: 25px;
+      }
+    }
   }
 }
 
