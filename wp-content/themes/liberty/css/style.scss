@@ -118,10 +118,9 @@ header {
 
 #video-background {
   min-width: 100%;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
   object-fit: fill;
-  height: 100vh;
   position: absolute;
   opacity: 0.3;
 }
@@ -550,7 +549,6 @@ header .jumbotron h2 .parallelogram .parallelogram-inner-text {
   -moz-transform: skew(-20deg);
   -o-transform: skew(-20deg);
   z-index: 1;
-
   @include media-for-xs {
     width: 200px;
     -webkit-transform: skew(-30deg);
@@ -564,6 +562,9 @@ header .jumbotron h2 .parallelogram .parallelogram-inner-text {
   }
   @include media-for-xs-h {
     display: none;
+  }
+  @include media-for-md {
+    transition: 3s;
   }
 }
 
@@ -871,19 +872,20 @@ header .jumbotron h2 .parallelogram .parallelogram-inner-text {
 .portfolio {
     position: relative;
     height: 100vh;
-}
-
-.portfolio .wedding-title {
+  & .wedding-title, & .production-title {
+    transition: 3s;
+  }
+  & .wedding-title {
     left: 70%;
     bottom: 30%;
     font-size: 15vh;
     width: max-content;
-}
-
-.portfolio .production-title {
+  }
+  & .production-title {
     right: 67%;
     top: 35%;
     font-size: 8vh;
+  }
 }
 
 @media screen and (max-width: 1024px){
