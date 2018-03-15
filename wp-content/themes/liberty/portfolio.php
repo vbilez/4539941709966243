@@ -268,6 +268,12 @@ $q = new WP_Query( $args );
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery-ui/jquery-ui.js" type="text/javascript"></script>
 <script>
     $(document).ready(function () {
+        win_w = $(window).width();
+        win_h = $(window).height();
+        $(window).resize(function () {
+            win_w = $(window).width();
+            win_h = $(window).height();
+        });
         $('#viewportInf p:first-child').append(function () {
             return $(window).width();
         });
@@ -306,16 +312,17 @@ $q = new WP_Query( $args );
     $(document).ready(function(){
         var owl = $('.video-thumbs-table > .row');
         function owlInit(arg) {
-            if ($(window).width() < 440) {
+            if (win_h < 630) {
                 if (!arg.hasClass('owl-carousel')) {
                     arg.addClass('owl-carousel');
                 }
+                owl.trigger('destroy.owl.carousel');
+                itemsQty = win_h < 450 ? 2 : 1;
                 $('.owl-carousel').owlCarousel({
-                    items: 1
+                    items: itemsQty
                 });
             } else {
-                owl.removeClass('owl-carousel');
-                owl.trigger('destroy.owl.carousel');
+                owl.removeClass('owl-carousel').trigger('destroy.owl.carousel');
             }
         }
         owlInit(owl);

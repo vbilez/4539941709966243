@@ -52,6 +52,7 @@ body.wedding {
   position: absolute;
   background-color: $primary-theme-color;
   border-radius: 10%;
+  z-index: 1;
   &:hover, &:focus, &:active {
     background-color: #fff;
     & i {
@@ -65,6 +66,11 @@ body.wedding {
     & i {
       font-size: 20px;
     }
+  }
+  @include media-for-xs-h {
+    @include square-width-height(30px);
+    right: 10px;
+    top: 10px;
   }
   @include media-for-sm {
     top: 30px;
@@ -120,6 +126,13 @@ body.wedding {
         left: 50%;
         transform: translateX(-70%) skew(-20deg);
         top: 79px;
+      }
+      @include media-for-xs-h {
+        right: 50%;
+        transform: translateX(50%) skew(-20deg);
+        top: 8px;
+      }
+      @include media-for-xs-h-v {
         background-color: transparent;
         border: 2px solid #66FAF9;
       }
@@ -151,6 +164,10 @@ body.wedding {
       font-size: 60pt;
       width: auto;
     }
+    @include media-for-xs-h {
+      width: auto;
+      text-align: left;
+    }
     @include media-for-sm {
       font-size: 70pt;
       padding-right: 110px;
@@ -168,8 +185,13 @@ video-thumbnails
  */
 
 .video-thumbs-table {
+  @include media-for-xs-h-v {
+    float: none !important;
+    margin: 0 auto;
+    width: 80vw !important;
+  }
   & > .row {
-    @include media-for-xs {
+    @include media-for-xs-h-v {
       @include margin-left-right(0);
     }
     & .video-item {
@@ -178,6 +200,9 @@ video-thumbnails
       @include media-for-xs {
         @include padding-left-right(0);
         height: 50vh;
+      }
+      @include media-for-xs-h {
+        height: 65vh;
       }
       @include media-for-sm {
         height: 21vh;
@@ -247,7 +272,6 @@ video-thumbnails
           }
         }
       }
-
     }
   }
   & .next-video-thumbs-arrow, & .prev-video-thumbs-arrow {
@@ -257,12 +281,21 @@ video-thumbnails
     @include media-for-sm-max {
       display: none;
     }
+    @include media-for-xs-h {
+      display: block;
+    }
   }
   & .next-video-thumbs-arrow {
     right: -60px;
+    @include media-for-xs-h-v {
+      right: -40px;
+    }
   }
   & .prev-video-thumbs-arrow {
     left: -60px;
+    @include media-for-xs-h-v {
+      left: -40px;
+    }
   }
 }
 
@@ -277,6 +310,9 @@ video-thumbnails
   justify-content: space-around;
   @include media-for-xs {
     padding-top: 4px;
+  }
+  @include media-for-xs-h {
+    display: none;
   }
   @include media-for-md {
     @include padding-left-right(120px);
@@ -315,6 +351,12 @@ video-thumbnails
 /**
 footer
  */
+
+footer {
+  @include media-for-xs-h {
+    display: none;
+  }
+}
 
 .social-connect-one-screen-layout {
   background-color: #66faf985;
