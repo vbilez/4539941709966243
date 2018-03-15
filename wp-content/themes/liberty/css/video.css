@@ -1,11 +1,11 @@
 .visible-xs-h {
   display: none !important; }
 
-@media (max-height: 459px) {
+@media (max-width: 767px) and (orientation: landscape) {
   .visible-xs-h {
     display: block !important; } }
 
-@media (max-height: 459px) {
+@media (max-width: 767px) and (orientation: landscape) {
   .hidden-xs-h {
     display: none !important; } }
 

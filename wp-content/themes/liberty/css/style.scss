@@ -138,12 +138,12 @@ header {
   border-bottom-color: #6c767661;
   border-left-color: transparent;
   z-index: 100;
-  @include media-for-xs-max {
+  @include media-for-xs-h-v {
     border-bottom-color: transparent;
   }
 
   & .navbar-collapse {
-    @include media-for-xs-max {
+    @include media-for-xs-h-v {
       position: absolute;
       width: 80%;
       right: 0;
@@ -161,7 +161,7 @@ header {
     letter-spacing: 1px;
     display: block;
     text-align: center;
-    @include media-for-xs-max {
+    @include media-for-xs-h-v {
       font-size: 20px;
       padding: 0;
       line-height: 50px;
@@ -195,7 +195,7 @@ header {
 
   & .navbar-toggle {
     border: none;
-    @include media-for-xs-max {
+    @include media-for-xs-h-v {
       margin-top: 50px;
     }
     @media screen and (max-width: 320px) {
@@ -219,7 +219,7 @@ nav .container-fluid {
 .header-menu {
   position: relative;
   margin-right: 25px;
-  @include media-for-xs-max {
+  @include media-for-xs-h-v {
     background-color: $dropdown-bg-color;
     margin: 0 auto;
     text-align: center;
@@ -228,7 +228,7 @@ nav .container-fluid {
       height: 70px;
     margin-top: 4px;
       margin-right: 30px;
-    @include media-for-xs-max {
+    @include media-for-xs-h-v {
       height: 50px;
       display: inline-block;
       border-bottom: 1px solid #fff;
@@ -257,7 +257,7 @@ header .navbar-toggle {
 .header-menu .dropdown-menu {
   @include header-menu-links-style;
   background-color: $dropdown-bg-color;
-  @include media-for-xs-max {
+  @include media-for-xs-h-v {
     right: auto;
     margin-top: 1em;
     left: -16px;
@@ -310,7 +310,7 @@ header .jumbotron {
     margin-top: 20%;
   }
 
-  @include media-for-xs-max {
+  @include media-for-xs-h-v {
     text-align: center;
     margin: 0 auto;
     padding: 0;
@@ -347,14 +347,14 @@ header .jumbotron {
       padding-right: 0 !important;
     }
 
-    @include media-for-xs-max {
+    @include media-for-xs-h-v {
       font-size: 4vh;
       line-height: 35px;
       margin: 0;
     }
 
     & .parallelogram:first-child {
-      @include media-for-xs-max {
+      @include media-for-xs-h-v {
         margin-bottom: 15px;
         background: transparent;
       }
@@ -375,7 +375,7 @@ header .jumbotron {
         }
       }
       &:last-child {
-        @include media-for-xs-max {
+        @include media-for-xs-h-v {
           line-height: 8vh;
           font-size: 9vw;
           height: 8vh;
@@ -390,7 +390,7 @@ header .jumbotron {
 
   & .jumbotron-content {
     font-size: 25pt;
-    @include media-for-xs-max {
+    @include media-for-xs-h-v {
       font-size: 3vh;
     }
     & img {
@@ -401,7 +401,7 @@ header .jumbotron {
       margin-left: 170px;
       margin-top: -15px;
       margin-bottom: 10px;
-      @include media-for-xs-max {
+      @include media-for-xs-h-v {
         margin: 5% 0;
         font-size: 4vh;
       }
@@ -417,7 +417,7 @@ header .jumbotron {
 
   & .jumbotron-footer {
     position: relative;
-    @include media-for-xs-max {
+    @include media-for-xs-h-v {
       width: 100%;
       display: inline-grid;
       margin-left: 0;
@@ -428,7 +428,7 @@ header .jumbotron {
     }
 
     & .jumbotron-footer-list-item-num {
-      @include media-for-xs-max {
+      @include media-for-xs-h-v {
         color: #fff !important;
         font-size: 26pt !important;
         line-height: 40px;
@@ -436,7 +436,7 @@ header .jumbotron {
     }
 
     & .parallelogram {
-      @include media-for-xs-max {
+      @include media-for-xs-h-v {
         width: 100% !important;
         background-color: transparent;
         border: 2px solid #66FAF9;
@@ -569,7 +569,7 @@ header .jumbotron h2 .parallelogram .parallelogram-inner-text {
 
 .stripe-anim-start {
     right: 130vw;
-  @include media-for-xs-max {
+  @include media-for-xs-h-v {
       right: 180vw;
   }
 }

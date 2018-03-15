@@ -75,7 +75,7 @@
   right: 0;
   border-color: transparent;
   margin: 0 auto;
-  @include media-for-xs-max {
+  @include media-for-xs-h-v {
     width: 80%;
   }
 }
