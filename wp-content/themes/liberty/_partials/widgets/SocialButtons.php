@@ -75,7 +75,7 @@ class SocialButtons {
         foreach (self::$SocLinks as $key => $item) {
             $icon = $svg ?
                 "<svg><use xlink:href=\"{$gtdu}/{$pathToIcons}#{$key}\"></use></svg>" :
-                "<i class=\"liberty-icon-{$key}\"></i>";
+                "<i class=\"liberty-icons liberty-icon-{$key}\"></i>";
             $liArr .= "<li><a href=\"{$item}\" target=\"_blank\">{$icon}</a></li>";
        }
         return "<ul{$htmlAttrs}>{$liArr}</ul>";
