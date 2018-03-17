@@ -27,7 +27,7 @@ $(document).ready(function () {
                 } else invalidInput(self, "must be a valid youtube link");
                 break;
             case 'title':
-                var maxChar = 40;
+                var maxChar = 24;
                 self.val().length < maxChar ? correctInput(self) : invalidInput(self, "maximum number of characters is " + maxChar);
                 break;
             default:
