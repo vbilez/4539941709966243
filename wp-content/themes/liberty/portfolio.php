@@ -5,7 +5,7 @@ $s=$_GET['s'];
 /**
  * variable to conditionally switch between specific stylesheet rules
  */
-$portfolioCssClass = ($currentSegment=='portfolio-wedding') ? (($currentSegment=='portfolio-production') ? 'production' : 'wedding') : null;
+$portfolioCssClass = (($currentSegment=='portfolio-wedding') ? 'wedding' : (($currentSegment=='portfolio-production') ? 'production' : null));
 ?>
 <!DOCTYPE html>
 <html lang="en">
