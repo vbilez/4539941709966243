@@ -4,6 +4,14 @@ $(document).ready(function () {
     var form = $('form#video-post-form');
     var fieldsToValidate = form.children('input[type="text"]');
     var youtubeRegex = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+    var selectField = $('#video-post-form select[name="category"]');
+    var lastUploadCategory = getCookie('lastUploadCategory');
+    function getCookie(name) {
+        var matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
     function correctInput(handle) {
         handle.removeClass('invalid-input');
         handle.next().is("#input-error") ? handle.next().remove() : null;
@@ -16,6 +24,9 @@ $(document).ready(function () {
         !handle.next().is("#" + errSpanId) ?
             handle.addClass(errCssClass).after('<span id="'+ errSpanId +'" style="color: grey"> ' + errMgs + '</span>')
             : null;
+    }
+    if (lastUploadCategory !== undefined) {
+        selectField.children('option[value="'+ lastUploadCategory +'"]').attr("selected","selected");
     }
     fieldsToValidate.change(function () {
         var self = $(this);
@@ -40,6 +51,9 @@ $(document).ready(function () {
             if (self.hasClass('invalid-input')) {
                 invalidInput($('input[type="submit"]'), 'Invalid input', 'no-submit', 'no-submit');
                 e.preventDefault()
+            } else {
+                var currentCategory = selectField.val();
+                document.cookie = "lastUploadCategory=" + currentCategory;
             }
         });
     })
