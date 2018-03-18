@@ -1,11 +1,7 @@
 <?php
 $currentSegment=urldecode($currentSegment);
 $s=$_GET['s'];
-if($currentSegment=='page')
-{$paged=$seg3;}
-else {
-//$paged=$_GET['page'];
-}
+
 /**
  * variable to conditionally switch between specific stylesheet rules
  */
@@ -31,7 +27,7 @@ $portfolioCssClass = ($currentSegment=='portfolio-wedding') ? (($currentSegment=
     ?>
     <?php wp_head(); ?>
 </head>
-<body class="<?= $portfolioCssClass ?>">
+<body class="<?= $portfolioCssClass ?>" >
 <div class="home-button"><a href="/"><i class="glyphicon glyphicon-home"></i></a></div>
 <div class="container">
     <div class="portfolio-title">
@@ -63,13 +59,15 @@ EOT;
     </div>
 
 <?php
+global $paged;
+$paged=$seg3;
 $args = array(
     'post_type' => 'attachment',
     'post_mime_type'=>'video/mp4',
     'post_status'    => 'inherit',
     's'=>$s,
     'posts_per_page'=>6,
-    'paged' => $paged,
+    'paged' => $seg3,
     'cat'=>5
 );
 $args2 = array(
@@ -78,22 +76,34 @@ $args2 = array(
     'post_status'    => 'inherit',
     's'=>$s,
     'posts_per_page'=>6,
-    'paged' => $paged,
+    'paged' => $seg3,
     'cat'=>6
 );
-$q = new WP_Query( $args );
 $q2 = new WP_Query( $args2 );
+$q = new WP_Query( $args );
+
+
 ?>
    
 <div class="row">
     <div class="video-thumbs-table col-xs-12">
         <?php if(($currentSegment=='portfolio-wedding')||($currentSegment=='portfolio-production')){?>
+          <?php if($currentSegment=='portfolio-wedding') {?>        
             <div class="prev-video-thumbs-arrow">
                 <?php previous_posts_link('<i style="color:#66FAF9" class="fa fa-4x fa-chevron-left"></i>',$q->max_num_pages);?>
             </div>
             <div class="next-video-thumbs-arrow">
                 <?php next_posts_link('<i style="color:#66FAF9" class="fa fa-4x fa-chevron-right"></i>',$q->max_num_pages);?>
             </div>
+          <?php }?>
+          <?php if($currentSegment=='portfolio-production') {?>        
+            <div class="prev-video-thumbs-arrow">
+                <?php previous_posts_link('<i style="color:#66FAF9" class="fa fa-4x fa-chevron-left"></i>',$q2->max_num_pages);?>
+            </div>
+            <div class="next-video-thumbs-arrow">
+                <?php next_posts_link('<i style="color:#66FAF9" class="fa fa-4x fa-chevron-right"></i>',$q2->max_num_pages);?>
+            </div>
+          <?php }?>  
         <?php }?>
         <div class="row">
 
@@ -223,17 +233,27 @@ $q2 = new WP_Query( $args2 );
 </div>
     <?php if(in_array($currentSegment, [$portfolio_wedding, $portfolio_production])) {?>
         <div class="search-field" data-style="display: flex">
-            <?php if(($currentSegment=='portfolio-wedding')||($currentSegment=='portfolio-production')){?>
+            <?php if($currentSegment=='portfolio-wedding'){?>
                 <div class="prev-video-thumbs-arrow">
                     <?php previous_posts_link('<i class="fa fa-4x fa-chevron-left"></i>', $q->max_num_pages); ?>
+                </div>
+            <?php }?>
+            <?php if($currentSegment=='portfolio-production'){?>
+                <div class="prev-video-thumbs-arrow">
+                    <?php previous_posts_link('<i class="fa fa-4x fa-chevron-left"></i>', $q2->max_num_pages); ?>
                 </div>
             <?php }?>
                 <form>
                     <input type="text" name="s"><span class="glyphicon glyphicon-search"></span>
                 </form>
-            <?php if(($currentSegment=='portfolio-wedding')||($currentSegment=='portfolio-production')){?>
+            <?php if($currentSegment=='portfolio-wedding'){?>
                 <div class="next-video-thumbs-arrow">
                     <?php next_posts_link('<i class="fa fa-4x fa-chevron-right"></i>',$q->max_num_pages);?>
+                </div>
+            <?php }?>
+            <?php if($currentSegment=='portfolio-production'){?>
+                <div class="next-video-thumbs-arrow">
+                    <?php next_posts_link('<i class="fa fa-4x fa-chevron-right"></i>',$q2->max_num_pages);?>
                 </div>
             <?php }?>
         </div>
