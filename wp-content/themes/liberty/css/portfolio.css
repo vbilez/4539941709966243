@@ -38,8 +38,10 @@ body::before {
   background: #002529d1; }
 
 body.production {
-  background-image: url("../assets/img/banner_bg.jpg");
-  background-repeat: no-repeat; }
+  background-image: url("../assets/img/portfolio-production-bodybg-sm.jpg"); }
+  @media (min-width: 1200px) {
+    body.production {
+      background-image: url("../assets/img/portfolio-production-bodybg-lg.jpg"); } }
 
 body.wedding {
   background-image: url("../assets/img/portfolio-wedding-bodybg-sm.jpg"); }
@@ -103,85 +105,118 @@ body.wedding {
     transform: translate(-53%, -50%);
     top: 50%; }
 
-.portfolio-title {
+@media (max-width: 480px) {
+  .portfolio-title {
+    position: relative;
+    left: 10px; } }
+.portfolio-title .wedding-title, .portfolio-title .production-title {
+  position: relative;
+  margin: 0 auto;
+  color: #fff;
+  transform: skew(0); }
+  .portfolio-title .wedding-title .parallelogram, .portfolio-title .production-title .parallelogram {
+    position: absolute; }
+    .portfolio-title .wedding-title .parallelogram .parallelogram-inner-text, .portfolio-title .production-title .parallelogram .parallelogram-inner-text {
+      padding: 0 40px;
+      font-family: 'GothamPro', sans-serif;
+      font-weight: bold;
+      font-size: 22px; }
+      @media (max-width: 480px) {
+        .portfolio-title .wedding-title .parallelogram .parallelogram-inner-text, .portfolio-title .production-title .parallelogram .parallelogram-inner-text {
+          font-family: 'GothamPro-Medium', sans-serif;
+          font-size: 19px;
+          font-weight: normal;
+          padding-right: 30px;
+          padding-left: 30px; } }
+      @media (min-width: 1900px) {
+        .portfolio-title .wedding-title .parallelogram .parallelogram-inner-text, .portfolio-title .production-title .parallelogram .parallelogram-inner-text {
+          font-size: 32px; } }
+.portfolio-title .wedding-title {
+  width: 600px;
   margin-bottom: 2%; }
   @media (max-width: 480px) {
-    .portfolio-title {
-      position: relative;
-      left: 10px;
+    .portfolio-title .wedding-title {
+      font-size: 60pt;
+      width: auto;
       margin-top: 20px;
       margin-bottom: 8%; } }
+  @media (max-width: 767px) and (orientation: landscape) {
+    .portfolio-title .wedding-title {
+      width: auto;
+      text-align: left; } }
   @media (min-width: 768px) {
-    .portfolio-title {
+    .portfolio-title .wedding-title {
+      font-size: 70pt;
+      padding-right: 110px;
       margin-top: 9%; } }
   @media (min-width: 992px) {
-    .portfolio-title {
+    .portfolio-title .wedding-title {
       margin-top: 5%; } }
   @media (min-width: 1200px) {
-    .portfolio-title {
+    .portfolio-title .wedding-title {
       margin-top: 8%; } }
   @media (min-width: 1900px) {
-    .portfolio-title {
+    .portfolio-title .wedding-title {
+      font-size: 110pt;
       margin-top: 5%; } }
-  .portfolio-title .wedding-title, .portfolio-title .production-title {
-    position: relative;
-    margin: 0 auto;
-    color: #fff;
-    transform: skew(0); }
-    .portfolio-title .wedding-title .parallelogram, .portfolio-title .production-title .parallelogram {
-      position: absolute;
-      right: 67px;
-      top: 18px; }
-      @media (max-width: 480px) {
-        .portfolio-title .wedding-title .parallelogram, .portfolio-title .production-title .parallelogram {
-          left: 50%;
-          transform: translateX(-70%) skew(-20deg);
-          top: 79px; } }
-      @media (max-width: 767px) and (orientation: landscape) {
-        .portfolio-title .wedding-title .parallelogram, .portfolio-title .production-title .parallelogram {
-          right: 50%;
-          transform: translateX(50%) skew(-20deg);
-          top: 8px; } }
-      @media (max-width: 767px) {
-        .portfolio-title .wedding-title .parallelogram, .portfolio-title .production-title .parallelogram {
-          background-color: transparent;
-          border: 2px solid #66FAF9; } }
-      @media (min-width: 1900px) {
-        .portfolio-title .wedding-title .parallelogram, .portfolio-title .production-title .parallelogram {
-          right: -28px;
-          top: 38px; } }
-      .portfolio-title .wedding-title .parallelogram .parallelogram-inner-text, .portfolio-title .production-title .parallelogram .parallelogram-inner-text {
-        padding: 0 40px;
-        font-family: 'GothamPro', sans-serif;
-        font-weight: bold;
-        font-size: 22px; }
-        @media (max-width: 480px) {
-          .portfolio-title .wedding-title .parallelogram .parallelogram-inner-text, .portfolio-title .production-title .parallelogram .parallelogram-inner-text {
-            font-family: 'GothamPro-Medium', sans-serif;
-            font-size: 19px;
-            font-weight: normal;
-            padding-right: 30px;
-            padding-left: 30px; } }
-        @media (min-width: 1900px) {
-          .portfolio-title .wedding-title .parallelogram .parallelogram-inner-text, .portfolio-title .production-title .parallelogram .parallelogram-inner-text {
-            font-size: 32px; } }
-  .portfolio-title .wedding-title {
-    width: 600px; }
+  .portfolio-title .wedding-title .parallelogram {
+    right: 67px;
+    top: 18px; }
     @media (max-width: 480px) {
-      .portfolio-title .wedding-title {
-        font-size: 60pt;
-        width: auto; } }
+      .portfolio-title .wedding-title .parallelogram {
+        left: 50%;
+        transform: translateX(-70%) skew(-20deg);
+        top: 79px; } }
     @media (max-width: 767px) and (orientation: landscape) {
-      .portfolio-title .wedding-title {
-        width: auto;
-        text-align: left; } }
-    @media (min-width: 768px) {
-      .portfolio-title .wedding-title {
-        font-size: 70pt;
-        padding-right: 110px; } }
+      .portfolio-title .wedding-title .parallelogram {
+        right: 50%;
+        transform: translateX(50%) skew(-20deg);
+        top: 8px; } }
+    @media (max-width: 767px) {
+      .portfolio-title .wedding-title .parallelogram {
+        background-color: transparent;
+        border: 2px solid #66FAF9; } }
     @media (min-width: 1900px) {
-      .portfolio-title .wedding-title {
-        font-size: 110pt; } }
+      .portfolio-title .wedding-title .parallelogram {
+        right: -28px;
+        top: 38px; } }
+.portfolio-title .production-title {
+  width: 430px;
+  font-size: 35pt;
+  margin-bottom: 7%;
+  padding-left: 30px; }
+  @media (max-width: 480px) {
+    .portfolio-title .production-title {
+      font-size: 60pt;
+      width: auto;
+      margin-top: 20px;
+      margin-bottom: 8%; } }
+  @media (max-width: 767px) and (orientation: landscape) {
+    .portfolio-title .production-title {
+      width: auto;
+      text-align: left; } }
+  @media (min-width: 768px) {
+    .portfolio-title .production-title {
+      margin-top: 9%; } }
+  @media (min-width: 992px) {
+    .portfolio-title .production-title {
+      margin-top: 10%; } }
+  @media (min-width: 1200px) {
+    .portfolio-title .production-title {
+      margin-top: 9%; } }
+  @media (min-width: 1900px) {
+    .portfolio-title .production-title {
+      font-size: 45pt;
+      margin-top: 9%;
+      padding-left: 0;
+      transform: translateX(-5%); } }
+  .portfolio-title .production-title .parallelogram {
+    right: -10px;
+    top: -20px; }
+    @media (min-width: 1900px) {
+      .portfolio-title .production-title .parallelogram {
+        right: -95px;
+        top: -23px; } }
 
 /**
 video-thumbnails

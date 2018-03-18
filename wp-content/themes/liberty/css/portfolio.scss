@@ -24,8 +24,10 @@ body::before {
 }
 
 body.production {
-  background-image: url('../assets/img/banner_bg.jpg');
-  background-repeat: no-repeat;
+  background-image: url('../assets/img/portfolio-production-bodybg-sm.jpg');
+  @include media-for-lg {
+    background-image: url('../assets/img/portfolio-production-bodybg-lg.jpg');
+  }
 }
 
 body.wedding {
@@ -95,24 +97,9 @@ body.wedding {
 }
 
 .portfolio-title {
-  margin-bottom: 2%;
   @include media-for-xs {
     position: relative;
     left: 10px;
-    margin-top: 20px;
-    margin-bottom: 8%;
-  }
-  @include media-for-sm {
-    margin-top: 9%;
-  }
-  @include media-for-md {
-    margin-top: 5%;
-  }
-  @include media-for-lg {
-    margin-top: 8%;
-  }
-  @include media-for-xl {
-    margin-top: 5%;
   }
   & .wedding-title, & .production-title {
     position: relative;
@@ -122,6 +109,52 @@ body.wedding {
     transform: skew(0);
     & .parallelogram {
       position: absolute;
+      & .parallelogram-inner-text{
+        padding: 0 40px;
+        font-family: 'GothamPro', sans-serif;
+        font-weight: bold;
+        font-size: 22px;
+        @include media-for-xs {
+          font-family: 'GothamPro-Medium', sans-serif;
+          font-size: 19px;
+          font-weight: normal;
+          @include padding-left-right(30px);
+        }
+        @include media-for-xl {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+  & .wedding-title {
+    width: 600px;
+    margin-bottom: 2%;
+    @include media-for-xs {
+      font-size: 60pt;
+      width: auto;
+      margin-top: 20px;
+      margin-bottom: 8%;
+    }
+    @include media-for-xs-h {
+      width: auto;
+      text-align: left;
+    }
+    @include media-for-sm {
+      font-size: 70pt;
+      padding-right: 110px;
+      margin-top: 9%;
+    }
+    @include media-for-md {
+      margin-top: 5%;
+    }
+    @include media-for-lg {
+      margin-top: 8%;
+    }
+    @include media-for-xl {
+      font-size: 110pt;
+      margin-top: 5%;
+    }
+    & .parallelogram {
       right: 67px;
       top: 18px;
       @include media-for-xs {
@@ -142,39 +175,45 @@ body.wedding {
         right: -28px;
         top: 38px;
       }
-      & .parallelogram-inner-text{
-        padding: 0 40px;
-        font-family: 'GothamPro', sans-serif;
-        font-weight: bold;
-        font-size: 22px;
-        @include media-for-xs {
-          font-family: 'GothamPro-Medium', sans-serif;
-          font-size: 19px;
-          font-weight: normal;
-          @include padding-left-right(30px);
-        }
-        @include media-for-xl {
-          font-size: 32px;
-        }
-      }
     }
   }
-  & .wedding-title {
-    width: 600px;
+  & .production-title {
+    width: 430px;
+    font-size: 35pt;
+    margin-bottom: 7%;
+    padding-left: 30px;
     @include media-for-xs {
       font-size: 60pt;
       width: auto;
+      margin-top: 20px;
+      margin-bottom: 8%;
     }
     @include media-for-xs-h {
       width: auto;
       text-align: left;
     }
     @include media-for-sm {
-      font-size: 70pt;
-      padding-right: 110px;
+      margin-top: 9%;
+    }
+    @include media-for-md {
+      margin-top: 10%;
+    }
+    @include media-for-lg {
+      margin-top: 9%;
     }
     @include media-for-xl {
-      font-size: 110pt;
+      font-size: 45pt;
+      margin-top: 9%;
+      padding-left: 0;
+      transform: translateX(-5%);
+    }
+    & .parallelogram {
+      right: -10px;
+      top: -20px;
+      @include media-for-xl {
+        right: -95px;
+        top: -23px;
+      }
     }
   }
 }
