@@ -3,6 +3,7 @@
 @import "partials/responsive-utilities";
 
 body {
+  background-repeat: no-repeat;
   @include background-size(cover);
   & > .container {
     @include media-for-sm {
@@ -115,6 +116,7 @@ body.wedding {
   }
   & .wedding-title, & .production-title {
     position: relative;
+    margin: 0 auto;
     color: #fff;
     //dummy transform property - somehow resolves conflict with bod'ys ::before attributes
     transform: skew(0);
@@ -158,7 +160,6 @@ body.wedding {
     }
   }
   & .wedding-title {
-    margin: 0 auto;
     width: 600px;
     @include media-for-xs {
       font-size: 60pt;
