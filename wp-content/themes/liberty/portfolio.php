@@ -17,6 +17,7 @@ $portfolioCssClass = (($currentSegment=='portfolio-wedding') ? 'wedding' : (($cu
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/owl.carousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bower_components/owl.carousel/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/portfolio.css">
     <script src="<?php echo get_template_directory_uri(); ?>/js/send-text-input.js"></script>
@@ -314,7 +315,7 @@ $q = new WP_Query( $args );
         function owlInit(arg) {
             if (win_h < 630) {
                 if (!arg.hasClass('owl-carousel')) {
-                    arg.addClass('owl-carousel');
+                    arg.addClass('owl-carousel').addClass('owl-theme');
                 }
                 owl.trigger('destroy.owl.carousel');
                 itemsQty = win_h < 450 ? 2 : 1;
@@ -322,7 +323,7 @@ $q = new WP_Query( $args );
                     items: itemsQty
                 });
             } else {
-                owl.removeClass('owl-carousel').trigger('destroy.owl.carousel');
+                owl.removeClass('owl-carousel owl-theme').trigger('destroy.owl.carousel');
             }
         }
         owlInit(owl);
