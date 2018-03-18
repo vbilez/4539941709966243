@@ -1,3 +1,7 @@
+@mixin padding-top-bottom($padding-size) {
+  padding-top: $padding-size;
+  padding-bottom: $padding-size;
+}
 @mixin padding-left-right($padding-size) {
   padding-right: $padding-size;
   padding-left: $padding-size;
@@ -15,4 +19,10 @@
 @mixin square-width-height($size){
   height: $size;
   width: $size;
+}
+@mixin transform-prefixed($param) {
+  -webkit-transform: $param;
+  -moz-transform: $param;
+  -o-transform: $param;
+  transform: $param;
 }
