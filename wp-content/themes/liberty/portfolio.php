@@ -328,7 +328,7 @@ $q = new WP_Query( $args );
         }
         owlInit(owl);
         $(window).resize(function () {
-            owlInit(owl)
+            !/iPhone/.test(navigator.userAgent) ? owlInit(owl) : null;
         });
     });
 </script>
