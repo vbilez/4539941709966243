@@ -154,20 +154,24 @@ $q = new WP_Query( $args );
                 echo $data;
             }
 
-
             if($currentSegment=='portfolio-wedding' || $currentSegment=='portfolio-production' || $currentSegment=='thankyou'
                 || $currentSegment=='video')
             {
-                if($currentSegment=='portfolio-wedding')   {
-
-                    if ( $q->have_posts() ) {
-                        while ( $q->have_posts() ) {
-                            $q->the_post();
+                if(in_array($currentSegment, ['portfolio-wedding', 'portfolio-production']))   {
+                    $query = (
+                    ($currentSegment=='portfolio-wedding') ? $q :
+                        (($currentSegment=='portfolio-production') ? $q2 : null)
+                    );
+                    if ( $query->have_posts() ) {
+                        while ( $query->have_posts() ) {
+                            $query->the_post();
                             // );
                             $category=get_the_category();
                             $category_use=$category[0]->term_id;
                             $postdate=   get_the_date('d') .'|'.get_the_date('m') ;
-                            $post_title=mb_strimwidth(get_the_title(),0,15);
+//                            $post_title=mb_strimwidth(get_the_title(),0,15) . '...';
+                            $post_title = get_the_title();
+                            $post_title = strlen($post_title) > 15 ? mb_strimwidth($post_title,0,15) . ' ...' : $post_title;
                             $post_thumbnail=get_the_post_thumbnail_url(get_the_ID(),'post_thumbnail');
                             echo'
                 <div class="video-item col-md-4 col-xs-12 col-sm-6">
@@ -187,33 +191,6 @@ $q = new WP_Query( $args );
                     }
 
                     //get_template_part( 'portfolio-wedding' );
-                }
-                if($currentSegment=='portfolio-production')   {
-                    if ( $q2->have_posts() ) {
-                        while ( $q2->have_posts() ) {
-                            $q2->the_post();
-                            // );
-                            $category=get_the_category();
-                            $category_use=$category[0]->term_id;
-                            $postdate=   get_the_date('d') .'|'.get_the_date('m') ;
-                            $post_title=mb_strimwidth(get_the_title(),0,15);
-                            $post_thumbnail=get_the_post_thumbnail_url(get_the_ID(),'post_thumbnail');
-                            echo'
-                <div class="video-item col-md-4 col-xs-12 col-sm-12">
-                    <a href='.get_home_url().'/video/'.get_the_ID() .'/'.$category_use.'">'.'
-                        <img src="'.$post_thumbnail.'">
-                    '.'</a>'.'
-                    <div class="video-thumb-caption-box"">
-                      <div class="video-thumb-title-text" >'.$post_title .'</div>
-                      <div class="video-thumb-title-date" >'.$postdate.'</div>
-                    </div>
-                </div>';
-                            // Your loop
-
-                        }
-                        wp_reset_postdata();
-                    }
-                    //get_template_part( 'portfolio-production' );
                 }
                 if($currentSegment=='video')   {
                     //get_template_part( 'video' );
