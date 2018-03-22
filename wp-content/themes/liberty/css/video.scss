@@ -2,36 +2,116 @@
 @import "partials/utilities";
 @import "partials/responsive-utilities";
 
+body.video {
+  background-color: #fff;
+  background-image: none;
+  &.wedding .description .description-title {
+    font-family: 'Corinthia', sans-serif;
+    font-size: 3vw;
+  }
+  &.production .description .description-title {
+    font-family: 'GothamPro-Bold', sans-serif;
+    font-size: 2.6vw;
+
+  }
+}
+
+#stripe {
+  @include transform-prefixed(skew(20deg));
+  z-index: 0;
+  opacity: 1;
+  left: 18.6vh;
+  transition: 0s;
+}
+
+.portfolio-title {
+  & .video {
+    color: $portfolio-grey;
+    &.wedding-title {
+      margin-top: 34px;
+    }
+    &.production-title {
+      margin-top: 72px;
+    }
+  }
+}
+
 .videoplayer {
   background-color: transparent;
+  height: 360px;
   @include media-for-xs {
     height: 200px;
     width: 100%;
   }
-  @include media-for-sm {
-    height: 400px;
-  }
-  @include media-for-lg {
-    height: 400px;
+  & .video-js .vjs-big-play-button {
+    border: none;
+    border-radius: 50%;
+    background-color: #fff;
+    @include square-width-height(1.5em);
+    transform: translate(30%, -20%);
+    -webkit-mask: url("../assets/img/triangle-play-inverted.png") no-repeat;
+    -webkit-mask-size: 140%;
+    -webkit-mask-position: 40%;
   }
 }
 
 .description{
   padding-top: 20px;
-  background-color: #C8C8C8;
+  background-color: $portfolio-grey;
+  //height of this div is determined by js in video.php
+  height: 0;
   color: #fff;
-  height: 400px;
   overflow-y:scroll;
+  border: 8px solid $portfolio-grey;
   & .description-title, & .description-date {
+    text-align: center;
+  }
+  & .description-title {
+    line-height: normal;
+  }
+  & .description-date {
     font-family: 'GothamPro-Bold', sans-serif;
-    font-size: 41px;
-    line-height: 1;
+    font-size: 2.3vw;
+    padding-bottom: 20px;
   }
   & .description-text {
     font-family: 'GothamPro', sans-serif;
     text-align: justify;
-    padding-left: 20px;
-    padding-right: 20px;
     font-weight: 600;
+  }
+}
+
+.scrollbar
+{
+  margin-left: 30px;
+  float: left;
+  height: 300px;
+  width: 65px;
+  background: #F5F5F5;
+  overflow-y: scroll;
+  margin-bottom: 25px;
+}
+
+.description::-webkit-scrollbar-track
+{
+  border-radius: 10px;
+  background-color: $portfolio-grey;
+}
+
+.description::-webkit-scrollbar
+{
+  width: 8px;
+  background-color: $portfolio-grey;
+}
+
+.description::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.social-connect-one-screen-layout {
+  & i::before {
+      color: $portfolio-grey;
   }
 }

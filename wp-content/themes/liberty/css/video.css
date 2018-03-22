@@ -17,34 +17,93 @@
   .hidden-xs-sm {
     display: none !important; } }
 
+body.video {
+  background-color: #fff;
+  background-image: none; }
+  body.video.wedding .description .description-title {
+    font-family: 'Corinthia', sans-serif;
+    font-size: 3vw; }
+  body.video.production .description .description-title {
+    font-family: 'GothamPro-Bold', sans-serif;
+    font-size: 2.6vw; }
+
+#stripe {
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  transform: skew(20deg);
+  z-index: 0;
+  opacity: 1;
+  left: 18.6vh;
+  transition: 0s; }
+
+.portfolio-title .video {
+  color: #C8C8C8; }
+  .portfolio-title .video.wedding-title {
+    margin-top: 34px; }
+  .portfolio-title .video.production-title {
+    margin-top: 72px; }
+
 .videoplayer {
-  background-color: transparent; }
+  background-color: transparent;
+  height: 360px; }
   @media (max-width: 480px) {
     .videoplayer {
       height: 200px;
       width: 100%; } }
-  @media (min-width: 768px) {
-    .videoplayer {
-      height: 400px; } }
-  @media (min-width: 1200px) {
-    .videoplayer {
-      height: 400px; } }
+  .videoplayer .video-js .vjs-big-play-button {
+    border: none;
+    border-radius: 50%;
+    background-color: #fff;
+    height: 1.5em;
+    width: 1.5em;
+    transform: translate(30%, -20%);
+    -webkit-mask: url("../assets/img/triangle-play-inverted.png") no-repeat;
+    -webkit-mask-size: 140%;
+    -webkit-mask-position: 40%; }
 
 .description {
   padding-top: 20px;
   background-color: #C8C8C8;
+  height: 0;
   color: #fff;
-  height: 400px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  border: 8px solid #C8C8C8; }
   .description .description-title, .description .description-date {
+    text-align: center; }
+  .description .description-title {
+    line-height: normal; }
+  .description .description-date {
     font-family: 'GothamPro-Bold', sans-serif;
-    font-size: 41px;
-    line-height: 1; }
+    font-size: 2.3vw;
+    padding-bottom: 20px; }
   .description .description-text {
     font-family: 'GothamPro', sans-serif;
     text-align: justify;
-    padding-left: 20px;
-    padding-right: 20px;
     font-weight: 600; }
+
+.scrollbar {
+  margin-left: 30px;
+  float: left;
+  height: 300px;
+  width: 65px;
+  background: #F5F5F5;
+  overflow-y: scroll;
+  margin-bottom: 25px; }
+
+.description::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #C8C8C8; }
+
+.description::-webkit-scrollbar {
+  width: 8px;
+  background-color: #C8C8C8; }
+
+.description::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #fff; }
+
+.social-connect-one-screen-layout i::before {
+  color: #C8C8C8; }
 
 /*# sourceMappingURL=video.css.map */

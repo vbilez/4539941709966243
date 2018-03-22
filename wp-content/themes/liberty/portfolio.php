@@ -5,7 +5,20 @@ $s=$_GET['s'];
 /**
  * variable to conditionally switch between specific stylesheet rules
  */
-$portfolioCssClass = (($currentSegment=='portfolio-wedding') ? 'wedding' : (($currentSegment=='portfolio-production') ? 'production' : null));
+switch ($currentSegment) {
+    case 'portfolio-wedding':
+        $portfolioCssClass = 'wedding';
+        break;
+    case 'portfolio-production':
+        $portfolioCssClass = 'production';
+        break;
+    case 'video':
+        $portfolioCssClass = 'video';
+        $portfolioCssClass .= (($seg3 == 5) ? ' wedding' : (($seg3 == 6) ? ' production' : null));
+        break;
+    default:
+        $portfolioCssClass = '';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,29 +46,26 @@ $portfolioCssClass = (($currentSegment=='portfolio-wedding') ? 'wedding' : (($cu
 <div class="container">
     <div class="portfolio-title">
             <?php
-            $parallelogram = '<div class="parallelogram"><div class="parallelogram-inner-text">Портфоліо</div></div>';
-            $wed = <<<EOT
-                    <div class="wedding-title">Wedding{$parallelogram}</div>
+            function build_title($portfolioCssClass) {
+                global $seg3;
+                $parallelogram = '<div class="parallelogram"><div class="parallelogram-inner-text">Портфоліо</div></div>';
+                $title = ucfirst($portfolioCssClass);
+                if(strpos($portfolioCssClass, 'video')!==false) {
+                    global $title;
+                    if ($seg3 == 5) {
+                        $css_classes = 'video wedding-title';
+                        $title = 'Wedding';
+                    }
+                    if ($seg3 == 6) {
+                        $css_classes = 'video production-title';
+                        $title = 'Production';
+                    }
+                } else $css_classes = $portfolioCssClass . '-title';
+                echo <<<EOT
+                    <div class="{$css_classes}">{$title}{$parallelogram}</div>
 EOT;
-            $prod= <<<EOT
-                    <div class="production-title">Production{$parallelogram}</div>
-EOT;
-            if($currentSegment=='portfolio-wedding'){
-                echo $wed;
             }
-            if($currentSegment=='portfolio-production'){
-                echo $prod;
-            }
-            if($currentSegment=='video'){
-                if($seg3==5)
-                {
-                    echo $wed_v;
-                }
-                if($seg3==6)
-                {
-                   echo $prod_v;
-                }
-            }
+            build_title($portfolioCssClass)
             ?>
     </div>
 
@@ -83,11 +93,11 @@ $args2 = array(
 $q2 = new WP_Query( $args2 );
 $q = new WP_Query( $args );
 
-
+echo $currentSegment == 'video' ? '<div id="stripe"></div>' : null;
+$content_section_wrapper = $currentSegment == 'video' ? 'video-preview' : 'video-thumbs-table';
 ?>
-   
 <div class="row">
-    <div class="video-thumbs-table col-xs-12">
+    <div class="<?= $content_section_wrapper ?> col-xs-12">
         <?php if(($currentSegment=='portfolio-wedding')||($currentSegment=='portfolio-production')){?>
           <?php if($currentSegment=='portfolio-wedding') {?>        
             <div class="prev-video-thumbs-arrow">
@@ -286,29 +296,34 @@ $q = new WP_Query( $args );
     })
 </script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/owl.carousel/dist/owl.carousel.min.js" type="text/javascript"></script>
-<script>
-    $(document).ready(function(){
-        var owl = $('.video-thumbs-table > .row');
-        function owlInit(arg) {
-            if (win_h < 630) {
-                if (!arg.hasClass('owl-carousel')) {
-                    arg.addClass('owl-carousel').addClass('owl-theme');
+<?php if ($currentSegment!=='video') { ?>
+    <script>
+        $(document).ready(function(){
+            var owl = $('.video-thumbs-table > .row');
+            function owlInit(arg) {
+                if (win_h < 630) {
+                    if (!arg.hasClass('owl-carousel')) {
+                        arg.addClass('owl-carousel').addClass('owl-theme');
+                    }
+                    owl.trigger('destroy.owl.carousel');
+                    itemsQty = $(window).height() < 450 ? 2 : 1;
+                    $('.owl-carousel').owlCarousel({
+                        items: itemsQty
+                    });
+                } else {
+                    owl.removeClass('owl-carousel owl-theme').trigger('destroy.owl.carousel');
                 }
-                owl.trigger('destroy.owl.carousel');
-                itemsQty = win_h < 450 ? 2 : 1;
-                $('.owl-carousel').owlCarousel({
-                    items: itemsQty
-                });
-            } else {
-                owl.removeClass('owl-carousel owl-theme').trigger('destroy.owl.carousel');
             }
-        }
-        owlInit(owl);
-        $(window).resize(function () {
-            !/iPhone/.test(navigator.userAgent) ? owlInit(owl) : null;
+            owlInit(owl);
+            $(window).resize(function () {
+                !/iPhone/.test(navigator.userAgent) ? owlInit(owl) : null;
+            });
+            window.addEventListener("orientationchange", function() {
+                owlInit(owl);
+            }, false);
         });
-    });
-</script>
+    </script>
+<?php }; ?>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/anims.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/send-text-input.js" type="text/javascript"></script>

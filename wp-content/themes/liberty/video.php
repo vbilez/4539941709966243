@@ -36,27 +36,46 @@ if(strpos($postname,$vimeolink)!==false)
     }
 $postdate= get_the_date('d',$post) .'|'.get_the_date('m',$post) ;
 echo '
-<div class="col-md-7  col-lg-7 col-sm-12 col-xs-12 videoplayer" style="padding-left:0 !important;padding-right:0 !important" >
-			<video  style="width: 100%; height: 100%;" id="my-video" class="video-js vjs-big-play-centered vjs-16-9" controls preload="auto" 
-  poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+<div class="videoplayer col-lg-8 col-md-8 col-sm-12 col-xs-12">
+<video id="my-video" class="video-js vjs-big-play-centered vjs-16-9" controls preload="auto" poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
     <source src="'.get_the_guid($id).'" type="'.$video_type.'">
-    
     <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a web browser that
       <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
     </p>
-  </video>
-		</div>
-        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 description">
-			<div class="description-title">'.$title.'</div>
-			<div class="description-date">'.$postdate.'</div>
-            <div class="description-text">'.$content.'</div>
-		
-
-  ';
-
- 
-	?>
-
+</video>
+</div>
+<div class="description hidden col-md-4 col-lg-4 col-sm-12 col-xs-12">
+    <div class="description-title">'.$title.'</div>
+    <div class="description-date">'.$postdate.'</div>
+    <div class="description-text">'.$content.'</div>
+</div>
+'; ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/video.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/Youtube.min.js"></script>
+<script>
+    $ = jQuery;
+    function descTitleFontAdjust() {
+        var descriptionTitle = $('.description-title');
+        var fontSize = 68 / descriptionTitle.text().length;
+        if (descriptionTitle.text().length < 16 && descriptionTitle.text().length > 12) {
+            fontSize = 4;
+        }
+        if (descriptionTitle.text().length < 12) {
+            fontSize = 5;
+        }
+        console.log(fontSize);
+        descriptionTitle.css({'font-size': fontSize + 'vw'})
+    }
+    $(document).ready(function () {
+        var description = $('.description');
+        description.css({'height': $('#my-video').outerHeight()});
+        description.removeClass('hidden');
+        console.log($('.description-title').text().length);
+        $(window).resize(function () {
+            description.css({'height': $('#my-video').outerHeight()});
+            descTitleFontAdjust();
+        })
+    });
+    descTitleFontAdjust();
+</script>
