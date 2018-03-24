@@ -449,6 +449,7 @@ else {
 <!--//for debug purpose-->
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/anims.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/killScroll.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/intro-anims.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/send-text-input.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/mobile-chrome-vh-fix/mobile-chrome-vh-fix.js"></script>
