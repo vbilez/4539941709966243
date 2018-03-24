@@ -58,13 +58,20 @@ $(document).ready(function () {
             stroke.animate({'height': '60%'}, 1500);
             stroke.animate({'height': '50%'}, 1500);
         }
-        featherTop.add(featherBottom).animate({
+        featherTop.animate({
+            '-webkit-mask-position-x': '50%',
+            '-webkit-mask-position-y': '60%',
+            'mask-position-x': '50%',
+            'mask-position-y': '60%',
+            'opacity': '1'
+        }, {duration: 2000, queue : false});
+        featherBottom.animate({
             '-webkit-mask-position-x': '50%',
             '-webkit-mask-position-y': '50%',
             'mask-position-x': '50%',
             'mask-position-y': '50%',
             'opacity': '1'
-        }, 2000);
+        }, {duration: 2000, queue : false})
     }
 
     effects_elem_arr.forEach(function (val) {

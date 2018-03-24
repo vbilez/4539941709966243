@@ -16,11 +16,11 @@
 </head>
 
 <body>
-<header>
+<header class="bg-none">
     <video class="hidden-xs" autoplay loop id="video-background" poster="" muted>
         <source src="<?php echo get_template_directory_uri(); ?>/assets/img/video-background.mp4" type="video/mp4">
     </video>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default opacity-0">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img class="hidden-xs-v" src="<?php echo get_template_directory_uri(); ?>/assets/img/brand_img_lg.png"/></a>
                 <!--todo : make correct brand logo mask on mobile-->
             </div>
@@ -105,7 +105,7 @@
 <section class="our-team" id="ourteam">
     <!--todo : non responsive render of this section on mobile-->
     <div class="container-fluid">
-        <div class="row row-eq-height">
+        <div class="row">
             <div class="col-md-12">
                 <div>
                     <div class="our-team-title">

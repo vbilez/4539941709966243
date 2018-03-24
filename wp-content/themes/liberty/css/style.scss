@@ -11,7 +11,7 @@ i {
 
 @mixin header-menu-links-style() {
   font-family: 'GothamPro', sans-serif;
-  font-size: 20px;
+  font-size: 10pt;
   text-align: center;
   color: #fff;
   font-weight: bold;
@@ -116,13 +116,20 @@ header {
     background-size: cover;
 }
 
+.bg-none {
+  @include media-for-sm {
+    background: none;
+    background-color: black;
+  }
+}
+
 #video-background {
   min-width: 100%;
   height: 100%;
   width: 100%;
   object-fit: fill;
   position: absolute;
-  opacity: 0.3;
+  opacity: 0;
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -179,7 +186,17 @@ header {
   }
 
   & .navbar-brand {
+    @include media-for-xs {
+      position: absolute;
+      height: 100px;
+      width: 50px;
+      left: 10px;
+      top: 10px;
+    }
     & img {
+      @include media-for-xs-h {
+        height: 45px;
+      }
       @include media-for-sm {
         height: 45px;
       }
@@ -195,7 +212,7 @@ header {
   & .navbar-toggle {
     border: none;
     @include media-for-xs-h-v {
-      margin-top: 50px;
+      margin-top: 20px;
     }
     @media screen and (max-width: 320px) {
       margin-top: 40px;
@@ -223,6 +240,15 @@ nav .container-fluid {
     margin: 0 auto;
     text-align: center;
   }
+  @include media-for-sm {
+    margin-right: 0;
+  }
+  @include media-for-md {
+    margin-right: 10px;
+  }
+  @include media-for-lg {
+    margin-right: 20px;
+  }
   & > li {
       height: 70px;
     margin-top: 4px;
@@ -244,6 +270,9 @@ nav .container-fluid {
         background-color: transparent;
       }
     }
+    @include media-for-sm {
+      margin-right: 20px;
+    }
   }
 }
 
@@ -263,8 +292,9 @@ header .navbar-toggle {
   }
   & li a {
     color: #fff;
+    @include padding-top-bottom(8px);
     &:hover, &:focus {
-      background-color:  lighten($dropdown-bg-color, 10%);
+      background-color: lighten($dropdown-bg-color, 10%);
     }
   }
 }
@@ -381,7 +411,7 @@ header .jumbotron {
         }
         @include media-for-xs-h {
           margin-top: 2%;
-          height: 18vh;
+          height: 60px;
         }
       }
     }
@@ -389,9 +419,6 @@ header .jumbotron {
 
   & .jumbotron-content {
     font-size: 25pt;
-    @include media-for-xs-h-v {
-      font-size: 3vh;
-    }
     & img {
         margin: 10px 12px;
         width: 500px;
@@ -402,7 +429,7 @@ header .jumbotron {
       margin-bottom: 10px;
       @include media-for-xs-h-v {
         margin: 5% 0;
-        font-size: 4vh;
+        font-size: 14pt;
       }
       @include media-for-sm-max {
         margin-left: 0;
@@ -544,7 +571,7 @@ header .jumbotron h2 .parallelogram .parallelogram-inner-text {
   opacity: 0.3;
   display: block;
   height: 100vh;
-  width: 200px;
+  width: 180px;
   -webkit-transform: skew(-20deg);
   -moz-transform: skew(-20deg);
   -o-transform: skew(-20deg);
@@ -565,6 +592,10 @@ header .jumbotron h2 .parallelogram .parallelogram-inner-text {
   }
   @include media-for-md {
     transition: 3s;
+    width: 190px;
+  }
+  @include media-for-lg {
+    width: 180px;
   }
 }
 
@@ -701,10 +732,14 @@ header .jumbotron h2 .parallelogram .parallelogram-inner-text {
     /*top: 83px;*/
 
 }
-.wedding-title{
+
+.wedding-title {
+  font-family: 'Corinthia', sans-serif;
+  color: $primary-theme-color;
+}
+
+.wedding .wedding-title{
      text-align: center;
-     font-family: 'Corinthia', sans-serif;
-     color: #66FAF9;
      font-size: 7vw;
     width: auto;
  }
@@ -865,7 +900,6 @@ header .jumbotron h2 .parallelogram .parallelogram-inner-text {
     display: inline;
     left: 50%;
 }
-.row-eq-height { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; }
 
 /*intro screen styles*/
 
@@ -890,9 +924,10 @@ header .jumbotron h2 .parallelogram .parallelogram-inner-text {
 
 @media screen and (max-width: 1024px){
     .portfolio .wedding-title {
-        left: 0;
-        bottom: 5%;
-        width: auto;
+      left: 0;
+      right: 0;
+      bottom: 5%;
+      width: auto;
     }
 
     .portfolio .production-title {
