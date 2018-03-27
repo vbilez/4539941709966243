@@ -23,7 +23,7 @@ $(document).ready(function () {
         return isIndexPageFunc(match + 1, allMatches)
     }
     isIntroPage = isIndexPageFunc();
-    isIntroPage ? killScroll() : null;
+    isIntroPage ? killScroll('xy') : null;
     effects_elem_arr = [
         [productionTitle, topFeatherArea, featherTop],
         [weddingTitle, bottomFeatherArea, featherBottom]
