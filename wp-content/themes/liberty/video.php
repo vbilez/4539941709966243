@@ -53,16 +53,23 @@ echo '
 '; ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/video.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/Youtube.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/killScroll.js"></script>
+<script>
+    $(window).width()<768 ? killScroll('x') : null;
+</script>
 <script>
     $ = jQuery;
     function descTitleFontAdjust() {
         var descriptionTitle = $('.description-title');
-        var fontSize = 68 / descriptionTitle.text().length;
+        var body = $('body');
+        var titleType = body.hasClass('production') ? 'prod' : body.hasClass('wedding') ? 'wed' : console.error('target must have class "wedding" or "production"');
+        body.hasClass('production') && body.hasClass('wedding') ? console.error('body class conflict for ' + arguments.callee.name + '() function') : null;
+        var fontSize = titleType === 'prod' ? ($(window).width() < 768 ? 125 : 38) / descriptionTitle.text().length : ($(window).width() < 768 ? 220 : 68) / descriptionTitle.text().length;
         if (descriptionTitle.text().length < 16 && descriptionTitle.text().length > 12) {
-            fontSize = 4;
+            fontSize = titleType === 'prod' ? ($(window).width() < 768 ? 8.4 : 2.5) : ($(window).width() < 768 ? 13 : 4);
         }
         if (descriptionTitle.text().length < 12) {
-            fontSize = 5;
+            fontSize = titleType === 'prod' ? ($(window).width()<768 ? 11 : 3.3) : ($(window).width()<768 ? 14 : 5);
         }
         console.log(fontSize);
         descriptionTitle.css({'font-size': fontSize + 'vw'})
@@ -71,7 +78,6 @@ echo '
         var description = $('.description');
         description.css({'height': $('#my-video').outerHeight()});
         description.removeClass('hidden');
-        console.log($('.description-title').text().length);
         $(window).resize(function () {
             description.css({'height': $('#my-video').outerHeight()});
             descTitleFontAdjust();
