@@ -59,6 +59,7 @@ echo '
 </script>
 <script>
     $ = jQuery;
+    var description = $('.description');
     function descTitleFontAdjust() {
         var descriptionTitle = $('.description-title');
         var body = $('body');
@@ -74,14 +75,19 @@ echo '
         console.log(fontSize);
         descriptionTitle.css({'font-size': fontSize + 'vw'})
     }
-    $(document).ready(function () {
-        var description = $('.description');
+    function descDivHeightAdjust() {
         description.css({'height': $('#my-video').outerHeight()});
         description.removeClass('hidden');
+        $(window).width()>=768 && $(window).width()<992
+            ? description.css({'height': '300px'})
+            : description.css({'height': $('#my-video').outerHeight()});
+    }
+    $(document).ready(function () {
         $(window).resize(function () {
-            description.css({'height': $('#my-video').outerHeight()});
+            descDivHeightAdjust();
             descTitleFontAdjust();
         })
     });
+    descDivHeightAdjust();
     descTitleFontAdjust();
 </script>

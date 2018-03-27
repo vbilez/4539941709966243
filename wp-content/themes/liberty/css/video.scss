@@ -82,6 +82,9 @@ body.video {
       width: 100%;
       @include padding-left-right(0);
     }
+    @include media-for-sm {
+      @include padding-left-right(0);
+    }
     & .video-js .vjs-big-play-button {
       border: none;
       border-radius: 50%;

@@ -90,6 +90,10 @@ body.video {
       width: 100%;
       padding-right: 0;
       padding-left: 0; } }
+  @media (min-width: 768px) {
+    .video-preview > .row .videoplayer {
+      padding-right: 0;
+      padding-left: 0; } }
   .video-preview > .row .videoplayer .video-js .vjs-big-play-button {
     border: none;
     border-radius: 50%;
