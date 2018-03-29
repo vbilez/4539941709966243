@@ -8,6 +8,7 @@ $title=$post->post_title;
 $youtubelink='youtubelink';
 $vimeolink='vimeolink';
 $postname=$post->post_name;
+$poster='';
 $deltitle="Delete video";
 if(
     (strpos($postname,$youtubelink)===false)
@@ -37,7 +38,7 @@ if(strpos($postname,$vimeolink)!==false)
 $postdate= get_the_date('d',$post) .'|'.get_the_date('m',$post) ;
 echo '
 <div class="videoplayer col-lg-8 col-md-8 col-sm-12 col-xs-12">
-<video id="my-video" class="video-js vjs-big-play-centered vjs-16-9" controls preload="auto" poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+<video id="my-video" class="video-js vjs-big-play-centered vjs-16-9" controls preload="auto" poster="'.$poster.'" data-setup="{}">
     <source src="'.get_the_guid($id).'" type="'.$video_type.'">
     <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a web browser that
